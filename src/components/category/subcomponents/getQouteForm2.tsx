@@ -27,7 +27,7 @@ export const GetQouteForm2 = (props: any) => {
   const sendEmail = async (e: any) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://formspree.io/f/mjvnrldz", {
+      const response = await fetch("https://formspree.io/f/mzbnokyz", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
