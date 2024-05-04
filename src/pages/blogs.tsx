@@ -1,13 +1,31 @@
+import { BlogMain } from "@/components/blog/blogMain";
+import { BlogQouteForm } from "@/components/blog/blogQouteForm";
 import { FeaturedCategories } from "@/components/blog/featuredCategories";
+import { FollowUS } from "@/components/blog/followUS";
 import { PopularPosts } from "@/components/blog/popularPosts";
 import { TabsGroup } from "@/components/blog/tabsGroup";
 import { Footer } from "@/components/shared/footer/footer";
 import { Navbar } from "@/components/shared/navbar/navbar";
 import { SearchBox } from "@/components/shared/navbar/subComponents/searchBox";
-import { getServerSideProps } from "@/services/categoriesService";
-import { Container } from "@mui/material";
+import { client } from "@/utils/sanityConfig";
+import { Container, useMediaQuery } from "@mui/material";
+import { useState } from "react";
 
-const Index = ({ data }: any) => {
+const Index = ({ data, blogs }: any) => {
+  const matches = useMediaQuery("(max-width:1280px)");
+  const matches2 = useMediaQuery("(max-width:1024px)");
+  const [blogsData, setBlogsData] = useState(blogs);
+
+  const handleSearch = (val: any) => {
+    if (val) {
+      let res: any = blogs.filter((blog: any) =>
+        blog.name.toLowerCase().includes(val.toLowerCase())
+      );
+      setBlogsData(res);
+    } else {
+      setBlogsData(blogs);
+    }
+  };
   return (
     <div className="relative p-0 m-0 w-full h-full">
       <Navbar data={data} />
@@ -16,7 +34,7 @@ const Index = ({ data }: any) => {
           <h2 className="fw_600 text-center text-3xl sm:text-2xl md:text-4xl xl:text-5xl primaryText leading-tight">
             Behind the Box
           </h2>
-          <p className="mt-2 text-base leading-5 opacity-70">
+          <p className="mt-5 xl:mt-3 text-base leading-5 opacity-70">
             Unpack expert insights with a range of content from our packaging
             wizards, featuring in-depth guides, custom packaging tips and
             inspiring customer stories. Grow from beginner to pro with
@@ -26,10 +44,10 @@ const Index = ({ data }: any) => {
             cardboard, shipping strategy, box templates, and more from a trusted
             packaging industry leader.
           </p>
-          <div className="w-5/6 mx-auto absolute -mt-6 top-full">
+          <div className="absolute -mt-6 left-1/2 transform -translate-x-1/2 w-5/6 top-full">
             <SearchBox
-              placeholder="Search by product, categories..."
-              onChange={() => {}}
+              placeholder="Search by title..."
+              onChange={(e: any) => handleSearch(e)}
               height="h-12"
             />
           </div>
@@ -37,15 +55,28 @@ const Index = ({ data }: any) => {
       </div>
       <div className="pt-20">
         <Container maxWidth="xl">
-          <TabsGroup />
-          <div className="flex mt-16">
-            <div className="w-full"></div>
+          <TabsGroup setBlogsData={setBlogsData} blogs={blogs} />
+          <div className="flex flex-col lg:flex-row mt-16 gap-y-8 lg:gap-y-0 lg:gap-x-8">
+            <div className="w-full">
+              <BlogMain blogs={blogsData} />
+            </div>
             <div
               className="flex flex-col gap-y-8"
-              style={{ width: "30rem", minWidth: "30rem" }}
+              style={{
+                width: matches ? (matches2 ? "100%" : "25rem") : "30rem",
+                minWidth: matches ? (matches2 ? "100%" : "25rem") : "30rem",
+              }}
             >
-              <PopularPosts />
-              <FeaturedCategories />
+              <PopularPosts
+                blogs={
+                  blogs.length > 0
+                    ? blogs.filter((d: any) => d.popular === true)
+                    : []
+                }
+              />
+              <FeaturedCategories blogs={blogs} />
+              <FollowUS />
+              <BlogQouteForm />
             </div>
           </div>
         </Container>
@@ -54,5 +85,18 @@ const Index = ({ data }: any) => {
     </div>
   );
 };
-export { getServerSideProps };
+export async function getServerSideProps() {
+  const query1 = `*[_type == "category"]`;
+  const query2 = `*[_type == "blogs"]`;
+
+  const data = await client.fetch(query1);
+  const data2 = await client.fetch(query2);
+
+  return {
+    props: {
+      data: data.reverse(),
+      blogs: data2,
+    },
+  };
+}
 export default Index;

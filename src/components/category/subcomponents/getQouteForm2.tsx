@@ -45,7 +45,6 @@ export const GetQouteForm2 = (props: any) => {
       toast.error("Failed to send email");
     }
   };
-
   return (
     <div
       className="overflow-hidden rounded-xl drop-shadow-xl w-full"
