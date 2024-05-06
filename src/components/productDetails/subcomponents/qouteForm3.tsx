@@ -59,7 +59,7 @@ export const QouteForm3 = (props: any) => {
             value={finalData.name}
             onChange={(e) => onchnage("name", e.target.value)}
             placeholder="Name"
-            className="pb-1 w-full border-b border-zinc-400 px-0 text-xs lg:text-sm outline-none"
+            className="pb-1 w-full border-b border-zinc-400 px-0 text-sm lg:text-base outline-none"
           />
         </div>
         <div className="col-span-6">
@@ -69,7 +69,7 @@ export const QouteForm3 = (props: any) => {
             value={finalData.email}
             onChange={(e) => onchnage("email", e.target.value)}
             placeholder="Email"
-            className="pb-1 w-full border-b border-zinc-400 px-0 text-xs lg:text-sm outline-none"
+            className="pb-1 w-full border-b border-zinc-400 px-0 text-sm lg:text-base outline-none"
           />
         </div>
         <div className="col-span-6">
@@ -79,7 +79,7 @@ export const QouteForm3 = (props: any) => {
             value={finalData.phone}
             onChange={(e) => onchnage("phone", e.target.value)}
             placeholder="Phone number"
-            className="pb-1 w-full border-b border-zinc-400 px-0 text-xs lg:text-sm outline-none"
+            className="pb-1 w-full border-b border-zinc-400 px-0 text-sm lg:text-base outline-none"
           />
         </div>
         <div className="col-span-6">
@@ -89,7 +89,7 @@ export const QouteForm3 = (props: any) => {
             value={finalData.quantity}
             onChange={(e) => onchnage("quantity", e.target.value)}
             placeholder="Quantity"
-            className="pb-1 w-full border-b border-zinc-400 px-0 text-xs lg:text-sm outline-none"
+            className="pb-1 w-full border-b border-zinc-400 px-0 text-sm lg:text-base outline-none"
           />
         </div>
         <div className="col-span-6">
@@ -97,7 +97,7 @@ export const QouteForm3 = (props: any) => {
             required
             value={finalData.color}
             onChange={(e) => onchnage("color", e.target.value)}
-            className="pb-1 w-full border-b border-zinc-400 px-0 text-xs lg:text-sm outline-none"
+            className="pb-1 w-full border-b border-zinc-400 px-0 text-sm lg:text-base outline-none"
           >
             <option>1-Color</option>
             <option>2-Color</option>
@@ -116,30 +116,30 @@ export const QouteForm3 = (props: any) => {
             value={finalData.shortDescription}
             onChange={(e) => onchnage("shortDescription", e.target.value)}
             placeholder="Description"
-            className="pb-1 w-full border-b border-zinc-400 px-0 text-xs lg:text-sm outline-none"
+            className="pb-1 w-full border-b border-zinc-400 px-0 text-sm lg:text-base outline-none"
           />
         </div>
         <div className="col-span-12">
-          <label className="text-sm fw_400 text-zinc-500">Description</label>
+          <label className="text-sm lg:text-base fw_400 text-zinc-500">Description</label>
           <textarea
             rows={4}
             required
             value={finalData.message}
             onChange={(e) => onchnage("message", e.target.value)}
-            className="w-full border border-zinc-400 px-2 py-1 text-xs lg:text-sm outline-none shadow-none"
+            className="w-full border border-zinc-400 px-2 py-1 text-sm lg:text-base outline-none shadow-none"
             placeholder="Write your message..."
           ></textarea>
         </div>
         <div className="col-span-12 flex items-center gap-x-3 -mt-2">
           <button
             type="submit"
-            className="fw_400 h-10 w-full primaryBg rounded-md text-xs lg:text-sm text-white"
+            className="fw_400 h-12 w-full primaryBg rounded-md text-sm lg:text-base text-white"
           >
             Get Inquiry
           </button>
           <button
             type="submit"
-            className="fw_400 h-10 w-full primaryBg rounded-md text-xs lg:text-sm text-white"
+            className="fw_400 h-12 w-full primaryBg rounded-md text-sm lg:text-base text-white"
           >
             Call Now
           </button>

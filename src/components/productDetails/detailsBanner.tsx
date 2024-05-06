@@ -16,26 +16,26 @@ export const DetailsBanner = () => {
             </div>
             <div className="col-span-6 flex items-center">
               <div className="w-full">
-                <p className={`primaryText ${matches? "text-2xl sm:text-3xl md:text-4xl" : "text-5xl"} leading-tight fw_600`}>
+                <p className={`primaryText ${matches? "text-3xl md:text-4xl" : "text-5xl"} leading-tight fw_600`}>
                   Packaging that protects
                   <br className="hidden lg:block" />
                   the environment.
                 </p>
-                <p className="text-base text-black fw_400 mt-6">
+                <p className="text-base lg:text-lg text-black fw_400 mt-6">
                   Ecological properties are a set of characteristics
                   <br className="hidden sm:block" />
                   related to the sustainability of packaging.
                 </p>
-                <div className="flex items-center gap-x-4 mt-10">
+                <div className="flex items-center gap-x-3 sm:gap-x-4 mt-10">
                   <button
                     onClick={() => router.push("/request-quote")}
-                    className="text-white rounded-md w-44 whitespace-nowrap primaryBg py-2 px-4 text-base fw_400 flex items-center justify-center gap-x-5"
+                    className="text-white rounded-md w-44 lg:w-52 whitespace-nowrap primaryBg h-12 px-4 text-base lg:text-lg fw_400 flex items-center justify-center gap-x-5"
                   >
                     Order Now
                   </button>
                   <button
                     onClick={() => router.push("/request-quote")}
-                    className="text-white rounded-md w-44 whitespace-nowrap primaryBg py-2 px-4 text-base fw_400 flex items-center justify-center gap-x-5"
+                    className="text-white rounded-md w-44 lg:w-52 whitespace-nowrap primaryBg h-12 px-4 text-base lg:text-lg fw_400 flex items-center justify-center gap-x-5"
                   >
                     Call Now
                   </button>

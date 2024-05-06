@@ -38,7 +38,7 @@ const DetailsHeader = (props: any) => {
               <h1 className="text-3xl lg:text-4xl fw_600 mb-3 primaryText2">
                 {props.product.name}
               </h1>
-              <p className="text-sm big_three_lines_elipsis">
+              <p className="big_three_lines_elipsis">
                 {props.product.shortDescription}
               </p>
             </div>
