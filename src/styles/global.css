@@ -42,7 +42,7 @@ a:hover {
   src: local("PoppinsExtraBold800"),
     url(../PoppinsExtraBold800.ttf) format("truetype");
 }
-
+html { scroll-behavior: smooth; }
 body {
   font-family: "PoppinsLight300";
   color: #131313;
@@ -196,4 +196,11 @@ textarea:-ms-input-placeholder {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.hov_blue {
+  color: #1a4885;
+}
+.hov_blue:hover {
+  background-color: #1a4885;
+  color: white;
 }

@@ -54,6 +54,8 @@ export const Testimonials = (props: any) => {
           <div className="mt-14 rounded-lg">
             <Carousel
               responsive={responsive}
+              arrows={true}
+              renderArrowsWhenDisabled={true}
               customLeftArrow={
                 <button className="absolute bottom-0 left-1/2 -ml-16">
                   <Image src={chevLeft} alt="chevLeft" width={16} />

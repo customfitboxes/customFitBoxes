@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Container } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import chev from "../../../static/chev.svg";
+import whiteChev from "../../../static/whiteChev.svg";
 import logo from "../../../static/logo.png";
 import { SmallNav } from "./subComponents/smallNav";
 import { useRouter } from "next/router";
@@ -93,20 +93,20 @@ export const Navbar = (props: any) => {
               </p>
               <a
                 title="Click for call me"
-                href={`tel:+1(307) 429 2922`}
+                href={`tel:+1(332) 254 1272`}
                 className="border-none text-white text-sm"
               >
-                +1(307) 429 2922
+                +1(332) 254 1272
               </a>
             </div>
             <div className="hidden lg:flex flex-col items-center gap-y-2">
               <p className="whitespace-nowrap text-sm">Email Us</p>
               <a
                 title="Click for mail me"
-                href={`mailto:info@packagingheight.com`}
+                href={`mailto:sales@customfitboxes.com`}
                 className=" text-sm border-none text-white"
               >
-                info@packagingheight.com
+                sales@customfitboxes.com
               </a>
             </div>
           </div>
@@ -119,7 +119,7 @@ export const Navbar = (props: any) => {
         </form>
         <div
           className={` hidden ${
-            fullNav ? "items-end  mt-3 lg:mt-2" : "items-center"
+            fullNav ? "items-start lg:items-end  mt-3 lg:mt-2" : "items-center"
           } duration-300 justify-between gap-x-5 md:flex relative`}
         >
           <ul className="flex items-center gap-x-6 lg:gap-x-10">
@@ -142,13 +142,13 @@ export const Navbar = (props: any) => {
                     ind === 0
                       ? "xl:border-r-2 xl:border-white xl:border-opacity-50 xl:pr-10"
                       : ""
-                  } cursor-pointer text-xs xl:text-sm whitespace-nowrap flex items-center gap-x-2 pb-0 mb-0 ${
+                  } cursor-pointer text-xs xl:text-base whitespace-nowrap flex items-center gap-x-2 pb-0 mb-0 ${
                     d.name !== "Industries" ? "hover:scale-95 duration-300" : ""
                   } ${isActive(d.active) ? "fw_600" : ""}`}
                 >
                   {d.name}
                   {d.name === "Industries" && (
-                    <Image src={chev} alt="" width={14} height={14} />
+                    <Image src={whiteChev} alt="" width={8} height={8} className="rotate-90" />
                   )}
                   {showDropdown && d.name === "Industries" && (
                     <IndustriesDropdown
@@ -166,7 +166,7 @@ export const Navbar = (props: any) => {
               onClick={() => router.push("/request-sample-pack")}
               className={`text-xs bg-transparent border border-white rounded-md py-2 w-36 lg:w-40`}
             >
-              Beat the price
+              Request a Sample Pack
             </button>
             <button
               onClick={() => router.push("/request-quote")}
@@ -177,10 +177,10 @@ export const Navbar = (props: any) => {
           </div>
           <a
             title="Click for mail me"
-            href={`mailto:info@packagingheight.com`}
+            href={`mailto:sales@customfitboxes.com`}
             className="block text-sm lg:hidden text-white"
           >
-            info@packagingheight.com
+            sales@customfitboxes.com
           </a>
         </div>
       </Container>

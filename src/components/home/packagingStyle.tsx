@@ -10,19 +10,23 @@ const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
     breakpoint: { max: 4000, min: 1280 },
-    items: 4,
+    items: 3,
+    partialVisibilityGutter: 80,
   },
   desktop: {
     breakpoint: { max: 1280, min: 1024 },
-    items: 3,
+    items: 2,
+    partialVisibilityGutter: 120,
   },
   tablet: {
     breakpoint: { max: 1024, min: 640 },
     items: 2,
+    partialVisibilityGutter: 80,
   },
   mobile: {
     breakpoint: { max: 640, min: 0 },
     items: 1,
+    partialVisibilityGutter: 0,
   },
 };
 
@@ -45,18 +49,20 @@ export const PackagingStyle = (props: any) => {
             </p>
           </div>
           <button
-            onClick={() => router.push("/request-quote")}
+            onClick={() => router.push("/industries")}
             className="text-white rounded-md px-10 whitespace-nowrap primaryBg h-14 text-base fw_400 flex items-center justify-center gap-x-5"
           >
             View all Industries
           </button>
         </div>
+
         {props.list && props.list.length > 0 && (
           <div className="mt-14">
             <Carousel
               responsive={responsive}
               arrows={true}
               infinite={true}
+              partialVisible={true}
               customLeftArrow={
                 <button className="absolute bottom-0 left-1/2 -ml-16">
                   <Image src={chevLeft} alt="chevLeft" width={16} />
@@ -69,7 +75,7 @@ export const PackagingStyle = (props: any) => {
               }
             >
               {props.list.map((data: any, ind: any) => (
-                <div className="px-1 sm:px-3 pb-20" key={ind + 1}>
+                <div className="px-1 md:px-3 pb-20" key={ind + 1}>
                   <div
                     onClick={() =>
                       router.push(`/category/${getSlug(data.slug)}`)
@@ -78,7 +84,7 @@ export const PackagingStyle = (props: any) => {
                     style={{ background: "#F5F5F5" }}
                   >
                     <div
-                      className="p-3 h-max lg:h-80 rounded-md flex items-center justify-center"
+                      className="p-3 h-72 sm:h-60 md:h-80 rounded-md flex items-center justify-center"
                       style={{ background: "#EFFCF9" }}
                     >
                       <img

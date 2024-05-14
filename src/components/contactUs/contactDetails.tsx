@@ -20,30 +20,42 @@ export const ContactDetails = () => {
               <div className="absolute left-1/2 transform -translate-x-1/2 bg-white shadow-md h-20 2xl:h-24 w-20 2xl:w-24 rounded-full -top-12 p-3 flex items-center justify-center">
                 <Image src={call} alt={"call"} />
               </div>
-              <p className="text-center text-base 2xl:text-lg fw_400">Our Contact Details</p>
-              <p className="text-center text-base 2xl:text-lg mb-0 pb-0">000 123 456 789</p>
+              <p className="text-center text-base 2xl:text-lg fw_400">
+                Our Contact Details
+              </p>
+              <p className="text-center text-base 2xl:text-lg mb-0 pb-0">
+                +1(332) 254 1272
+              </p>
             </div>
             <div className="primaryBorder2 rounded-lg px-5 pb-3 pt-12 2xl:pt-16 relative">
               <div className="absolute left-1/2 transform -translate-x-1/2 bg-white shadow-md h-20 2xl:h-24 w-20 2xl:w-24 rounded-full -top-12 p-3 flex items-center justify-center">
                 <Image src={email} alt={"email"} />
               </div>
-              <p className="text-center text-base 2xl:text-lg fw_400">Our Email Address</p>
-              <p className="text-center text-base 2xl:text-lg mb-0 pb-0">info@name.com</p>
+              <p className="text-center text-base 2xl:text-lg fw_400">
+                Our Email Address
+              </p>
+              <p className="text-center text-base 2xl:text-lg mb-0 pb-0">
+                sales@customfitboxes.com
+              </p>
             </div>
             <div className="primaryBorder2 rounded-lg px-5 pb-3 pt-12 2xl:pt-16 relative">
               <div className="absolute left-1/2 transform -translate-x-1/2 bg-white shadow-md h-20 2xl:h-24 w-20 2xl:w-24 rounded-full -top-12 p-3 flex items-center justify-center">
                 <Image src={address} alt={"address"} />
               </div>
-              <p className="text-center text-base 2xl:text-lg fw_400">Our Office Address</p>
+              <p className="text-center text-base 2xl:text-lg fw_400">
+                Our Office Address
+              </p>
               <p className="text-center text-base 2xl:text-lg mb-0 pb-0">
-                Block, house number,street number,lahore.
+                401 North Michigan Avenue, Suite 1200, Chicago, Illinois, 60611
               </p>
             </div>
             <div className="primaryBorder2 rounded-lg px-5 pb-3 pt-12 2xl:pt-16 relative">
               <div className="absolute left-1/2 transform -translate-x-1/2 bg-white shadow-md h-20 2xl:h-24 w-20 2xl:w-24 rounded-full -top-12 p-3 flex items-center justify-center">
                 <Image src={socialMedia} alt={"socialMedia"} />
               </div>
-              <p className="text-center text-base 2xl:text-lg fw_400">Our Social Media</p>
+              <p className="text-center text-base 2xl:text-lg fw_400">
+                Our Social Media
+              </p>
               <p className="text-center text-base 2xl:text-lg mb-0 pb-0">
                 Fb, Insta, whatsapp
               </p>

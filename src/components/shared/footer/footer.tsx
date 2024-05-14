@@ -55,6 +55,33 @@ export const Footer = () => {
                 className="cursor-pointer"
                 style={{ minWidth: "160" }}
               />
+              <div className="flex flex-row md:flex-col flex-wrap sm:flex-nowrap gap-y-10 sm:gap-y-0 gap-x-10 md:gap-y-10 fw_400 mt-10">
+                <div className="flex flex-col items-start gap-y-1 -mt-3">
+                  <p className="whitespace-nowrap text-sm">Phone</p>
+                  <a
+                    title="Click for call me"
+                    href={`tel:+1(332) 254 1272`}
+                    className="border-none text-black text-sm"
+                  >
+                    +1(332) 254 1272
+                  </a>
+                </div>
+                <div className="flex flex-col items-start gap-y-1 -mt-3">
+                  <p className="whitespace-nowrap text-sm">Email Us</p>
+                  <a
+                    title="Click for mail me"
+                    href={`mailto:sales@customfitboxes.com`}
+                    className=" text-sm border-none text-black"
+                  >
+                    sales@customfitboxes.com
+                  </a>
+                </div>
+                <div className="flex items-center gap-x-4">
+                  <Image src={linkedin} alt="linkedin" width={22} />
+                  <Image src={instagram} alt="instagram" width={22} />
+                  <Image src={facebook} alt="facebook" width={22} />
+                </div>
+              </div>
             </div>
             <div className="col-span-12 md:col-span-9 grid grid-cols-2 sm:flex justify-between gap-y-6 sm:gap-y-0 gap-x-8">
               <Categories list={linksData1} title="Explore" />
@@ -67,13 +94,8 @@ export const Footer = () => {
             <div className="flex items-center gap-x-2 text-black">
               <Image src={copyright} alt={copyright} />
               <span className="text-base text-black fw_400 -mt-1">
-                2023 PrintPackBox.Allrightsreserved.
+                2024 Customfitboxes.Allrightsreserved.
               </span>
-            </div>
-            <div className="flex items-center gap-x-4">
-              <Image src={linkedin} alt="linkedin" width={22} />
-              <Image src={instagram} alt="instagram" width={22} />
-              <Image src={facebook} alt="facebook" width={22} />
             </div>
           </div>
         </div>

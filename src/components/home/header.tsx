@@ -20,8 +20,7 @@ export const Header = () => {
         <div className="flex flex-col-reverse gap-y-6 sm:flex-row sm:gap-x-5 md:gap-x-10 items-center">
           <div className="w-full">
             <button
-              onClick={() => router.push("/request-quote")}
-              className="primaryBorder primaryText rounded-md px-4 whitespace-nowrap bg-transparent h-12 text-base fw_600"
+              className="primaryBorder hov_blue duration-300 rounded-md px-4 whitespace-nowrap bg-transparent h-12 text-base fw_600"
             >
               Customer Packaging Boxes
             </button>

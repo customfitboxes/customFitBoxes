@@ -13,7 +13,7 @@ export const CategoryCards = (props: any) => {
   const matches = useMediaQuery("(max-width:640px)");
   const [tab, setTab] = useState(0);
   return (
-    <Container maxWidth={"xl"}>
+    <Container maxWidth={"xl"} id="catProducts">
       <div className="pt-10 pb-14">
         <h1 className="text-3xl sm:text-2xl md:text-4xl xl:text-5xl primaryText text-center fw_600 leading-tight">
           Explor Packaging Solutions

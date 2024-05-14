@@ -1,5 +1,5 @@
 import { Container, useMediaQuery } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { QouteForm3 } from "./subcomponents/qouteForm3";
 import { ImagesCarousel } from "./subcomponents/imagesCarousel";
 import { getImg } from "@/services/descriptionService";
@@ -9,6 +9,7 @@ const DetailsHeader = (props: any) => {
   const matches2 = useMediaQuery("(max-width:400px)");
   const [myImg, setMyImg] = useState({});
   const [images, setImages] = useState<any>([]);
+  const carouselRef: any = useRef(null);
   useEffect(() => {
     if (props.product && props.product.images) {
       let res: any = props.product.images.filter(
@@ -18,17 +19,28 @@ const DetailsHeader = (props: any) => {
       setImages(res);
     }
   }, [props.product]);
+
+  const handleImageClick = (index: any) => {
+    if (carouselRef.current) {
+      carouselRef.current.goToSlide(index);
+    }
+  };
   return (
     <Container maxWidth={"xl"}>
       <div
-        className={`flex flex-col-reverse md:grid ${
+        className={`flex flex-col-reverse lg:grid ${
           matches ? "grid-cols-11" : "grid-cols-12"
-        } gap-y-5 pb-10 pt-6 sm:py-10 md:gap-x-10`}
+        } gap-y-5 pb-10 pt-6 sm:py-10 lg:gap-x-10`}
       >
         <div className="col-span-6">
           {props.product &&
             props.product.images &&
-            props.product.images.length > 0 && <ImagesCarousel myImg={myImg} />}
+            props.product.images.length > 0 && (
+              <ImagesCarousel
+                carouselRef={carouselRef}
+                imagesList={props.product.images}
+              />
+            )}
         </div>
         <div
           className={`${matches ? "col-span-5" : "col-span-6"} flex items-end`}
@@ -42,7 +54,7 @@ const DetailsHeader = (props: any) => {
                 {props.product.shortDescription}
               </p>
             </div>
-            <div className="hidden md:block">
+            <div className="hidden lg:block">
               <QouteForm3 productName={props.product.name} />
             </div>
             <div className="mt-3">
@@ -53,12 +65,15 @@ const DetailsHeader = (props: any) => {
                     key={index + 1}
                     className={`${
                       matches2 ? "h-20" : "h-24 xl:h-32 2xl:h-40"
-                    } w-1/4 p-2 flex items-center justify-center cursor-pointer rounded-md overflow-hidden border-2 ${
+                    } w-1/4 sm:p-2 flex items-center justify-center cursor-pointer rounded-md overflow-hidden border-2 ${
                       img === myImg
                         ? "border-blue-700"
                         : "border-zinc-200 border-opacity-0"
                     }`}
-                    onClick={() => setMyImg(img)}
+                    onClick={() => {
+                      handleImageClick(index);
+                      setMyImg(img);
+                    }}
                   >
                     <img src={getImg(img).url} alt={getImg(img).alt} />
                   </div>
@@ -68,8 +83,8 @@ const DetailsHeader = (props: any) => {
           </div>
         </div>
       </div>
-      <div className="block md:hidden">
-        <h2 className="text-xl fw_600 mt-0 text-center md:text-left">
+      <div className="block lg:hidden">
+        <h2 className="text-xl fw_600 mt-0 text-center lg:text-left">
           Get Custom Quote
         </h2>
         <QouteForm3 productName={props.product.name} />

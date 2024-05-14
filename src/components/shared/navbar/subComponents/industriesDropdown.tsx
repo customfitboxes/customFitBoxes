@@ -45,7 +45,7 @@ const IndustriesDropdown = (props: any) => {
             </div>
           ))}
         <div
-          onClick={() => router.push("/all-categories")}
+          onClick={() => router.push("/industries")}
           className="flex items-center gap-x-3 cursor-pointer text-black rounded-lg justify-center px-2 h-12 sm:h-14 md:h-16 bg-zinc-100 hover:scale-95 duration-300"
         >
           <h2 className="text-xs sm:text-sm md:text-base fw_600 text-black">

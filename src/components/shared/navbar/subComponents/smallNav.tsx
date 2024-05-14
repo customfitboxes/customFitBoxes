@@ -43,7 +43,7 @@ export const SmallNav = (props: any) => {
           onClick={() => router.push("/contact-us")}
           className={`text-xs fw_600 bg-white primaryText greenBorder py-2 w-36 sm:w-40 buttonBorderRadius`}
         >
-          Beat the price
+          Request a Sample Pack
         </button>
         <button
           onClick={() => router.push("/request-quote")}

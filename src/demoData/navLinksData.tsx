@@ -1,6 +1,6 @@
 export const linksData = [
   { name: "Products", path: "/all-products", active: "/all-products" },
-  { name: "Industries", path: "/all-categories", active: "/all-categories" },
+  { name: "Industries", path: "/industries", active: "/industries" },
   {
     name: "Box by Material",
     path: "/category/box-by-material",

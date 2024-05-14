@@ -3,8 +3,8 @@ import { useMediaQuery } from "@mui/material";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import capchaIcon from "../../../static/capchaIcon.svg";
-import Image from "next/image";
+// import capchaIcon from "../../../static/capchaIcon.svg";
+// import Image from "next/image";
 
 export const GetQouteForm2 = (props: any) => {
   const matches2 = useMediaQuery("(max-width:850px)");
@@ -127,7 +127,7 @@ export const GetQouteForm2 = (props: any) => {
             placeholder="Write your message..."
           ></textarea>
         </div>
-        <div className="col-span-12">
+        {/* <div className="col-span-12">
           <div className="flex justify-between px-3 py-2 border border-zinc-400 w-72 sm:w-80">
             <label className="flex items-center gap-x-2 sm:gap-x-4 text-xs sm:text-sm">
               <input type="checkbox" className="w-5 sm:w-6 h-5 sm:h-6 rounded-sm" />
@@ -146,7 +146,7 @@ export const GetQouteForm2 = (props: any) => {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="col-span-12 flex justify-center mt-4">
           <button
             type="submit"
