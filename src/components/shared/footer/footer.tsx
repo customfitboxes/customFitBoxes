@@ -7,6 +7,7 @@ import instagram from "../../../static/instagram.svg";
 import copyright from "../../../static/copyright.svg";
 import { Categories } from "./subcomponents/categories";
 import logo from "../../../static/logo.png";
+import paymentImg from "../../../static/paymentImg.jpg";
 import { useRouter } from "next/router";
 
 const linksData1 = [
@@ -93,10 +94,11 @@ export const Footer = () => {
           <div className="flex flex-col items-center justify-between gap-y-3 py-12 md:flex-row md:gap-y-0 md:gap-x-4">
             <div className="flex items-center gap-x-2 text-black">
               <Image src={copyright} alt={copyright} />
-              <span className="text-base text-black fw_400 -mt-1">
-                2024 Customfitboxes.Allrightsreserved.
+              <span className="text-sm sm:text-base text-black fw_400 -mt-1">
+                2024 Customfitboxes.All rights reserved.
               </span>
             </div>
+            <Image src={paymentImg} alt="paymentImg" className="w-60" />
           </div>
         </div>
       </Container>

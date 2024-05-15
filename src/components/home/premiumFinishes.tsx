@@ -1,49 +1,53 @@
 import { Container } from "@mui/material";
-// import Carousel from "react-multi-carousel";
+import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Image from "next/image";
-// import { PremiumFinishesData } from "@/demoData/premiumFinishesData";
-import gallery from "../../static/gallery.svg";
+import { PremiumFinishesData } from "@/demoData/premiumFinishesData";
 
-// const responsive = {
-//   superLargeDesktop: {
-//     // the naming can be any, depends on you.
-//     breakpoint: { max: 4000, min: 3000 },
-//     items: 3,
-//     slidesToSlide: 1,
-//   },
-//   desktop: {
-//     breakpoint: { max: 3000, min: 1024 },
-//     items: 3,
-//     slidesToSlide: 1,
-//   },
-//   tablet: {
-//     breakpoint: { max: 1024, min: 464 },
-//     items: 2,
-//     slidesToSlide: 1,
-//   },
-//   mobile: {
-//     breakpoint: { max: 464, min: 0 },
-//     items: 1,
-//     slidesToSlide: 1,
-//   },
-// };
+const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 3,
+    slidesToSlide: 1,
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3,
+    slidesToSlide: 1,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+    slidesToSlide: 1,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+    slidesToSlide: 1,
+  },
+};
 
 export const PremiumFinishes = () => {
   return (
-    <Container maxWidth={"xl"}>
-      <div className="py-14">
-        <h2 className="text-3xl sm:text-2xl md:text-4xl xl:text-5xl primaryText text-center fw_600 leading-tight">
+    <Container maxWidth={"lg"}>
+      <div className="pb-10 pt-5">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl text-center fw_600 leading-tight">
           Premium Finishes
         </h2>
-        <p className="text-center mt-2 leading-5 opacity-70 text-base">
-          Donac vtea odio quis dapture misturedre. aiquet velit.aliquium
-          valpuriate vate saqvin barndk impred dolor tempo
+        <p className="text-center mt-2 leading-5 opacity-70 text-sm">
+          We know how crucial it is for your packaging to shine bright like a
+          diamond! Our premium finishes guarantee that your packaging looks
+          amazing and feels super fancy in your customers hands. Because when
+          it comes to packaging, it's all about making a statement, and we're
+          here to help you do it with style{" "}
+          <span className="lowercase">
+            of finishing options to ensure SPECTACULAR LOOKS AND PREMIUM
+          </span>
+          <br className="hidden sm:block" />
+          <span className="lowercase"> FEEL OF CUSTOM BOXES</span>
         </p>
-        <div className="w-full flex justify-center mt-14">
-          <Image src={gallery} alt="contentImg" style={{ width: "100%" }} />
-        </div>
-        {/* <div className="w-full mt-14 relative z-10">
+        <div className="w-full mt-14 relative z-10">
           <Carousel responsive={responsive}>
             {PremiumFinishesData.map((item: any, index: any) => (
               <div className="sm:p-3" key={index + 1}>
@@ -58,7 +62,7 @@ export const PremiumFinishes = () => {
               </div>
             ))}
           </Carousel>
-        </div> */}
+        </div>
       </div>
     </Container>
   );
