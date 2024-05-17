@@ -5,7 +5,6 @@ import { toast } from "react-toastify";
 
 export const QouteForm3 = (props: any) => {
   const [finalData, setFinalData] = useState<any>({
-    color: "1-Color",
     productName: props.productName,
   });
   const router = useRouter();
@@ -31,7 +30,7 @@ export const QouteForm3 = (props: any) => {
       });
 
       if (response.ok) {
-        setFinalData({ ...resetForm(finalData), color: "1-Color" });
+        setFinalData({ ...resetForm(finalData), color: "" });
         router.push("/thank-you");
       } else {
         toast.error("Failed to send email");
@@ -143,6 +142,7 @@ export const QouteForm3 = (props: any) => {
             onChange={(e) => onchnage("color", e.target.value)}
             className="pb-1 w-full border-b border-zinc-400 px-0 text-sm sm:text-0base lg:text-sm xl:text-base outline-none"
           >
+            <option>Color</option>
             <option>1-Color</option>
             <option>2-Color</option>
             <option>3-Color</option>
@@ -154,14 +154,21 @@ export const QouteForm3 = (props: any) => {
           </select>
         </div>
         <div className="col-span-6 sm:col-span-4">
-          <input
-            type="text"
-            required
-            value={finalData.shortDescription}
-            onChange={(e) => onchnage("shortDescription", e.target.value)}
-            placeholder="Description"
+          <select
+            value={finalData.stock}
+            onChange={(e) => onchnage("stock", e.target.value)}
             className="pb-1 w-full border-b border-zinc-400 px-0 text-sm sm:text-0base lg:text-sm xl:text-base outline-none"
-          />
+          >
+            <option>Select Stock</option>
+            <option>12 PT</option>
+            <option>14 PT</option>
+            <option>16 PT</option>
+            <option>18 PT</option>
+            <option>20 PT</option>
+            <option>Kraft Stock</option>
+            <option>Corrugated Stock</option>
+            <option>Rigid Stock</option>
+          </select>
         </div>
         <div className="col-span-12">
           <textarea

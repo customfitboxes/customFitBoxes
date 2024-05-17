@@ -4,10 +4,7 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 export const GetQouteForm1 = (props: any) => {
-  const [finalData, setFinalData] = useState<any>({
-    color: "1-Color",
-    unit: "Inches",
-  });
+  const [finalData, setFinalData] = useState<any>({});
 
   useEffect(() => {
     if (props.products && props.products.length > 0)
@@ -31,7 +28,7 @@ export const GetQouteForm1 = (props: any) => {
       });
 
       if (response.ok) {
-        setFinalData({ ...resetForm(finalData), color: "1-Color" });
+        setFinalData({ ...resetForm(finalData), color: "" });
         router.push("/thank-you");
       } else {
         toast.error("Failed to send email");
@@ -83,6 +80,7 @@ export const GetQouteForm1 = (props: any) => {
             onChange={(e) => onchnage("unit", e.target.value)}
             className="h-10 w-full border-b border-zinc-800 bg-transparent text-sm sm:text-base outline-none"
           >
+            <option>Select Unit</option>
             <option>Inches</option>
             <option>CM</option>
             <option>MM</option>
@@ -121,6 +119,7 @@ export const GetQouteForm1 = (props: any) => {
             onChange={(e) => onchnage("color", e.target.value)}
             className="h-10 w-full border-b border-zinc-800 bg-transparent text-sm sm:text-base outline-none"
           >
+            <option>Color</option>
             <option>1-Color</option>
             <option>2-Color</option>
             <option>3-Color</option>

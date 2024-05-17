@@ -71,7 +71,7 @@ const DetailsHeader = (props: any) => {
                         : "border-zinc-200 border-opacity-0"
                     }`}
                     onClick={() => {
-                      handleImageClick(index);
+                      handleImageClick(index + 2);
                       setMyImg(img);
                     }}
                   >

@@ -34,7 +34,7 @@ export const tabsData = [
 
 export const PackagingProcess = () => {
   return (
-    <div className="pt-14">
+    <div className="pt-4">
       <Container maxWidth={"xl"}>
         <div>
           <h1 className="text-3xl sm:text-2xl md:text-4xl xl:text-5xl primaryText text-center fw_600 leading-tight">

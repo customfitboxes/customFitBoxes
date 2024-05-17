@@ -31,8 +31,8 @@ const responsive = {
 export const PremiumFinishes = () => {
   return (
     <Container maxWidth={"xl"}>
-      <div className="pb-10 pt-5">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl text-center fw_600 leading-tight">
+      <div className="pb-10 pt-14">
+        <h2 className="text-3xl sm:text-2xl md:text-4xl xl:text-5xl primaryText text-center fw_600 leading-tight">
           Premium Finishes
         </h2>
         <p className="text-center mt-2 leading-5 opacity-70 text-sm">
@@ -47,7 +47,7 @@ export const PremiumFinishes = () => {
           <br className="hidden sm:block" />
           <span className="lowercase"> FEEL OF CUSTOM BOXES</span>
         </p>
-        <div className="w-full mt-14 relative z-10">
+        <div className="w-full mt-10 relative z-10">
           <Carousel responsive={responsive}>
             {PremiumFinishesData.map((item: any, index: any) => (
               <div className="sm:p-3" key={index + 1}>
