@@ -54,7 +54,12 @@ export const BlogMain = (props: any) => {
         <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-5 xl:gap-8">
           {props.blogs.map(
             (blog: any, index: number) =>
-              index !== 0 && <BlogCard key={index + 1} blog={blog} />
+              index !== 0 && (
+                <BlogCard
+                  key={index + 1}
+                  blog={blog}
+                />
+              )
           )}
         </div>
       )}

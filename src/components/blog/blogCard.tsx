@@ -1,8 +1,12 @@
 import { PortableText } from "@portabletext/react";
 import moment from "moment";
 import { getImg } from "@/services/descriptionService";
+import { getSlug } from "@/services/categoriesService";
+import { useRouter } from "next/router";
 
 export const BlogCard = (props: any) => {
+  const router = useRouter();
+
   const block = {
     h1: ({ children }: any) => (
       <h1 className="text-3xl fw_600 mb-2 mt-4 primaryText2">{children}</h1>
@@ -26,7 +30,8 @@ export const BlogCard = (props: any) => {
   return (
     props.blog && (
       <div
-        className=" rounded-md  overflow-hidden w-full"
+        onClick={() => router.push("/blog/" + getSlug(props.blog.slug))}
+        className="rounded-md cursor-pointer overflow-hidden w-full"
         style={{ background: "#F5F5F5" }}
       >
         <div className="h-60 xl:h-80">

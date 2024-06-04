@@ -4,7 +4,7 @@ import { Container } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import whiteChev from "../../../static/whiteChev.svg";
-import logo from "../../../static/logo.png";
+import logo from "../../../static/logo1.png";
 import { SmallNav } from "./subComponents/smallNav";
 import { useRouter } from "next/router";
 import { linksData } from "@/demoData/navLinksData";

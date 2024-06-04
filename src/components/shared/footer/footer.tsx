@@ -6,7 +6,7 @@ import facebook from "../../../static/facebook.svg";
 import instagram from "../../../static/instagram.svg";
 import copyright from "../../../static/copyright.svg";
 import { Categories } from "./subcomponents/categories";
-import logo from "../../../static/logo.png";
+import logo from "../../../static/logo2.png";
 import paymentImg from "../../../static/paymentImg.jpg";
 import { useRouter } from "next/router";
 
