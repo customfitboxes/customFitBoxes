@@ -13,7 +13,6 @@ export const HomeContentSection = () => {
       <div className="pt-14">
         <div>
           <h2 className="text-3xl sm:text-2xl md:text-4xl xl:text-5xl fw_600 leading-tight primaryText mt-0 pt-0">
-            Content Section
           </h2>
           <p className="mt-1 leading-5 text-base">
             Discover our range of fully customizable retail boxes tailored to
