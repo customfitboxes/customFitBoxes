@@ -27,7 +27,7 @@ export const Header = () => {
             <h1 className="fw_600 text-3xl sm:text-2xl leading-tight md:text-4xl xl:text-5xl mt-8">
               Elevate Your Brand With{" "}
               <br className={matches ? "hidden" : "block"} />
-              Tailor-Made Packaging{" "}
+              Tailor Made Packaging{" "}
               <br className={matches ? "hidden" : "block"} />
               Solutions
             </h1>
