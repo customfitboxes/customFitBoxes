@@ -32,7 +32,7 @@ const Index = ({ data, category, products, faqs }: any) => {
             },
           ]}
           canonical={
-            "https://packagingheight.com/category/" + category.slug.current
+            "https://customfitboxes.com/category/" + category.slug.current
           }
         />
         <Navbar data={data} />
