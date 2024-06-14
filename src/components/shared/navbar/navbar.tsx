@@ -59,8 +59,8 @@ export const Navbar = (props: any) => {
               onClick={() => router.push("/")}
               src={logo}
               alt={"logo"}
-              width={150}
-              height={70}
+              width={170}
+              height={90}
               className="cursor-pointer"
               style={{ minWidth: "130" }}
             />
