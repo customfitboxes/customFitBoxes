@@ -1,14 +1,14 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 const ZohoChatWidget = () => {
   useEffect(() => {
-    const tawk = document.createElement('script');
+    const tawk = document.createElement("script");
     tawk.async = true;
-    tawk.src = 'https://embed.tawk.to/66392fa007f59932ab3cab25/1ht7m42su';
-    const s:any = document.getElementsByTagName('script')[0];
+    tawk.src = "https://embed.tawk.to/66949419becc2fed6924d88e/1i2q6527q";
+    const s: any = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(tawk, s);
     return () => {
-      document.getElementById('tawkToScript')?.remove();
+      document.getElementById("tawkToScript")?.remove();
     };
   }, []);
 
@@ -16,3 +16,15 @@ const ZohoChatWidget = () => {
 };
 
 export default ZohoChatWidget;
+
+// <script type="text/javascript">
+// var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+// (function(){
+// var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+// s1.async=true;
+// s1.src='https://embed.tawk.to/66949419becc2fed6924d88e/1i2q6527q';
+// s1.charset='UTF-8';
+// s1.setAttribute('crossorigin','*');
+// s0.parentNode.insertBefore(s1,s0);
+// })();
+// </script>

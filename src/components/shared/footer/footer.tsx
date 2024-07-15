@@ -78,9 +78,27 @@ export const Footer = () => {
                   </a>
                 </div>
                 <div className="flex items-center gap-x-4">
-                  <Image src={linkedin} alt="linkedin" width={22} />
-                  <Image src={instagram} alt="instagram" width={22} />
-                  <Image src={facebook} alt="facebook" width={22} />
+                  <a
+                    href="https://www.linkedin.com/company/custom-fit-boxes/"
+                    target="_blank"
+                    className="border-none"
+                  >
+                    <Image src={linkedin} alt="linkedin" width={22} />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/customfitboxesusa/"
+                    target="_blank"
+                    className="border-none"
+                  >
+                    <Image src={instagram} alt="instagram" width={22} />
+                  </a>
+                  <a
+                    href="https://www.facebook.com/customfitboxes/"
+                    target="_blank"
+                    className="border-none"
+                  >
+                    <Image src={facebook} alt="facebook" width={22} />
+                  </a>
                 </div>
               </div>
             </div>

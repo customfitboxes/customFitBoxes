@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { QouteForm3 } from "./subcomponents/qouteForm3";
 import { ImagesCarousel } from "./subcomponents/imagesCarousel";
 import { getImg } from "@/services/descriptionService";
+import { useRouter } from "next/router";
 
 const DetailsHeader = (props: any) => {
   const matches = useMediaQuery("(max-width:1100px)");
@@ -10,6 +11,7 @@ const DetailsHeader = (props: any) => {
   const [myImg, setMyImg] = useState({});
   const [images, setImages] = useState<any>([]);
   const carouselRef: any = useRef(null);
+  const router = useRouter();
   useEffect(() => {
     if (props.product && props.product.images) {
       let res: any = props.product.images.filter(
@@ -46,8 +48,21 @@ const DetailsHeader = (props: any) => {
           className={`${matches ? "col-span-5" : "col-span-6"} flex items-end`}
         >
           <div className="w-full">
+            <span className="text-xs greenText -mt-3">
+              <button
+                className="outline-none shadow-none text-blue-600 fw_400"
+                onClick={() => router.push("/")}
+              >
+                Home
+              </button>{" "}
+              /
+              <span className="text-zinc-600 fw_400">
+                {" "}
+                {props.product.name}
+              </span>
+            </span>
             <div>
-              <h1 className="text-3xl lg:text-4xl fw_600 mb-3 primaryText2">
+              <h1 className="text-3xl lg:text-4xl fw_600 my-3 primaryText2">
                 {props.product.name}
               </h1>
               <p className="big_three_lines_elipsis">
@@ -65,7 +80,7 @@ const DetailsHeader = (props: any) => {
                     key={index + 1}
                     className={`${
                       matches2 ? "h-20" : "h-24 xl:h-32 2xl:h-40"
-                    } w-1/4 sm:p-2 flex items-center justify-center cursor-pointer rounded-md overflow-hidden border-2 ${
+                    } w-1/4  flex items-center justify-center cursor-pointer rounded-md overflow-hidden border-2 ${
                       img === myImg
                         ? "border-blue-700"
                         : "border-zinc-200 border-opacity-0"
@@ -75,7 +90,11 @@ const DetailsHeader = (props: any) => {
                       setMyImg(img);
                     }}
                   >
-                    <img src={getImg(img).url} alt={getImg(img).alt} />
+                    <img
+                      src={getImg(img).url}
+                      alt={getImg(img).alt}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 ))}
               </div>

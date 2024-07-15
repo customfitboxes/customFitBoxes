@@ -4,6 +4,8 @@ import callBackBanner from "../../static/callBackBanner.svg";
 import { useState } from "react";
 import whiteChev from "../../static/whiteChev.svg";
 import { useRouter } from "next/router";
+import { resetForm } from "@/services/categoriesService";
+import { toast } from "react-toastify";
 
 export const CallBackComp = () => {
   const [finalData, setFinalData] = useState<any>({});
@@ -11,7 +13,31 @@ export const CallBackComp = () => {
     const updatedData = { ...finalData, [key]: val };
     setFinalData(updatedData);
   };
+
   const router = useRouter();
+
+  const sendEmail = async (e: any) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("https://formspree.io/f/mzbnokyz", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(finalData),
+      });
+
+      if (response.ok) {
+        setFinalData({ ...resetForm(finalData), color: "" });
+        router.push("/thank-you");
+      } else {
+        toast.error("Failed to send email");
+      }
+    } catch (error) {
+      toast.error("Failed to send email");
+    }
+  };
+
   return (
     <div className="pb-0 md:pb-14">
       <div style={{ background: "#EFFCF9" }} className="py-10">
@@ -21,14 +47,14 @@ export const CallBackComp = () => {
               <Image src={callBackBanner} alt="callBackBanner" />
             </div>
             <div className="col-span-6 flex items-center">
-              <div className="w-full">
+              <form onSubmit={sendEmail} className="w-full">
                 <p className="text-center text-base sm:text-lg fw_600">
                   Just drop your contact number
                 </p>
                 <h2 className="text-center primaryText fw_600 text-4xl sm:text-5xl 2xl:text-6xl mt-2">
                   We’ll Call You Back
                 </h2>
-                <form className="grid grid-cols-12 gap-y-3 sm:gap-y-0 gap-x-4 mt-10">
+                <div className="grid grid-cols-12 gap-y-3 sm:gap-y-0 gap-x-4 mt-10">
                   <div className="col-span-6 sm:col-span-4">
                     <input
                       type="text"
@@ -41,12 +67,12 @@ export const CallBackComp = () => {
                   </div>
                   <div className="col-span-6 sm:col-span-4">
                     <input
-                      type="tel"
+                      type="number"
                       required
                       value={finalData.phone}
                       onChange={(e) => onchnage("phone", e.target.value)}
                       placeholder="+1 123-123-1234"
-                      className="h-10 w-full border-b border-zinc-800 bg-transparent text-sm sm:text-base outline-none"
+                      className="h-10 w-full border-b border-zinc-800 bg-transparent text-sm sm:text-base outline-none num_input"
                     />
                   </div>
                   <div className="col-span-12 sm:col-span-4">
@@ -59,9 +85,9 @@ export const CallBackComp = () => {
                       className="h-10 w-full border-b border-zinc-800 bg-transparent text-sm sm:text-base outline-none"
                     />
                   </div>
-                </form>
+                </div>
                 <button
-                  onClick={() => router.push("/request-quote")}
+                  type="submit"
                   className="text-white rounded-md mx-auto whitespace-nowrap primaryBg h-12 px-5 text-base fw_400 mt-10 lg:mt-20 flex items-center justify-between gap-x-8"
                 >
                   Send Now
@@ -72,7 +98,7 @@ export const CallBackComp = () => {
                     height={14}
                   />
                 </button>
-              </div>
+              </form>
             </div>
           </div>
         </Container>

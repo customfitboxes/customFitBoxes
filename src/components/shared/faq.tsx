@@ -2,7 +2,34 @@ import { Container } from "@mui/material";
 import { FaqItem } from "./subcomponents/faqItem";
 import faqBannerImg from "../../static/faqBannerImg.png";
 import Image from "next/image";
+import { useState } from "react";
+import { toast } from "react-toastify";
+
 export const Faq = (props: any) => {
+  const [message, setMessage] = useState("");
+
+  const sendEmail = async (e: any) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("https://formspree.io/f/mzbnokyz", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ message }),
+      });
+
+      if (response.ok) {
+        setMessage("");
+        toast.success("Query submitted successfully!");
+      } else {
+        toast.error("Failed to send email");
+      }
+    } catch (error) {
+      toast.error("Failed to send email");
+    }
+  };
+
   return props.faqs && props.faqs.length > 0 ? (
     <Container maxWidth={"xl"}>
       <div className="py-10">
@@ -26,16 +53,25 @@ export const Faq = (props: any) => {
           </div>
           <div className="sm:sticky sm:top-36 md:top-16 w-full sm:w-max h-max">
             <Image src={faqBannerImg} alt="faqBannerImg" />
-            <div className="primaryBorder rounded-md flex items-center gap-x-3 p-2 mt-5">
+            <form
+              onSubmit={sendEmail}
+              className="primaryBorder rounded-md flex items-center gap-x-3 p-2 mt-5"
+            >
               <input
                 type="text"
+                required
+                value={message}
+                onChange={(e: any) => setMessage(e.target.value)}
                 className="bg-transparent p-0 outline-none border-none w-full text-sm sm:text-base px-3"
                 placeholder="What else would you like to know?"
               />
-              <button className="primaryBg text-white w-24 py-2 sm:text-base text-sm rounded-md">
+              <button
+                type="submit"
+                className="primaryBg text-white w-24 py-2 sm:text-base text-sm rounded-md"
+              >
                 Send
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </div>

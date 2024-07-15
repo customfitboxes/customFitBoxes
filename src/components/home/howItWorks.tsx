@@ -77,7 +77,7 @@ export const HowItWorks = () => {
             </div>
             <div className="flex justify-center sm:justify-start">
               <button
-                onClick={() => router.push("/request-quote")}
+                onClick={() => router.push("/about-us")}
                 className="text-white rounded-md px-4 whitespace-nowrap primaryBg h-12 lg:h-14 text-base lg:text-2xl fw_400 mt-14 flex items-center justify-between gap-x-8"
               >
                 About Us
