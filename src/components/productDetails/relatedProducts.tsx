@@ -45,7 +45,7 @@ export const RelatedProducts = (props: any) => {
                   className="col-span-12 sm:col-span-6 lg:col-span-3 cursor-pointer p-2"
                 >
                   <div
-                    className="w-full rounded-md h-80 sm:h-96 p-1 flex items-center justify-center overflow-hidden"
+                    className="w-full rounded-md h-80 sm:h-96 flex items-center justify-center overflow-hidden"
                     style={{ background: "#eaf0f5" }}
                   >
                     {data.images &&
@@ -54,10 +54,13 @@ export const RelatedProducts = (props: any) => {
                         <img
                           src={getImg(data.images[0]).url}
                           alt={getImg(data.images[0]).alt}
+                          className="h-full w-full object-cover"
                         />
                       )}
                   </div>
-                  <p className="text-base text-center fw_400 mt-1">{data.name}</p>
+                  <p className="text-base text-center fw_400 mt-1">
+                    {data.name}
+                  </p>
                 </div>
               ))}
             </Carousel>

@@ -12,6 +12,7 @@ import { faqsData } from "@/demoData/faqsData";
 import { HomeContentSection } from "@/components/home/homeContentSection";
 import { PackagingProcess } from "@/components/home/packagingProcess";
 import { CallBackComp } from "@/components/home/callBackComp";
+import { NextSeo } from "next-seo";
 
 const Index = ({
   data,
@@ -23,6 +24,13 @@ const Index = ({
 }: any) => {
   return (
     <div className="relative p-0 m-0 w-full h-full">
+      <NextSeo
+        title={"Custom Packaging & Boxes Wholesale | Custom Fit Boxes®"}
+        description={
+          "Order your Custom packaging Boxes with Logo at affordable wholesale prices. Custom Fit boxes provides custom made boxes with free design and shipping in the USA."
+        }
+        canonical={"https://customfitboxes.com/"}
+      />
       <Navbar
         data={data}
         boxProducts={boxProducts}

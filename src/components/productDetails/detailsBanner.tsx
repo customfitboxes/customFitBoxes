@@ -16,7 +16,11 @@ export const DetailsBanner = () => {
             </div>
             <div className="col-span-6 flex items-center">
               <div className="w-full">
-                <p className={`primaryText ${matches? "text-3xl md:text-4xl" : "text-5xl"} leading-tight fw_600`}>
+                <p
+                  className={`primaryText ${
+                    matches ? "text-3xl md:text-4xl" : "text-5xl"
+                  } leading-tight fw_600`}
+                >
                   Packaging that protects
                   <br className="hidden lg:block" />
                   the environment.
@@ -33,12 +37,14 @@ export const DetailsBanner = () => {
                   >
                     Order Now
                   </button>
-                  <button
-                    onClick={() => router.push("/request-quote")}
-                    className="text-white rounded-md w-44 lg:w-52 whitespace-nowrap primaryBg h-12 px-4 text-base lg:text-lg fw_400 flex items-center justify-center gap-x-5"
-                  >
-                    Call Now
-                  </button>
+                  <a href="tel:+13322541272" className="w-full border-none">
+                    <button
+                      type="button"
+                      className="text-white rounded-md w-44 lg:w-52 whitespace-nowrap primaryBg h-12 px-4 text-base lg:text-lg fw_400 flex items-center justify-center gap-x-5"
+                    >
+                      Call Now
+                    </button>
+                  </a>
                 </div>
               </div>
             </div>

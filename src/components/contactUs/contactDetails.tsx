@@ -56,8 +56,30 @@ export const ContactDetails = () => {
               <p className="text-center text-base 2xl:text-lg fw_400">
                 Our Social Media
               </p>
-              <p className="text-center text-base 2xl:text-lg mb-0 pb-0">
-                Fb, Insta, whatsapp
+              <p className="text-center text-sm fw_400 2xl:text-base mb-0 pb-0 flex items-center justify-center gap-x-1">
+                <a
+                  href="https://www.facebook.com/customfitboxes/"
+                  target="_blank"
+                  className="border-none"
+                >
+                  Fb
+                </a>
+                ,{" "}
+                <a
+                  href="https://www.instagram.com/customfitboxes_usa/"
+                  target="_blank"
+                  className="border-none"
+                >
+                  Insta
+                </a>
+                ,{" "}
+                <a
+                  href="https://www.linkedin.com/company/custom-fit-boxes/"
+                  target="_blank"
+                  className="border-none"
+                >
+                  LinkedIn
+                </a>
               </p>
             </div>
           </div>

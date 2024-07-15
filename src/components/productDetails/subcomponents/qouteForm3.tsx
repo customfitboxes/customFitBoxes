@@ -183,16 +183,18 @@ export const QouteForm3 = (props: any) => {
         <div className="col-span-12 flex items-center gap-x-3 -mt-2">
           <button
             type="submit"
-            className="fw_400 h-12 w-full primaryBg rounded-md text-sm sm:text-0base lg:text-sm xl:text-base text-white"
+            className="fw_400 h-12 w-full primaryBg rounded-md text-sm sm:text-base lg:text-sm xl:text-base text-white"
           >
             Get Inquiry
           </button>
-          <button
-            type="submit"
-            className="fw_400 h-12 w-full primaryBg rounded-md text-sm sm:text-0base lg:text-sm xl:text-base text-white"
-          >
-            Call Now
-          </button>
+          <a href="tel:+13322541272" className="w-full border-none">
+            <button
+              type="button"
+              className="fw_400 h-12 w-full primaryBg rounded-md text-sm sm:text-base lg:text-sm xl:text-base text-white"
+            >
+              Call Now
+            </button>
+          </a>
         </div>
       </form>
     </div>

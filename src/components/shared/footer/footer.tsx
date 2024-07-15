@@ -27,7 +27,7 @@ const linksData2 = [
 const linksData3 = [
   { link: "/category/candle-boxes/", name: "Candle Boxes" },
   { link: "/category/retail-boxes/", name: "Retail Boxes" },
-  { link: "/category/food-boxes/", name: "Foor Boxes" },
+  { link: "/category/food-boxes/", name: "Food Boxes" },
   { link: "/category/bakery-boxes/", name: "Bakery Boxes" },
   { link: "/category/apparel-boxes/", name: "Apparel Boxes" },
 ];
