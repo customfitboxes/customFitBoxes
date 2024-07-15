@@ -86,7 +86,7 @@ export const Footer = () => {
                     <Image src={linkedin} alt="linkedin" width={22} />
                   </a>
                   <a
-                    href="https://www.instagram.com/customfitboxesusa/"
+                    href="https://www.instagram.com/customfitboxes_usa/"
                     target="_blank"
                     className="border-none"
                   >
