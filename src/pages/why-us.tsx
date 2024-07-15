@@ -3,10 +3,14 @@ import { getServerSideProps } from "@/services/categoriesService";
 import { Footer } from "@/components/shared/footer/footer";
 import { Container } from "@mui/material";
 
-const Index = ({ data }: any) => {
+const Index = ({ data, boxProducts, shapeProducts }: any) => {
   return (
     <div>
-      <Navbar data={data} />
+      <Navbar
+        data={data}
+        boxProducts={boxProducts}
+        shapeProducts={shapeProducts}
+      />
       <div className="py-10  px-3" style={{ background: "#EFFCF9" }}>
         <div>
           <h1 className="text-4xl fw_600 text-center">Why Us</h1>

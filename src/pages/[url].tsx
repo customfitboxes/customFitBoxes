@@ -12,7 +12,7 @@ import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
-const Index = ({ data, product, faqs }: any) => {
+const Index = ({ data, product, faqs, boxProducts, shapeProducts }: any) => {
   const router = useRouter();
   useEffect(() => {
     if (!product) {
@@ -33,7 +33,11 @@ const Index = ({ data, product, faqs }: any) => {
             },
           ]}
         />
-        <Navbar data={data} />
+        <Navbar
+          data={data}
+          boxProducts={boxProducts}
+          shapeProducts={shapeProducts}
+        />
         <DetailsHeader product={product} />
         <DetailsContent />
         <ContentSection contentData={product.content} />
@@ -84,11 +88,36 @@ export async function getServerSideProps(context: any) {
     product = { ...product, relatedProducts: relatedProducts };
   }
 
+  const cat1Name = "Box by Material";
+  const cat2Name = "Shapes & Styles";
+  const query5 = `*[ _type == "category" && name  == "${cat1Name}"][0]`;
+  const query6 = groq`*[_type == 'product' && _id in $p_ids1]`;
+
+  const query7 = `*[ _type == "category" && name  == "${cat2Name}"][0]`;
+  const query8 = groq`*[_type == 'product' && _id in $p_ids2]`;
+
+  const cat1 = await client.fetch(query5, { cat1Name });
+  const cat2 = await client.fetch(query7, { cat2Name });
+
+  let p_ids1: any = [];
+  if (cat1 && cat1.products && cat1.products.length > 0) {
+    cat1.products.forEach((item: any) => p_ids1.push(item._ref));
+  }
+
+  let p_ids2: any = [];
+  if (cat2 && cat2.products && cat2.products.length > 0) {
+    cat2.products.forEach((item: any) => p_ids2.push(item._ref));
+  }
+
+  const products1 = await client.fetch(query6, { p_ids1 });
+  const products2 = await client.fetch(query8, { p_ids2 });
   return {
     props: {
       data: data.reverse(),
       product: product && product._id ? product : null,
       faqs: result,
+      boxProducts: products1,
+      shapeProducts: products2,
     },
   };
 }

@@ -3,11 +3,15 @@ import { getServerSideProps } from "@/services/categoriesService";
 import { Footer } from "@/components/shared/footer/footer";
 import { useRouter } from "next/router";
 
-const ThankYou = ({ data }: any) => {
+const ThankYou = ({ data, boxProducts, shapeProducts }: any) => {
   const router = useRouter();
   return (
     <div>
-      <Navbar data={data} />
+      <Navbar
+        data={data}
+        boxProducts={boxProducts}
+        shapeProducts={shapeProducts}
+      />
       <div
         className="bg-center bg-cover flex flex-col items-center justify-center w-fullpx-5"
         style={{ background: "#EFFCF9", height: "30rem" }}

@@ -7,9 +7,9 @@ export const linksData = [
     active: "/category/box-by-material",
   },
   {
-    name: "Shape & Styles",
-    path: "/category/shape-and-styles",
-    active: "/category/shape-and-styles",
+    name: "Shapes & Styles",
+    path: "/category/shapes-&-styles",
+    active: "/category/shapes-&-styles",
   },
   { name: "Contact Us", path: "/contact-us", active: "/contact-us" },
   { name: "Blog", path: "/blogs", active: "/blogs" },

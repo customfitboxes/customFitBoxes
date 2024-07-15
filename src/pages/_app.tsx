@@ -25,7 +25,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
     <ToastContainer />
     <Component {...pageProps} />
     <FloatingWhatsApp
-      phoneNumber="+13073938994"
+      phoneNumber="+13322541272"
       accountName="Team"
       notification={false}
       buttonClassName="left-3 -mb-5"

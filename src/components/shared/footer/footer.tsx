@@ -11,25 +11,25 @@ import paymentImg from "../../../static/paymentImg.jpg";
 import { useRouter } from "next/router";
 
 const linksData1 = [
-  { link: "/", name: "Homepage" },
+  { link: "/why-us", name: "Why Us" },
   { link: "/about-us", name: "About Us" },
-  { link: "/blog", name: "Blogs" },
-  { link: "/faq", name: "Frequently asked question" },
+  { link: "/blogs", name: "Blogs" },
+  { link: "/request-sample-pack", name: "Request Sample Pack" },
   { link: "/request-quote", name: "Get A Quote" },
 ];
 const linksData2 = [
-  { link: "/why-us", name: "Product Boxes" },
-  { link: "/about-us", name: "Cosmetics Boxes" },
-  { link: "/contact-us", name: "Food & Beverage Boxes" },
-  { link: "/request-quote", name: "Corugated Boxes" },
-  { link: "/request-quote", name: "Paper Boxes" },
+  { link: "/category/rigid-boxes", name: "Rigid Boxes" },
+  { link: "/category/cbd-boxes/", name: "CBD Boxes" },
+  { link: "/category/mailer-boxes/", name: "Mailer Boxes" },
+  { link: "/category/cosmetics-boxes/", name: "Cosmetic Boxes" },
+  { link: "/category/soap-boxes/", name: "Soap Boxes" },
 ];
 const linksData3 = [
-  { link: "", name: "Other Boxes" },
-  { link: "", name: "Market Essentials" },
-  { link: "", name: "Sticker" },
-  { link: "", name: "Folding Boxes" },
-  { link: "", name: "Custom Rigid  Boxes" },
+  { link: "/category/candle-boxes/", name: "Candle Boxes" },
+  { link: "/category/retail-boxes/", name: "Retail Boxes" },
+  { link: "/category/food-boxes/", name: "Foor Boxes" },
+  { link: "/category/bakery-boxes/", name: "Bakery Boxes" },
+  { link: "/category/apparel-boxes/", name: "Apparel Boxes" },
 ];
 
 const linksData4 = [
@@ -104,8 +104,8 @@ export const Footer = () => {
             </div>
             <div className="col-span-12 md:col-span-9 grid grid-cols-2 sm:flex justify-between gap-y-6 sm:gap-y-0 gap-x-8">
               <Categories list={linksData1} title="Explore" />
-              <Categories list={linksData2} title="Products" />
-              <Categories list={linksData3} title="Resources" />
+              <Categories list={linksData2} title="Solutions" />
+              <Categories list={linksData3} title="Products" />
               <Categories list={linksData4} title="Legals" />
             </div>
           </div>

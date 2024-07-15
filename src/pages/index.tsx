@@ -13,10 +13,21 @@ import { HomeContentSection } from "@/components/home/homeContentSection";
 import { PackagingProcess } from "@/components/home/packagingProcess";
 import { CallBackComp } from "@/components/home/callBackComp";
 
-const Index = ({ data, featuredCategories, testimonials, products }: any) => {
+const Index = ({
+  data,
+  featuredCategories,
+  testimonials,
+  products,
+  boxProducts,
+  shapeProducts,
+}: any) => {
   return (
     <div className="relative p-0 m-0 w-full h-full">
-      <Navbar data={data} />
+      <Navbar
+        data={data}
+        boxProducts={boxProducts}
+        shapeProducts={shapeProducts}
+      />
       <Header />
       <PackagingStyle list={featuredCategories} />
       <PackagingProcess />

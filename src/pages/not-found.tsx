@@ -4,12 +4,16 @@ import { Container, useMediaQuery } from "@mui/material";
 import { useRouter } from "next/router";
 import { getServerSideProps } from "@/services/categoriesService";
 
-const Index = ({ data }: any) => {
+const Index = ({ data, boxProducts, shapeProducts }: any) => {
   const matches = useMediaQuery("(max-width:640px)");
   const router = useRouter();
   return (
     <div>
-      <Navbar data={data} />
+      <Navbar
+        data={data}
+        boxProducts={boxProducts}
+        shapeProducts={shapeProducts}
+      />
       <div>
         <Container maxWidth="lg">
           <div className="py-20">

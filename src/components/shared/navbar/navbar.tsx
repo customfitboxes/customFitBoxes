@@ -10,12 +10,15 @@ import { useRouter } from "next/router";
 import { linksData } from "@/demoData/navLinksData";
 import IndustriesDropdown from "./subComponents/industriesDropdown";
 import { SearchBox } from "./subComponents/searchBox";
+import BoxDropdown from "./subComponents/boxDropdown";
 
 export const Navbar = (props: any) => {
   const [tab, setTab] = useState("Industries");
   const [showNav, setShowNav] = useState(false);
   const router = useRouter();
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showBoxDropdown, setShowBoxDropdown] = useState(false);
+  const [showShapeDropdown, setShowShapeDropdown] = useState(false);
   const [fullNav, setFullNav] = useState(true);
   const [searchVal, setSearchVal] = useState("");
   const isActive = (p: any) => {
@@ -42,6 +45,10 @@ export const Navbar = (props: any) => {
     e.preventDefault();
     router.push(`/search?name=${searchVal}`);
   };
+
+  useEffect(() => {
+    console.log("xxxxxxxxxxxxxx", props.boxProducts);
+  }, [props.boxProducts]);
   return (
     <div
       className={`pb-3 md:pb-0 pt-3 xl:px-5 2xl:px-10 sticky duration-300 primaryBg text-white ${
@@ -128,32 +135,64 @@ export const Navbar = (props: any) => {
                 key={ind + 1}
                 className={`h-max md:pb-2 mb-0`}
                 onMouseEnter={() =>
-                  d.name === "Industries" && setShowDropdown(true)
+                  d.name === "Industries"
+                    ? setShowDropdown(true)
+                    : d.name === "Box by Material"
+                    ? setShowBoxDropdown(true)
+                    : d.name === "Shapes & Styles" && setShowShapeDropdown(true)
                 }
-                onMouseLeave={() => setShowDropdown(false)}
+                onMouseLeave={() => {
+                  setShowDropdown(false);
+                  setShowBoxDropdown(false);
+                  setShowShapeDropdown(false);
+                }}
               >
                 <div
-                  onClick={() =>
-                    d.name === "Industries"
-                      ? setShowDropdown(!showDropdown)
-                      : router.push(d.path)
-                  }
+                  onClick={() => router.push(d.path)}
                   className={`${
                     ind === 0
                       ? "xl:border-r-2 xl:border-white xl:border-opacity-50 xl:pr-10"
                       : ""
                   } cursor-pointer text-xs xl:text-base whitespace-nowrap flex items-center gap-x-2 pb-0 mb-0 ${
-                    d.name !== "Industries" ? "hover:scale-95 duration-300" : ""
+                    d.name !== "Industries" &&
+                    d.name !== "Box by Material" &&
+                    d.name !== "Shapes & Styles"
+                      ? "hover:scale-95 duration-300"
+                      : ""
+                  } ${
+                    d.name === "Box by Material" || d.name === "Shapes & Styles"
+                      ? "relative"
+                      : ""
                   } ${isActive(d.active) ? "fw_600" : ""}`}
                 >
                   {d.name}
-                  {d.name === "Industries" && (
-                    <Image src={whiteChev} alt="" width={8} height={8} className="rotate-90" />
+                  {(d.name === "Industries" ||
+                    d.name === "Shapes & Styles" ||
+                    d.name === "Box by Material") && (
+                    <Image
+                      src={whiteChev}
+                      alt=""
+                      width={8}
+                      height={8}
+                      className="rotate-90"
+                    />
                   )}
                   {showDropdown && d.name === "Industries" && (
                     <IndustriesDropdown
                       list={props.data}
                       setShowDropdown={setShowDropdown}
+                    />
+                  )}
+                  {showBoxDropdown && d.name === "Box by Material" && (
+                    <BoxDropdown
+                      list={props.boxProducts}
+                      setShowDropdown={setShowBoxDropdown}
+                    />
+                  )}
+                  {showShapeDropdown && d.name === "Shapes & Styles" && (
+                    <BoxDropdown
+                      list={props.shapeProducts}
+                      setShowDropdown={setShowShapeDropdown}
                     />
                   )}
                 </div>

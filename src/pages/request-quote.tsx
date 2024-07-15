@@ -6,7 +6,7 @@ import { getServerSideProps, resetForm } from "@/services/categoriesService";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 
-const Index = ({ data, products }: any) => {
+const Index = ({ data, products, boxProducts, shapeProducts }: any) => {
   const [finalData, setFinalData] = useState<any>({ unit: "Inches" });
   const router = useRouter();
   const onchnage = (key: any, val: any) => {
@@ -46,7 +46,11 @@ const Index = ({ data, products }: any) => {
   };
   return (
     <div>
-      <Navbar data={data} />
+      <Navbar
+        data={data}
+        boxProducts={boxProducts}
+        shapeProducts={shapeProducts}
+      />
       <div className="sm:px-6 sm:pt-6 pb-14">
         <div
           className="bg-center bg-cover w-full pt-20 px-5"
