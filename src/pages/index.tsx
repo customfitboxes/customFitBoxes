@@ -2,7 +2,7 @@ import { GetQoute } from "@/components/home/getQoute";
 import { Header } from "@/components/home/header";
 import { HowItWorks } from "@/components/home/howItWorks";
 import { PackagingStyle } from "@/components/home/packagingStyle";
-import { PremiumFinishes } from "@/components/home/premiumFinishes";
+import { PremiumFinishes } from "../components/home/premiumFinishes";
 import { Testimonials } from "@/components/home/testimonials";
 import { Faq } from "@/components/shared/faq";
 import { Footer } from "@/components/shared/footer/footer";
