@@ -25,7 +25,7 @@ const Index = ({ data, product, faqs, boxProducts, shapeProducts }: any) => {
         <NextSeo
           title={product.metaTitle}
           description={product.metaDescription}
-          canonical={"https://packagingheight.com/" + product.slug.current}
+          canonical={"https://customfitboxes.com/" + product.slug.current + "/"}
           additionalMetaTags={[
             {
               name: "keywords",

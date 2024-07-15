@@ -39,7 +39,7 @@ const Index = ({
             },
           ]}
           canonical={
-            "https://customfitboxes.com/category/" + category.slug.current
+            "https://customfitboxes.com/category/" + category.slug.current + "/"
           }
         />
         <Navbar
