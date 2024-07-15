@@ -9,6 +9,8 @@ class MyDocument extends Document {
     return (
       <Html lang={AppConfig.locale}>
         <Head>
+          <meta name="robots" content="index, follow" />
+          <meta name="robots" content="all" />
           <script
             dangerouslySetInnerHTML={{
               __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

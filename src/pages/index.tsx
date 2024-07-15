@@ -13,6 +13,7 @@ import { HomeContentSection } from "@/components/home/homeContentSection";
 import { PackagingProcess } from "@/components/home/packagingProcess";
 import { CallBackComp } from "@/components/home/callBackComp";
 import { NextSeo } from "next-seo";
+import Head from "next/head";
 
 const Index = ({
   data,
@@ -23,31 +24,36 @@ const Index = ({
   shapeProducts,
 }: any) => {
   return (
-    <div className="relative p-0 m-0 w-full h-full">
-      <NextSeo
-        title={"Custom Packaging & Boxes Wholesale | Custom Fit Boxes®"}
-        description={
-          "Order your Custom packaging Boxes with Logo at affordable wholesale prices. Custom Fit boxes provides custom made boxes with free design and shipping in the USA."
-        }
-        canonical={"https://customfitboxes.com/"}
-      />
-      <Navbar
-        data={data}
-        boxProducts={boxProducts}
-        shapeProducts={shapeProducts}
-      />
-      <Header />
-      <PackagingStyle list={featuredCategories} />
-      <PackagingProcess />
-      <PremiumFinishes />
-      <HowItWorks />
-      <GetQoute products={products} />
-      <HomeContentSection />
-      <Faq faqs={faqsData} />
-      <Testimonials testimonials={testimonials} />
-      <CallBackComp />
-      <Footer />
-    </div>
+    <>
+      <Head>
+        <meta name="robots" content="all" />
+      </Head>
+      <div className="relative p-0 m-0 w-full h-full">
+        <NextSeo
+          title={"Custom Packaging & Boxes Wholesale | Custom Fit Boxes®"}
+          description={
+            "Order your Custom packaging Boxes with Logo at affordable wholesale prices. Custom Fit boxes provides custom made boxes with free design and shipping in the USA."
+          }
+          canonical={"https://customfitboxes.com/"}
+        />
+        <Navbar
+          data={data}
+          boxProducts={boxProducts}
+          shapeProducts={shapeProducts}
+        />
+        <Header />
+        <PackagingStyle list={featuredCategories} />
+        <PackagingProcess />
+        <PremiumFinishes />
+        <HowItWorks />
+        <GetQoute products={products} />
+        <HomeContentSection />
+        <Faq faqs={faqsData} />
+        <Testimonials testimonials={testimonials} />
+        <CallBackComp />
+        <Footer />
+      </div>
+    </>
   );
 };
 export { getServerSideProps };
