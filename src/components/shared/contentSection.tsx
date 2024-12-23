@@ -46,7 +46,7 @@ export const ContentSection = (props: any) => {
       <div className="">
         {/* <div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl fw_600 leading-tight primaryText2 mt-0 pt-0">
-            Content Section
+            Content Section 01
           </h2>
           <p className="mt-1 leading-5 text-sm">
             Discover our range of fully customizable retail boxes tailored to
