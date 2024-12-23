@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://customfitboxes.com
+
+# Sitemaps
+Sitemap: https://customfitboxes.com/sitemap.xml
