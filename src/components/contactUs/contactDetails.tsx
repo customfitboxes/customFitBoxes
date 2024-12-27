@@ -24,7 +24,7 @@ export const ContactDetails = () => {
                 Our Contact Details
               </p>
               <p className="text-center text-base 2xl:text-lg mb-0 pb-0">
-                +1(332) 254 1272
+                <a href="tel:+13322541272" className="border-none" >+1(332) 254 1272</a>
               </p>
             </div>
             <div className="primaryBorder2 rounded-lg px-5 pb-3 pt-12 2xl:pt-16 relative">
@@ -34,8 +34,8 @@ export const ContactDetails = () => {
               <p className="text-center text-base 2xl:text-lg fw_400">
                 Our Email Address
               </p>
-              <p className="text-center text-base 2xl:text-lg mb-0 pb-0">
-                sales@customfitboxes.com
+              <p className="text-center text-base 2xl:text-lg mb-0 pb-0 ">
+                <a href="mailto:sales@customfitboxes.com" className="border-none"  >sales@customfitboxes.com</a>
               </p>
             </div>
             <div className="primaryBorder2 rounded-lg px-5 pb-3 pt-12 2xl:pt-16 relative">

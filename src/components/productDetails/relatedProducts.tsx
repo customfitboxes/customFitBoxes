@@ -39,13 +39,14 @@ export const RelatedProducts = (props: any) => {
           <div className="mt-5">
             <Carousel responsive={responsive}>
               {props.product.relatedProducts.map((data: any, index: any) => (
+                <div className="px-2" key={index + 1}>
                 <div
-                  key={index + 1}
+                  
                   onClick={() => router.push("/" + getSlug(data.slug))}
-                  className="col-span-12 sm:col-span-6 lg:col-span-3 cursor-pointer p-2"
+                  className="col-span-12 sm:col-span-6 lg:col-span-3   rounded-3xl cursor-pointer bg-[#f5f5f5] hover:drop-shadow-md duration-300"
                 >
                   <div
-                    className="w-full rounded-md h-80 sm:h-96 flex items-center justify-center overflow-hidden"
+                    className="w-full h-80 sm:h-96 flex items-center justify-center overflow-hidden rounded-t-3xl  "
                     style={{ background: "#eaf0f5" }}
                   >
                     {data.images &&
@@ -58,9 +59,10 @@ export const RelatedProducts = (props: any) => {
                         />
                       )}
                   </div>
-                  <p className="text-base text-center fw_400 mt-1">
+                  <p className="text-base text-center fw_400 mt-1 px-10 py-8">
                     {data.name}
                   </p>
+                </div>
                 </div>
               ))}
             </Carousel>

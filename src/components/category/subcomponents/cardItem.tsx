@@ -6,11 +6,11 @@ export const CardItem = (props: any) => {
   const router = useRouter();
   return (
     <div
-      className="overflow-hidden cursor-pointer bg-white"
+      className="overflow-hidden rounded-3xl cursor-pointer bg-[#f5f5f5] hover:drop-shadow-md duration-300"
       onClick={() => router.push("/" + getSlug(props.data.slug))}
     >
       <div
-        className="w-full h-72 lg:h-96 flex items-center justify-center overflow-hidden hover:drop-shadow-md duration-300"
+        className="w-full h-72 lg:h-96 flex items-center justify-center overflow-hidden "
         style={{ background: "#eaf0f5" }}
       >
         {props.data.images &&
@@ -23,7 +23,7 @@ export const CardItem = (props: any) => {
             />
           )}
       </div>
-      <div className="pt-3 px-4">
+      <div className="px-10 py-8">
         <h3 className="text-base text-center fw_600">{props.data.name}</h3>
       </div>
     </div>
