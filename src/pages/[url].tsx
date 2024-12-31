@@ -6,46 +6,93 @@ import { ContentSection } from "@/components/shared/contentSection";
 import { Faq } from "@/components/shared/faq";
 import { Footer } from "@/components/shared/footer/footer";
 import { Navbar } from "@/components/shared/navbar/navbar";
+import { builder } from "@/services/descriptionService";
 import { client } from "@/utils/sanityConfig";
 import { groq } from "next-sanity";
 import { NextSeo } from "next-seo";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
 const Index = ({ data, product, faqs, boxProducts, shapeProducts }: any) => {
+
+  const ImagesURL = product?.images.map((item:any)=>(
+    builder.image(item?.image?.asset?._ref).url() 
+  ))
+  
   const router = useRouter();
   useEffect(() => {
     if (!product) {
       router.push("/not-found");
     }
   }, [product, router]);
+
+  const jsonLdData = {
+    "@context": "http://schema.org",
+    "@type": "Product",
+    name: product?.name || "",
+    image: JSON.stringify(ImagesURL),
+    description: product.shortDescription || "",
+    url: `https://customfitboxes.com/${product.slug}`,
+    brand: {
+      "@type": "Brand",
+      name: "Custom Fit Boxes",
+      logo: "https://customfitboxes.com/logo1.png",
+    },
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "USD",
+      lowPrice: "0.2",
+      highPrice: "50",
+      availability: "http://schema.org/InStock",
+      offerCount: "100000",
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.5",
+      bestRating: "5",
+      ratingCount: "120",
+    },
+  };
+
   return (
     product && (
-      <div>
-        <NextSeo
-          title={product.metaTitle}
-          description={product.metaDescription}
-          canonical={"https://customfitboxes.com/" + product.slug.current }
-          additionalMetaTags={[
-            {
-              name: "keywords",
-              content: product.metaTags,
-            },
-          ]}
-        />
-        <Navbar
-          data={data}
-          boxProducts={boxProducts}
-          shapeProducts={shapeProducts}
-        />
-        <DetailsHeader product={product} />
-        <DetailsContent />
-        <ContentSection contentData={product.content} />
-        {faqs && faqs.length > 0 && <Faq faqs={faqs} />}
-        <RelatedProducts product={product} />
-        <DetailsBanner />
-        <Footer />
-      </div>
+      <>
+        <Head>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
+          />
+        </Head>
+
+        <div>
+          <NextSeo
+            title={product.metaTitle}
+            description={product.metaDescription}
+            canonical={
+              "https://customfitboxes.com/" + product.slug.current 
+            }
+            additionalMetaTags={[
+              {
+                name: "keywords",
+                content: product.metaTags,
+              },
+            ]}
+          />
+          <Navbar
+            data={data}
+            boxProducts={boxProducts}
+            shapeProducts={shapeProducts}
+          />
+          <DetailsHeader product={product} />
+          <DetailsContent />
+          <ContentSection contentData={product.content} />
+          {faqs && faqs.length > 0 && <Faq faqs={faqs} />}
+          <RelatedProducts product={product} />
+          <DetailsBanner />
+          <Footer />
+        </div>
+      </>
     )
   );
 };

@@ -1,6 +1,6 @@
 import imageUrlBuilder from "@sanity/image-url";
 
-const builder = imageUrlBuilder({
+export const builder = imageUrlBuilder({
   projectId: "hktnmaz3", // Replace with your Sanity project ID
   dataset: "production", // Replace with your Sanity dataset name
 });
