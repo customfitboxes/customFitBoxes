@@ -37,7 +37,7 @@ const Index = ({
               content: blog.metaTags,
             },
           ]}
-          canonical={"https://customfitboxes.com/blog/" + blog.slug.current + "/"}
+          canonical={"https://customfitboxes.com/blog/" + blog.slug.current}
         />
         <Navbar
           data={data}

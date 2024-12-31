@@ -38,9 +38,7 @@ const Index = ({
               content: category.metaTags,
             },
           ]}
-          canonical={
-            "https://customfitboxes.com/category/" + category.slug.current + "/"
-          }
+          canonical={"https://customfitboxes.com/category/" + category.slug.current }
         />
         <Navbar
           data={data}
