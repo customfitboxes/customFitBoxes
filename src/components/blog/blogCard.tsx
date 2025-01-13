@@ -1,5 +1,4 @@
 import { PortableText } from "@portabletext/react";
-import moment from "moment";
 import { getImg } from "@/services/descriptionService";
 import { getSlug } from "@/services/categoriesService";
 import { useRouter } from "next/router";
