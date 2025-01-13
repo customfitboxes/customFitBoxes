@@ -3,6 +3,7 @@ import moment from "moment";
 import { getImg } from "@/services/descriptionService";
 import { getSlug } from "@/services/categoriesService";
 import { useRouter } from "next/router";
+import BlogAuthor from "./blog-author";
 
 export const BlogCard = (props: any) => {
   const router = useRouter();
@@ -46,17 +47,7 @@ export const BlogCard = (props: any) => {
           <p className="primaryText fw_600 text-lg xl:text-xl mt-3">
             {props.blog.name}
           </p>
-          <div className="flex items-center gap-x-3 my-5">
-            <img
-              src={getImg(props.blog.userImage).url}
-              alt={getImg(props.blog.userImage).alt}
-              className="h-8 w-8 rounded-full object-cover"
-            />
-            <p className="text-xs">
-              {props.blog.username}, Last Updated:{" "}
-              {moment(props.blog.date).format("MMM DD, YYYY")}
-            </p>
-          </div>
+          <BlogAuthor props={props}/>
           <p className="text-sm xl:text-base big_four_lines_elipsis">
             <PortableText
               value={props.blog.description}

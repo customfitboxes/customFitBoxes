@@ -1,3 +1,5 @@
+import { BlogQouteForm } from "@/components/blog/blogQouteForm";
+import { FollowUS } from "@/components/blog/followUS";
 import { BlogDetails } from "@/components/blogDetailsPage/blogDetails";
 import { BlogDetailsHeader } from "@/components/blogDetailsPage/blogDetailsHeader";
 import { RelatedBlogs } from "@/components/blogDetailsPage/relatedBlogs";
@@ -45,24 +47,30 @@ const Index = ({
           shapeProducts={shapeProducts}
         />
 
+        <BlogDetailsHeader blog={blog} />
+
         <Container maxWidth="xl">
-          <div className="flex flex-col lg:flex-row gap-y-8 lg:gap-y-0 lg:gap-x-8 pb-10">
+          <div className="flex mb-20 flex-col lg:flex-row mt-16 gap-y-8 lg:gap-y-0 lg:gap-x-8">
             <div className="w-full">
-              <BlogDetailsHeader blog={blog} />
               <BlogDetails blog={blog} />
             </div>
             <div
-              className="flex flex-col gap-y-8 sticky top-20 h-max"
+              className="flex flex-col gap-y-8"
               style={{
-                width: matches ? (matches2 ? "100%" : "25rem") : "26rem",
-                minWidth: matches ? (matches2 ? "100%" : "25rem") : "26rem",
+                width: matches ? (matches2 ? "100%" : "25rem") : "30rem",
+                minWidth: matches ? (matches2 ? "100%" : "25rem") : "30rem",
               }}
             >
-              <RelatedBlogs blogs={relatedBlogs} />
+              <div className="sticky top-24">
+                <FollowUS />
+                <BlogQouteForm />
+              </div>
             </div>
           </div>
         </Container>
 
+        <RelatedBlogs blogs={relatedBlogs} />
+        
         <div className="border-t border-zinc-300">
           <Footer />
         </div>

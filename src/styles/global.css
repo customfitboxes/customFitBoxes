@@ -216,3 +216,8 @@ textarea:-ms-input-placeholder {
     -webkit-appearance: none;
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
+
+.blog-single ul li,
+.blog-single p{
+  margin-bottom: 12px;
+}

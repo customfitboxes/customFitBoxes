@@ -36,11 +36,6 @@ async function generateSitemap() {
        <url>
           <loc>${SITE_URL}/blogs</loc>
       </url>
-        ${blogs?.map((item) => `
-            <url>
-                <loc>${SITE_URL}/blog/${item?.slug?.current}</loc>
-            </url>
-        `).join("")}
         ${products?.map((item) => `
             <url>
                 <loc>${SITE_URL}/${item?.slug?.current}</loc>
@@ -60,3 +55,8 @@ generateSitemap();
 
 
 
+// ${blogs?.map((item) => `
+//     <url>
+//         <loc>${SITE_URL}/blog/${item?.slug?.current}</loc>
+//     </url>
+// `).join("")}
