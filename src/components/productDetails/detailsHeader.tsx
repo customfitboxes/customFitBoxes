@@ -4,6 +4,7 @@ import { QouteForm3 } from "./subcomponents/qouteForm3";
 import { ImagesCarousel } from "./subcomponents/imagesCarousel";
 import { getImg } from "@/services/descriptionService";
 import { useRouter } from "next/router";
+import limitWords from "@/utils/content-limit";
 
 const DetailsHeader = (props: any) => {
   const matches = useMediaQuery("(max-width:1100px)");
@@ -27,56 +28,54 @@ const DetailsHeader = (props: any) => {
       carouselRef.current.goToSlide(index);
     }
   };
+
   return (
     <Container maxWidth={"xl"}>
       <div
-        className={`flex flex-col-reverse lg:grid ${
-          matches ? "grid-cols-11" : "grid-cols-12"
-        } gap-y-5 pb-10 pt-6 sm:py-10 lg:gap-x-10`}
+        className={`flex flex-col-reverse lg:grid ${matches ? "grid-cols-11" : "grid-cols-12"
+          } gap-y-5 pb-10 pt-6 sm:py-10 lg:gap-x-10`}
       >
         <div className="col-span-6 flex md:flex-row flex-row gap-3">
 
-        <div className="w-1/5">
-            
-              <div className="flex flex-col gap-x-2 lg:h-full ">
-                {images.map((img: any, index: any) => (
-                  <div
-                    key={index + 1}
-                    className={`${
-                      matches2 ? "h-20" : "h-full"
-                    } w-full  flex items-center justify-center cursor-pointer rounded-md overflow-hidden border-2 ${
-                      img === myImg
-                        ? "border-blue-700"
-                        : "border-zinc-200 border-opacity-0"
-                    }`}
-                    onClick={() => {
-                      handleImageClick(index + 2);
-                      setMyImg(img);
-                    }}
-                  >
-                    <img
-                      src={getImg(img).url}
-                      alt={getImg(img).alt}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="w-4/5">
+          <div className="w-1/5">
 
-          {props.product &&
-            props.product.images &&
-            props.product.images.length > 0 && (
-              <ImagesCarousel
-                carouselRef={carouselRef}
-                imagesList={props.product.images}
-              />
-            )}
-              </div>
+            <div className="flex flex-col gap-x-2 lg:h-full ">
+              {images.map((img: any, index: any) => (
+                <div
+                  key={index + 1}
+                  className={`${matches2 ? "h-20" : "h-full"
+                    } w-full  flex items-center justify-center cursor-pointer rounded-md overflow-hidden border-2 ${img === myImg
+                      ? "border-blue-700"
+                      : "border-zinc-200 border-opacity-0"
+                    }`}
+                  onClick={() => {
+                    handleImageClick(index + 2);
+                    setMyImg(img);
+                  }}
+                >
+                  <img
+                    src={getImg(img).url}
+                    alt={getImg(img).alt}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="w-4/5">
+
+            {props.product &&
+              props.product.images &&
+              props.product.images.length > 0 && (
+                <ImagesCarousel
+                  carouselRef={carouselRef}
+                  imagesList={props.product.images}
+                />
+              )}
+          </div>
         </div>
         <div
-          className={`${matches ? "col-span-5" : "col-span-6"} flex items-end`}
+          className={`${matches ? "col-span-5" : "col-span-6"} flex`}
         >
           <div className="w-full">
             <span className="text-xs greenText -mt-3">
@@ -97,13 +96,13 @@ const DetailsHeader = (props: any) => {
                 {props.product.name}
               </h1>
               <p className="big_three_lines_elipsis">
-                {props.product.shortDescription}
+                {limitWords(props.product.shortDescription, 60)}
               </p>
             </div>
             <div className="hidden lg:block">
               <QouteForm3 productName={props.product.name} />
             </div>
-            
+
           </div>
         </div>
       </div>

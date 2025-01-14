@@ -58,21 +58,21 @@ export const Footer = () => {
               />
               <div className="flex flex-row md:flex-col flex-wrap sm:flex-nowrap gap-y-10 sm:gap-y-0 gap-x-10 md:gap-y-10 fw_400 mt-10">
                 <div className="flex flex-col items-start gap-y-1 -mt-3">
-                  <p className="whitespace-nowrap text-sm">Phone</p>
+                  <p className="whitespace-nowrap font-bold">Phone</p>
                   <a
                     title="Click for call me"
                     href={`tel:+1(332) 254 1272`}
-                    className="border-none text-black text-sm"
+                    className="border-none text-black text-[15px] font-medium"
                   >
                     +1(332) 254 1272
                   </a>
                 </div>
                 <div className="flex flex-col items-start gap-y-1 -mt-3">
-                  <p className="whitespace-nowrap text-sm">Email Us</p>
+                  <p className="whitespace-nowrap font-bold">Email Us</p>
                   <a
                     title="Click for mail me"
                     href={`mailto:sales@customfitboxes.com`}
-                    className=" text-sm border-none text-black"
+                    className=" text-[15px] font-medium border-none text-black"
                   >
                     sales@customfitboxes.com
                   </a>

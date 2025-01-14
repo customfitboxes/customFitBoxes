@@ -63,15 +63,16 @@ const Index = ({
             >
               <div className="sticky top-24">
                 <FollowUS />
+                <div className="mb-6"/>
                 <BlogQouteForm />
-              </div>
+              </div> 
             </div>
           </div>
+          <RelatedBlogs blogs={relatedBlogs} />
         </Container>
 
-        <RelatedBlogs blogs={relatedBlogs} />
         
-        <div className="border-t border-zinc-300">
+        <div className="border-t border-zinc-300 mt-12">
           <Footer />
         </div>
       </div>

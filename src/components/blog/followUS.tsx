@@ -5,6 +5,7 @@ import blackIinkedin from "../../static/blackIinkedin.svg";
 import blackTwitter from "../../static/blackTwitter.svg";
 import blackYoutube from "../../static/blackYoutube.svg";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export const FollowUS = () => {
   const router = useRouter();
@@ -16,9 +17,9 @@ export const FollowUS = () => {
         className="w-full flex flex-col gap-y-3 p-3 mt-3 rounded-xl"
       >
         <div className="bg-white rounded-xl px-6 py-5 flex items-center gap-x-5">
-          <Image src={blackInstagram} alt="blackInstagram" width={30} />
-          <Image src={blackFacebook} alt="blackFacebook" width={30} />
-          <Image src={blackIinkedin} alt="blackIinkedin" width={30} />
+          <Link href="https://www.instagram.com/customfitboxes_usa/" target="_blank"><Image src={blackInstagram} alt="blackInstagram" width={30} /></Link>
+          <Link href="https://www.facebook.com/customfitboxes/" target="_blank"><Image src={blackFacebook} alt="blackFacebook" width={30} /></Link>
+          <Link href="https://www.linkedin.com/company/custom-fit-boxes/" target="_blank"><Image src={blackIinkedin} alt="blackIinkedin" width={30} /></Link>
           <Image src={blackTwitter} alt="blackTwitter" width={30} />
           <Image src={blackYoutube} alt="blackYoutube" width={30} />
         </div>

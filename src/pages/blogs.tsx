@@ -58,6 +58,7 @@ const Index = ({ data, blogs, boxProducts, shapeProducts }: any) => {
           </div>
         </Container>
       </div>
+
       <div className="pt-20">
         <Container maxWidth="xl">
           <TabsGroup setBlogsData={setBlogsData} blogs={blogs} />

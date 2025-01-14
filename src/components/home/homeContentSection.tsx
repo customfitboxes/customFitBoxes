@@ -112,7 +112,7 @@ export const HomeContentSection = () => {
                 width: matches ? (matches2 ? "100%" : "26rem") : "30rem",
                 minWidth: matches ? (matches2 ? "100%" : "26rem") : "30rem",
               }}
-              className="object-cover"
+              className="object-cover scale-105"
             />
           </div>
         </div>
