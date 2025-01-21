@@ -49,15 +49,13 @@ export const Navbar = (props: any) => {
   }, [props.boxProducts]);
   return (
     <div
-      className={`pb-3 md:pb-0 pt-3 xl:px-5 2xl:px-10 sticky duration-300 primaryBg text-white ${
-        fullNav ? "top-0" : "top-0 md:-top-14"
-      } z-40`}
+      className={`pb-3 md:pb-0 pt-3 xl:px-5 2xl:px-10 sticky duration-300 primaryBg text-white ${fullNav ? "top-0" : "top-0 md:-top-14"
+        } z-40`}
     >
       <Container maxWidth={"xl"}>
         <div
-          className={`flex w-full justify-between gap-x-10 ${
-            fullNav ? "" : "md:invisible"
-          }`}
+          className={`flex w-full justify-between gap-x-10 ${fullNav ? "" : "md:invisible"
+            }`}
         >
           <div className="flex items-center gap-x-10 xl:gap-x-20">
             <Image
@@ -75,7 +73,9 @@ export const Navbar = (props: any) => {
             className="block text-lg md:hidden"
           >
             {/* <FontAwesomeIcon icon={faBars} /> */}
-            Menu
+            <svg width="26px" height="26px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 6H20M4 12H20M4 18H20" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
           </button>
           <SmallNav
             show={showNav}
@@ -124,9 +124,8 @@ export const Navbar = (props: any) => {
           />
         </form>
         <div
-          className={` hidden ${
-            fullNav ? "items-start lg:items-end  mt-3 lg:mt-2" : "items-center"
-          } duration-300 justify-between gap-x-5 md:flex relative`}
+          className={` hidden ${fullNav ? "items-start lg:items-end  mt-3 lg:mt-2" : "items-center"
+            } duration-300 justify-between gap-x-5 md:flex relative`}
         >
           <ul className="flex items-center gap-x-6 lg:gap-x-10">
             {linksData.map((d: any, ind: any) => (
@@ -137,8 +136,8 @@ export const Navbar = (props: any) => {
                   d.name === "Industries"
                     ? setShowDropdown(true)
                     : d.name === "Box by Material"
-                    ? setShowBoxDropdown(true)
-                    : d.name === "Shapes & Styles" && setShowShapeDropdown(true)
+                      ? setShowBoxDropdown(true)
+                      : d.name === "Shapes & Styles" && setShowShapeDropdown(true)
                 }
                 onMouseLeave={() => {
                   setShowDropdown(false);
@@ -148,34 +147,31 @@ export const Navbar = (props: any) => {
               >
                 <div
                   onClick={() => router.push(d.path)}
-                  className={`${
-                    ind === 0
+                  className={`${ind === 0
                       ? "xl:border-r-2 xl:border-white xl:border-opacity-50 xl:pr-10"
                       : ""
-                  } cursor-pointer text-xs xl:text-base whitespace-nowrap flex items-center gap-x-2 pb-0 mb-0 ${
-                    d.name !== "Industries" &&
-                    d.name !== "Box by Material" &&
-                    d.name !== "Shapes & Styles"
+                    } cursor-pointer text-xs xl:text-base whitespace-nowrap flex items-center gap-x-2 pb-0 mb-0 ${d.name !== "Industries" &&
+                      d.name !== "Box by Material" &&
+                      d.name !== "Shapes & Styles"
                       ? "hover:scale-95 duration-300"
                       : ""
-                  } ${
-                    d.name === "Box by Material" || d.name === "Shapes & Styles"
+                    } ${d.name === "Box by Material" || d.name === "Shapes & Styles"
                       ? "relative"
                       : ""
-                  } ${isActive(d.active) ? "fw_600" : ""}`}
+                    } ${isActive(d.active) ? "fw_600" : ""}`}
                 >
                   {d.name}
                   {(d.name === "Industries" ||
                     d.name === "Shapes & Styles" ||
                     d.name === "Box by Material") && (
-                    <Image
-                      src={whiteChev}
-                      alt=""
-                      width={8}
-                      height={8}
-                      className="rotate-90"
-                    />
-                  )}
+                      <Image
+                        src={whiteChev}
+                        alt=""
+                        width={8}
+                        height={8}
+                        className="rotate-90"
+                      />
+                    )}
                   {showDropdown && d.name === "Industries" && (
                     <IndustriesDropdown
                       list={props.data}
