@@ -14,12 +14,6 @@ export const HomeContentSection = () => {
         <div>
           <h2 className="text-3xl sm:text-2xl md:text-4xl xl:text-5xl fw_600 leading-tight primaryText mt-0 pt-0">
           </h2>
-          <p className="mt-1 leading-5 text-base">
-            Discover our range of fully customizable retail boxes tailored to
-            your industry - available in an array of unique shapes, custom
-            <br className="hidden xl:block" /> sizes and colors. Our packaging
-            specialists can help you find the perfect
-          </p>
         </div>
         <div className="flex flex-col-reverse gap-y-6 gap-x-0 rounded-lg py-5 sm:py-10 md:flex-row md:gap-y-0 md:gap-x-10 md:py-14">
           <div

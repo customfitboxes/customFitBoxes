@@ -32,8 +32,8 @@ const Index = ({ data, product, faqs, boxProducts, shapeProducts }: any) => {
     "@type": "Product",
     name: product?.name || "",
     image: JSON.stringify(ImagesURL),
-    description: product.shortDescription || "",
-    url: `https://customfitboxes.com/${product.slug}`,
+    description: product?.shortDescription || "",
+    url: `https://customfitboxes.com/${product?.slug}`,
     brand: {
       "@type": "Brand",
       name: "Custom Fit Boxes",

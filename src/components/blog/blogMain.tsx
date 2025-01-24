@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { BlogCard } from "./blogCard";
 import moment from "moment";
 import { PortableText } from "@portabletext/react";
@@ -6,7 +7,14 @@ import { getSlug } from "@/services/categoriesService";
 import { useRouter } from "next/router";
 
 export const BlogMain = (props: any) => {
-  const router = useRouter()
+  const router = useRouter();
+  const [visibleBlogs, setVisibleBlogs] = useState(8); // Track how many blogs are displayed
+
+  const loadMoreBlogs = () => {
+    setVisibleBlogs((prev) => prev + 8); // Show 8 more blogs when clicked
+  };
+
+  const blogsToDisplay = props.blogs.slice(0, visibleBlogs);
 
   const block = {
     h1: ({ children }: any) => (
@@ -38,38 +46,49 @@ export const BlogMain = (props: any) => {
         style={{ objectFit: "cover" }}
         className="w-full h-full cursor-pointer"
       />
-      <p
-        className="primaryText fw_600 text-2xl mt-3 cursor-pointer"
-        onClick={() => router.push("/blog/" + getSlug(props.blogs[0].slug))}
-      >{props.blogs[0].name}</p>
-      <div className="flex items-center gap-x-3 mt-5">
-        <img
-          src={getImg(props.blogs[0].userImage).url}
-          alt={getImg(props.blogs[0].userImage).alt}
-          className="h-8 w-8 rounded-full object-cover"
-        />
-        <p className="text-xs">
-          {props.blogs[0].username}, Last Updated:{" "}
-          {moment(props.blogs[0].date).format("MMM DD, YYYY")}
+      <div className="bg-[#f5f5f5] p-5 rounded-b">
+
+
+        <p
+          className="primaryText fw_600 text-2xl mt-3 cursor-pointer"
+          onClick={() => router.push("/blog/" + getSlug(props.blogs[0].slug))}
+        >
+          {props.blogs[0].name}
+        </p>
+        <div className="flex items-center gap-x-3 mt-5">
+          <img
+            src={getImg(props.blogs[0].userImage).url}
+            alt={getImg(props.blogs[0].userImage).alt}
+            className="h-8 w-8 rounded-full object-cover"
+          />
+          <p className="text-xs">
+            {props.blogs[0].username}, Last Updated:{" "}
+            {moment(props.blogs[0].date).format("MMM DD, YYYY")}
+          </p>
+        </div>
+        <p className="text-base mt-5 line-clamp-4">
+          <PortableText value={props.blogs[0].description} components={{ block }} />
         </p>
       </div>
-      <p className="text-base mt-5 line-clamp-4">
-        <PortableText
-          value={props.blogs[0].description}
-          components={{ block }}
-        />
-      </p>
-      {props.blogs && props.blogs.length > 0 && (
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-5 xl:gap-8">
-          {props.blogs.map(
-            (blog: any, index: number) =>
-              index !== 0 && (
-                <BlogCard
-                  key={index + 1}
-                  blog={blog}
-                />
-              )
-          )}
+
+      {/* Display the remaining blogs */}
+      <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-5 xl:gap-8">
+        {blogsToDisplay.map((blog: any, index: number) => (
+          index !== 0 && (
+            <BlogCard key={blog.slug} blog={blog} />
+          )
+        ))}
+      </div>
+
+      {/* Load more button */}
+      {visibleBlogs < props.blogs.length && (
+        <div className="text-center mt-6">
+          <button
+            onClick={loadMoreBlogs}
+            className="px-8 py-3 bg-blue-500 text-white rounded-md"
+          >
+            Load More
+          </button>
         </div>
       )}
     </div>

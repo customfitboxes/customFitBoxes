@@ -36,7 +36,7 @@ const linksData4 = [
   { link: "/privacy-policy", name: "Privacy Policy" },
   { link: "/terms-&-conditions", name: "Terms & Conditions" },
   { link: "", name: "Return Policy" },
-  { link: "", name: "Contact Us" },
+  { link: "/contact-us", name: "Contact Us" },
 ];
 
 export const Footer = () => {
