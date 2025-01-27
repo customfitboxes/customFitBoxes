@@ -252,7 +252,7 @@ const Index = ({ data, products, boxProducts, shapeProducts }: any) => {
               <label className="text-sm sm:text-base">Attachment</label>
               <input
                 type="file"
-                onChange={(e) => onchnage("attachment", e.target.files[0])}
+                onChange={(e:any) => onchnage("attachment", e.target.files[0])}
                 className="h-10 md:h-12 pt-3 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
             </div>
