@@ -33,9 +33,9 @@ export const Faq = (props: any) => {
   return props.faqs && props.faqs.length > 0 ? (
     <Container maxWidth={"xl"}>
       <div className="py-10">
-        <h3 className="text-3xl sm:text-2xl md:text-4xl xl:text-5xl fw_600 text-center leading-tight primaryText">
+        <h2 className="text-3xl sm:text-2xl md:text-4xl xl:text-5xl fw_600 text-center leading-tight primaryText">
           Frequently Asked Question
-        </h3>
+        </h2>
         <p className="mt-2 text-center text-base leading-5 opacity-70">
           Discover our range of fully customizable retail boxes tailored to your
           industry - available in an array of unique shapes, custom

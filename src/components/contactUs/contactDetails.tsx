@@ -24,7 +24,7 @@ export const ContactDetails = () => {
                 Our Contact Details
               </p>
               <p className="text-center text-base 2xl:text-lg mb-0 pb-0">
-                <a href="tel:+13322541272" className="border-none" >+1(332) 254 1272</a>
+                <a href="tel:+13322541272" className="border-none" >+1(332) 252 9988</a>
               </p>
             </div>
             <div className="primaryBorder2 rounded-lg px-5 pb-3 pt-12 2xl:pt-16 relative">

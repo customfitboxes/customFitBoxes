@@ -37,7 +37,7 @@ export const PackagingStyle = (props: any) => {
       <div className="py-10">
         <div className="flex flex-wrap sm:flex-nowrap gap-y-5 items-start justify-between gap-x-10">
           <div>
-            <h2 className="text-3xl sm:text-2xl md:text-4xl xl:text-5xl fw_600 leading-tight primaryText mt-0 pt-0">
+            <h2 className="text-3xl sm:text-2xl -mt-2 md:text-4xl xl:text-5xl fw_600 leading-tight primaryText pt-0">
               Find Custom Boxes for Your Industry
             </h2>
             <p className="mt-1 leading-5 text-base">

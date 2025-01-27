@@ -61,10 +61,10 @@ export const Footer = () => {
                   <p className="whitespace-nowrap font-bold">Phone</p>
                   <a
                     title="Click for call me"
-                    href={`tel:+1(332) 254 1272`}
+                    href={`tel:+1(332) 252 9988`}
                     className="border-none text-black text-[15px] font-medium"
                   >
-                    +1(332) 254 1272
+                    +1(332) 252 9988
                   </a>
                 </div>
                 <div className="flex flex-col items-start gap-y-1 -mt-3">

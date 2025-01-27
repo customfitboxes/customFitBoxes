@@ -14,7 +14,7 @@ export const FaqItem = (props: any) => {
         expandIcon={<Image src={chev} alt="" width={16} height={16} />}
         className="fw_400 px-0 py-2 text-sm sm:text-base"
       >
-        <h4>{props.item.question}</h4>
+        <h3>{props.item.question}</h3>
       </AccordionSummary>
       <AccordionDetails className="p-0 m-0">
         <div className="mx-0 my-0 border-none px-0 pb-4 pt-2 text-sm sm:text-base">

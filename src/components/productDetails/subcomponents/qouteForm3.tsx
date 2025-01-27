@@ -6,27 +6,46 @@ import { toast } from "react-toastify";
 export const QouteForm3 = (props: any) => {
   const [finalData, setFinalData] = useState<any>({
     productName: props.productName,
+    attachment: null, // State to store the uploaded file
   });
   const router = useRouter();
+
   useEffect(() => {
     if (props.productName) {
       setFinalData({ ...finalData, productName: props.productName });
     }
   }, []);
+
   const onchnage = (key: any, val: any) => {
     const updatedData = { ...finalData, [key]: val };
     setFinalData(updatedData);
   };
 
+  const handleFileChange = (e: any) => {
+    const file = e.target.files[0]; // Get the selected file
+    if (file) {
+      setFinalData({ ...finalData, attachment: file });
+    }
+  };
+
   const sendEmail = async (e: any) => {
     e.preventDefault();
+    const formData = new FormData();
+
+    // Append form data
+    Object.keys(finalData).forEach((key) => {
+      if (finalData[key] !== null) {
+        formData.append(key, finalData[key]);
+      }
+    });
+
     try {
       const response = await fetch("https://formspree.io/f/mzbnokyz", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          // Note: "Content-Type" should not be set for FormData, as it will be automatically set
         },
-        body: JSON.stringify(finalData),
+        body: formData,
       });
 
       if (response.ok) {
@@ -39,6 +58,7 @@ export const QouteForm3 = (props: any) => {
       toast.error("Failed to send email");
     }
   };
+
   return (
     <div
       style={{
@@ -170,6 +190,7 @@ export const QouteForm3 = (props: any) => {
             <option>Rigid Stock</option>
           </select>
         </div>
+
         <div className="col-span-12">
           <textarea
             rows={1}
@@ -180,21 +201,23 @@ export const QouteForm3 = (props: any) => {
             placeholder="Write your message..."
           ></textarea>
         </div>
-        <div className="col-span-12 flex items-center gap-x-3 -mt-2">
+
+        {/* Attachment field */}
+        <div className="col-span-6">
+          <input
+            type="file"
+            onChange={handleFileChange}
+            className="pb-2 w-full border-b border-zinc-400 px-0 text-sm sm:text-0base lg:text-sm xl:text-base outline-none"
+          />
+        </div>
+
+        <div className="col-span-6 flex items-center gap-x-3 -mt-2">
           <button
             type="submit"
             className="fw_400 h-12 w-full primaryBg rounded-md text-sm sm:text-base lg:text-sm xl:text-base text-white"
           >
-            Get Inquiry
+            Get a Quote
           </button>
-          <a href="tel:+13322541272" className="w-full border-none">
-            <button
-              type="button"
-              className="fw_400 h-12 w-full primaryBg rounded-md text-sm sm:text-base lg:text-sm xl:text-base text-white"
-            >
-              Call Now
-            </button>
-          </a>
         </div>
       </form>
     </div>

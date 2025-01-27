@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 const Index = ({ data, products, boxProducts, shapeProducts }: any) => {
   const [finalData, setFinalData] = useState<any>({ unit: "Inches" });
   const router = useRouter();
+
   const onchnage = (key: any, val: any) => {
     const updatedData = { ...finalData, [key]: val };
     setFinalData(updatedData);
@@ -19,17 +20,60 @@ const Index = ({ data, products, boxProducts, shapeProducts }: any) => {
       setFinalData({ ...finalData, productName: products[0].name });
   }, [products]);
 
+  // const sendEmail = async (e: any) => {
+  //   e.preventDefault();
+  //   try {
+  //     const response = await fetch("https://formspree.io/f/mzbnokyz", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(finalData),
+  //     });
+
+  //     if (response.ok) {
+  //       setFinalData({
+  //         ...resetForm(finalData),
+  //         color: "1-Color",
+  //         productName: products[0].name,
+  //       });
+  //       router.push("/thank-you");
+  //     } else {
+  //       toast.error("Failed to send email");
+  //     }
+  //   } catch (error) {
+  //     toast.error("Failed to send email");
+  //   }
+  // };
+
   const sendEmail = async (e: any) => {
     e.preventDefault();
+    
+    const formData = new FormData();
+    formData.append("name", finalData.name);
+    formData.append("email", finalData.email);
+    formData.append("phone", finalData.phone);
+    formData.append("productName", finalData.productName);
+    formData.append("color", finalData.color);
+    formData.append("quantity", finalData.quantity);
+    formData.append("length", finalData.length);
+    formData.append("width", finalData.width);
+    formData.append("depth", finalData.depth);
+    formData.append("unit", finalData.unit);
+    formData.append("deadline", finalData.deadline);
+    formData.append("message", finalData.message);
+  
+    // Check if there's an attachment and append it
+    if (finalData.attachment) {
+      formData.append("attachment", finalData.attachment);
+    }
+  
     try {
       const response = await fetch("https://formspree.io/f/mzbnokyz", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(finalData),
+        body: formData,
       });
-
+  
       if (response.ok) {
         setFinalData({
           ...resetForm(finalData),
@@ -44,6 +88,8 @@ const Index = ({ data, products, boxProducts, shapeProducts }: any) => {
       toast.error("Failed to send email");
     }
   };
+
+  
   return (
     <div>
       <Navbar
@@ -102,7 +148,7 @@ const Index = ({ data, products, boxProducts, shapeProducts }: any) => {
             </div>
             {products && products.length > 0 && (
               <div className="col-span-12 sm:col-span-6">
-                <label className="text-sm sm:text-base">Product Name*</label>
+                <label className="text-sm sm:text-base">Select Product*</label>
                 <select
                   required
                   value={finalData.productName}
@@ -117,17 +163,22 @@ const Index = ({ data, products, boxProducts, shapeProducts }: any) => {
               </div>
             )}
             <div className="col-span-12 sm:col-span-6">
-              <label className="text-sm sm:text-base">
-                Design varitations*
-              </label>
-              <input
-                type="number"
-                required
-                value={finalData.varitations}
-                onChange={(e) => onchnage("varitations", e.target.value)}
-                placeholder="Design varitations"
+              <label className="text-sm sm:text-base">Color</label>
+              <select
+                value={finalData.color}
+                onChange={(e) => onchnage("color", e.target.value)}
                 className="h-10 md:h-12 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
-              />
+              >
+                <option>Color</option>
+                <option>1-Color</option>
+                <option>2-Color</option>
+                <option>3-Color</option>
+                <option>4-Color</option>
+                <option>4/1-Color</option>
+                <option>4/2-Color</option>
+                <option>4/3-Color</option>
+                <option>4/4-Color</option>
+              </select>
             </div>
             <div className="col-span-12 sm:col-span-6">
               <label className="text-sm sm:text-base">Quantity*</label>
@@ -171,7 +222,7 @@ const Index = ({ data, products, boxProducts, shapeProducts }: any) => {
               />
             </div>
 
-            <div className="col-span-6">
+            <div className="col-span-12 sm:col-span-4">
               <label className="hidden sm:block text-sm sm:text-base">
                 Select Unit*
               </label>
@@ -186,7 +237,7 @@ const Index = ({ data, products, boxProducts, shapeProducts }: any) => {
                 <option>MM</option>
               </select>
             </div>
-            <div className="col-span-12 sm:col-span-6">
+            <div className="col-span-12 sm:col-span-4">
               <label className="text-sm sm:text-base">Delivery Deadline</label>
               <input
                 type="date"
@@ -197,6 +248,15 @@ const Index = ({ data, products, boxProducts, shapeProducts }: any) => {
                 className="h-10 md:h-12 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
             </div>
+            <div className="col-span-12 sm:col-span-4">
+              <label className="text-sm sm:text-base">Attachment</label>
+              <input
+                type="file"
+                onChange={(e) => onchnage("attachment", e.target.files[0])}
+                className="h-10 md:h-12 pt-3 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
+              />
+            </div>
+
             <div className="col-span-12">
               <textarea
                 rows={5}
@@ -210,7 +270,7 @@ const Index = ({ data, products, boxProducts, shapeProducts }: any) => {
               type="submit"
               className="primaryBg fw_400 h-12 col-span-12 rounded-md text-sm uppercase text-white"
             >
-              Get Inquiry
+              Submit
             </button>
           </form>
         </Container>

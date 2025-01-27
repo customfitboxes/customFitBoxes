@@ -22,7 +22,7 @@ export const Header = () => {
     logo: "https://customfitboxes.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo1.25ff3b5e.png&w=256&q=75",
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+1(332) 254 1272",
+      telephone: "+1(332) 252 9988",
       contactType: "customer service",
       areaServed: "US",
       availableLanguage: "en",
@@ -61,7 +61,7 @@ export const Header = () => {
               </h1>
               <button
                 onClick={() => router.push("/request-quote")}
-                className="text-white rounded-md px-5 whitespace-nowrap primaryBg h-14 text-base fw_600 mt-14 flex items-center justify-center gap-x-5"
+                className="text-white rounded-md px-5 w-[258.53px] whitespace-nowrap primaryBg h-14 text-base fw_600 mt-14 flex items-center justify-center gap-x-5"
               >
                 Customize Products
                 <Image

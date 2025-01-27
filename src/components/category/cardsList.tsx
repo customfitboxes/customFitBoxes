@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { CardListItem } from "./subcomponents/cardListItem";
 
 export const CardsList = (props: any) => {
-  const [visibleItems, setVisibleItems] = useState(8); // State to track the number of items shown
+  const [visibleItems, setVisibleItems] = useState(16); // State to track the number of items shown
 
   const loadMoreItems = () => {
     setVisibleItems((prev) => prev + 8); // Show 8 more items on click
@@ -26,7 +26,7 @@ export const CardsList = (props: any) => {
             onClick={loadMoreItems}
            className="px-8 py-3 bg-blue-500 text-white rounded-md"
           >
-            Load More
+            Load More Products
           </button>
         </div>
       )}

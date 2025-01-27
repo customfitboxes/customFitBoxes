@@ -15,9 +15,9 @@ export const CategoryCards = (props: any) => {
   return (
     <Container maxWidth={"xl"} id="catProducts">
       <div className="pt-10 pb-14">
-        <h1 className="text-3xl sm:text-2xl md:text-4xl xl:text-5xl primaryText text-center fw_600 leading-tight">
+        <h2 className="text-3xl sm:text-2xl md:text-4xl xl:text-5xl primaryText text-center fw_600 leading-tight">
           Explor Packaging Solutions
-        </h1>
+        </h2>
         <p className="text-center mt-2 leading-5 opacity-70 text-base">
           Discover our range of fully customizable retail boxes tailored to your
           industry - available in an array of unique shapes, custom

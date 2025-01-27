@@ -5,30 +5,41 @@ import { toast } from "react-toastify";
 
 export const GetQouteForm1 = (props: any) => {
   const [finalData, setFinalData] = useState<any>({});
+  const [file, setFile] = useState<any>(null);
 
   useEffect(() => {
     if (props.products && props.products.length > 0)
       setFinalData({ ...finalData, productName: props.products[0].name });
   }, [props.products]);
+
   const onchnage = (key: any, val: any) => {
     const updatedData = { ...finalData, [key]: val };
     setFinalData(updatedData);
   };
 
   const router = useRouter();
+
   const sendEmail = async (e: any) => {
     e.preventDefault();
+    const formData = new FormData();
+    // Append form data
+    for (let key in finalData) {
+      formData.append(key, finalData[key]);
+    }
+    // Append file if exists
+    if (file) {
+      formData.append("file", file);
+    }
+
     try {
       const response = await fetch("https://formspree.io/f/mzbnokyz", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(finalData),
+        body: formData,
       });
 
       if (response.ok) {
         setFinalData({ ...resetForm(finalData), color: "" });
+        setFile(null); // Reset file after submission
         router.push("/thank-you");
       } else {
         toast.error("Failed to send email");
@@ -37,8 +48,9 @@ export const GetQouteForm1 = (props: any) => {
       toast.error("Failed to send email");
     }
   };
+
   return (
-    <div className="border border-black px-4 sm:px-8 lg:px-10 pt-6 sm:pt-8 pb-16 relative w-full lg:w-11/12 mx-auto">
+    <div className="border border-black rounded-xl px-4 sm:px-8 lg:px-10 pt-6 sm:pt-8 pb-16 relative w-full lg:w-11/12 mx-auto">
       <form
         onSubmit={sendEmail}
         className="grid grid-cols-12 gap-x-6 sm:gap-x-6 gap-y-6 md:gap-y-4 sm:p-3"
@@ -46,27 +58,6 @@ export const GetQouteForm1 = (props: any) => {
         <div className="col-span-6 sm:col-span-3 md:col-span-4">
           <input
             type="number"
-            required
-            value={finalData.width}
-            onChange={(e) => onchnage("width", e.target.value)}
-            placeholder="Width"
-            className="h-10 w-full border-b border-zinc-800 bg-transparent text-sm sm:text-base outline-none"
-          />
-        </div>
-        <div className="col-span-6 sm:col-span-3 md:col-span-2">
-          <input
-            type="number"
-            required
-            value={finalData.depth}
-            onChange={(e) => onchnage("depth", e.target.value)}
-            placeholder="Depth"
-            className="h-10 w-full border-b border-zinc-800 bg-transparent text-sm sm:text-base outline-none"
-          />
-        </div>
-        <div className="col-span-6 sm:col-span-3 md:col-span-4">
-          <input
-            type="number"
-            required
             value={finalData.length}
             onChange={(e) => onchnage("length", e.target.value)}
             placeholder="Length"
@@ -74,8 +65,25 @@ export const GetQouteForm1 = (props: any) => {
           />
         </div>
         <div className="col-span-6 sm:col-span-3 md:col-span-2">
+          <input
+            type="number"
+            value={finalData.width}
+            onChange={(e) => onchnage("width", e.target.value)}
+            placeholder="Width"
+            className="h-10 w-full border-b border-zinc-800 bg-transparent text-sm sm:text-base outline-none"
+          />
+        </div>
+        <div className="col-span-6 sm:col-span-3 md:col-span-4">
+          <input
+            type="number"
+            value={finalData.depth}
+            onChange={(e) => onchnage("depth", e.target.value)}
+            placeholder="Depth"
+            className="h-10 w-full border-b border-zinc-800 bg-transparent text-sm sm:text-base outline-none"
+          />
+        </div>
+        <div className="col-span-6 sm:col-span-3 md:col-span-2">
           <select
-            required
             value={finalData.unit}
             onChange={(e) => onchnage("unit", e.target.value)}
             className="h-10 w-full border-b border-zinc-800 bg-transparent text-sm sm:text-base outline-none"
@@ -114,7 +122,6 @@ export const GetQouteForm1 = (props: any) => {
         )}
         <div className="col-span-12 sm:col-span-6">
           <select
-            required
             value={finalData.color}
             onChange={(e) => onchnage("color", e.target.value)}
             className="h-10 w-full border-b border-zinc-800 bg-transparent text-sm sm:text-base outline-none"
@@ -133,7 +140,6 @@ export const GetQouteForm1 = (props: any) => {
         <div className="col-span-12 sm:col-span-6">
           <input
             type="number"
-            required
             value={finalData.quantity}
             onChange={(e) => onchnage("quantity", e.target.value)}
             placeholder="Quantity"
@@ -153,7 +159,6 @@ export const GetQouteForm1 = (props: any) => {
         <div className="col-span-12 sm:col-span-6">
           <input
             type="tel"
-            required
             value={finalData.phone}
             onChange={(e) => onchnage("phone", e.target.value)}
             placeholder="+1 123-123-1234"
@@ -170,20 +175,29 @@ export const GetQouteForm1 = (props: any) => {
             className="h-10 w-full border-b border-zinc-800 bg-transparent text-sm sm:text-base outline-none"
           />
         </div>
-        <div className="col-span-12 mt-5 flex justify-center">
+        {/* Attachment input */}
+        <div className="col-span-12 sm:col-span-6">
+          <input
+            type="file"
+            onChange={(e) => setFile(e.target.files ? e.target.files[0] : null)}
+            className="h-10 w-full border-b border-zinc-800 bg-transparent text-sm sm:text-base outline-none"
+          />
+        </div>
+
+        <div className="col-span-12  sm:col-span-6">
           <textarea
             rows={1}
-            required
             value={finalData.message}
             onChange={(e) => onchnage("message", e.target.value)}
-            className="w-full lg:w-1/2 mx-auto border-b border-zinc-800 py-1 bg-transparent text-sm sm:text-base outline-none shadow-none"
+            className="h-10 w-full mx-auto border-b border-zinc-800 py-1 bg-transparent text-sm sm:text-base outline-none shadow-none"
             placeholder="Write your message"
           ></textarea>
         </div>
+
         <div className="absolute -bottom-4 flex justify-center left-0 w-full z-10">
           <button
             type="submit"
-            className="primaryBg fw_400 h-12 px-10 rounded-md text-base uppercase text-white"
+            className="primaryBg hover:scale-105 transition-all duration-200 fw_400 h-12 px-10 rounded-md text-base uppercase text-white"
           >
             Get Inquiry
           </button>

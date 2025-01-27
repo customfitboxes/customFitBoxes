@@ -13,7 +13,7 @@ export const CategoryDetails = (props: any) => {
             <p className="text-base mb-4 mt-3">{props.category.description}</p> */}
           <div
             style={{ height: "36rem" }}
-            className="p-4 overflow-hidden hidden md:flex items-center justify-center bg-zinc-50"
+            className="p-4 overflow-hidden hidden md:flex items-center rounded-2xl justify-center bg-zinc-50"
           >
             {props.category && props.category.imageWithAlt2 ? (
               <img

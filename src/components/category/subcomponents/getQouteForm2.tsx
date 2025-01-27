@@ -12,6 +12,7 @@ export const GetQouteForm2 = (props: any) => {
   const [finalData, setFinalData] = useState<any>({
     color: "1-Color",
     productName: props.productName,
+    attachment: null, // New state for the attachment
   });
 
   useEffect(() => {
@@ -19,20 +20,37 @@ export const GetQouteForm2 = (props: any) => {
       setFinalData({ ...finalData, productName: props.productName });
     }
   }, []);
+
   const onchnage = (key: any, val: any) => {
     const updatedData = { ...finalData, [key]: val };
     setFinalData(updatedData);
   };
 
+  const handleFileChange = (e: any) => {
+    const file = e.target.files[0];
+    if (file) {
+      setFinalData({ ...finalData, attachment: file });
+    }
+  };
+
   const sendEmail = async (e: any) => {
     e.preventDefault();
+    const formData = new FormData();
+
+    // Append form fields to FormData
+    Object.keys(finalData).forEach((key) => {
+      if (finalData[key] !== null) {
+        formData.append(key, finalData[key]);
+      }
+    });
+
     try {
       const response = await fetch("https://formspree.io/f/mzbnokyz", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Accept": "application/json",
         },
-        body: JSON.stringify(finalData),
+        body: formData,
       });
 
       if (response.ok) {
@@ -45,22 +63,18 @@ export const GetQouteForm2 = (props: any) => {
       toast.error("Failed to send email");
     }
   };
+
   return (
-    <div
-      className="overflow-hidden rounded-xl drop-shadow-xl w-full"
-    >
+    <div className="overflow-hidden rounded-xl drop-shadow-xl w-full">
       <div className="primaryBg flex py-4 items-center justify-center text-white">
-        <p className="fw_600 m-0 p-0 text-xl lg:text-2xl">
-          Get an Instant Quote
-        </p>
+        <p className="fw_600 m-0 p-0 text-xl lg:text-2xl">Get an Instant Quote</p>
       </div>
       <form
         onSubmit={sendEmail}
-        className={`grid grid-cols-12 ${
-          matches2 ? "gap-y-6 sm:gap-3" : "gap-6"
-        } pt-3 pb-5 px-3 lg:p-5`}
+        className={`grid grid-cols-12 gap-x-4 ${matches2 ? "gap-y-6 sm:gap-3" : "gap-6"} pt-3 pb-5 px-3 lg:p-5`}
         style={{ background: "#F5F5F5" }}
       >
+        {/* Form Fields */}
         <div className="col-span-12 sm:col-span-6">
           <input
             type="text"
@@ -81,7 +95,7 @@ export const GetQouteForm2 = (props: any) => {
             className="h-10 w-full border-b border-zinc-500 bg-transparent text-base outline-none"
           />
         </div>
-        <div className="col-span-12 sm:col-span-6">
+        <div className="col-span-12">
           <input
             type="tel"
             required
@@ -91,31 +105,35 @@ export const GetQouteForm2 = (props: any) => {
             className="h-10 w-full border-b border-zinc-500 bg-transparent text-base outline-none"
           />
         </div>
-        <div className="col-span-12 sm:col-span-6">
+
+        <div className="col-span-6 sm:col-span-4">
           <input
             type="number"
-            required
-            value={finalData.quantity}
-            onChange={(e) => onchnage("quantity", e.target.value)}
-            placeholder="Quantity MQ(200)"
-            className="h-10 w-full border-b border-zinc-500 bg-transparent text-base outline-none"
+            value={finalData.length}
+            onChange={(e) => onchnage("length", e.target.value)}
+            placeholder="Length"
+            className="h-10 w-full border-b border-zinc-800 bg-transparent text-sm sm:text-base outline-none"
           />
         </div>
-        <div className="col-span-12">
-          <select
-            required
-            value={finalData.productName}
-            onChange={(e) => onchnage("productName", e.target.value)}
-            className="h-10 w-full border-b border-zinc-500 bg-transparent text-base outline-none"
-          >
-            {props.products &&
-              props.products.length > 0 &&
-              props.products.map((product: any, index: any) => (
-                <option key={index + 1}>{product.name}</option>
-              ))}
-            <option>Other</option>
-          </select>
+        <div className="col-span-6 sm:col-span-4">
+          <input
+            type="number"
+            value={finalData.width}
+            onChange={(e) => onchnage("width", e.target.value)}
+            placeholder="Width"
+            className="h-10 w-full border-b border-zinc-800 bg-transparent text-sm sm:text-base outline-none"
+          />
         </div>
+        <div className="col-span-12 sm:col-span-4">
+          <input
+            type="number"
+            value={finalData.depth}
+            onChange={(e: any) => onchnage("depth", e.target.value)}
+            placeholder="Depth"
+            className="h-10 w-full border-b border-zinc-800 bg-transparent text-sm sm:text-base outline-none"
+          />
+        </div>
+
         <div className="col-span-12">
           <label className="text-base fw_400">Description</label>
           <textarea
@@ -123,31 +141,22 @@ export const GetQouteForm2 = (props: any) => {
             required
             value={finalData.description}
             onChange={(e) => onchnage("description", e.target.value)}
-            className="w-full mt-2 border border-zinc-400 bg-transparent px-2 py-1 text-xs lg:text-sm outline-none shadow-none"
+            className="w-full mt-1 border border-zinc-400 bg-transparent px-2 py-1 text-xs lg:text-sm outline-none shadow-none"
             placeholder="Write your message..."
           ></textarea>
         </div>
-        {/* <div className="col-span-12">
-          <div className="flex justify-between px-3 py-2 border border-zinc-400 w-72 sm:w-80">
-            <label className="flex items-center gap-x-2 sm:gap-x-4 text-xs sm:text-sm">
-              <input type="checkbox" className="w-5 sm:w-6 h-5 sm:h-6 rounded-sm" />
-              I'm not a Robot
-            </label>
-            <div>
-              <Image
-                src={capchaIcon}
-                alt="capchaIcon"
-                width={40}
-                className="ml-3"
-              />
-              <p className="text-xs leading-4">
-                reCAPTCHA <br />
-                Privacy - Terms
-              </p>
-            </div>
-          </div>
-        </div> */}
-        <div className="col-span-12 flex justify-center mt-4">
+
+        {/* Attachment Field */}
+        <div className="col-span-6">
+          {/* <label className="text-base fw_400">Attachment (Optional)</label> */}
+          <input
+            type="file"
+            onChange={handleFileChange}
+            className="w-full  border-b pb-2 border-zinc-500 bg-transparent text-xs lg:text-sm outline-none"
+          />
+        </div>
+
+        <div className="col-span-6 flex justify-end">
           <button
             type="submit"
             className="primaryBg fw_400 py-4 px-20 rounded-md text-sm lg:text-base text-white"
