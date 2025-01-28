@@ -7,11 +7,11 @@ import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 import Select from 'react-select';
 
-const Index = ({ data, products, boxProducts, shapeProducts }: any) => {
+const Index = ({ data, products, boxProducts, shapeProducts }) => {
   const [finalData, setFinalData] = useState<any>({ unit: "Inches" });
   const router = useRouter();
 
-  const onchnage = (key: any, val: any) => {
+  const onchnage = (key, val) => {
     const updatedData = { ...finalData, [key]: val };
     setFinalData(updatedData);
   };
@@ -21,7 +21,7 @@ const Index = ({ data, products, boxProducts, shapeProducts }: any) => {
       setFinalData({ ...finalData, productName: products[0].name });
   }, [products]);
 
-  const sendEmail = async (e: any) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
 
     const formData = new FormData();
@@ -128,7 +128,7 @@ const Index = ({ data, products, boxProducts, shapeProducts }: any) => {
                   required
                   value={finalData.productName ? { label: finalData.productName, value: finalData.productName } : null}
                   onChange={(selectedOption) => onchnage("productName", selectedOption ? selectedOption.value : '')}
-                  options={products.map((product: any) => ({
+                  options={products.map((product) => ({
                     label: product.name,
                     value: product.name,
                   }))}
@@ -260,7 +260,7 @@ const Index = ({ data, products, boxProducts, shapeProducts }: any) => {
               <label className="text-sm sm:text-base">Attachment</label>
               <input
                 type="file"
-                onChange={(e: any) => onchnage("attachment", e.target.files[0])}
+                onChange={(e) => onchnage("attachment", e.target.files[0])}
                 className="h-10 md:h-12 pt-3 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
             </div>

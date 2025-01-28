@@ -3,36 +3,11 @@
 import { Container, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 
-import workImg from "../../static/workImg1.svg";
-import workImg2 from "../../static/workImg2.svg";
-import workImg3 from "../../static/workImg3.svg";
-import shippingIcon from "../../static/shippingIcon.svg";
 import rightChevCircle from "../../static/rightChevCircle.svg";
 import workBannerImg from "../../static/workBannerImg.png";
 import { useRouter } from "next/router";
 
-const howWorksData = [
-  {
-    name: "Minimum order",
-    desc: "Custom boxes from 1 unit",
-    img: workImg,
-  },
-  {
-    name: "Eco- friend material",
-    desc: "Sustainable products to reinforce your brand",
-    img: workImg2,
-  },
-  {
-    name: "Free Shipping",
-    desc: "For standard box shipments",
-    img: shippingIcon,
-  },
-  {
-    name: "Free advice",
-    desc: "Consult with our Packaging Technicians for free.",
-    img: workImg3,
-  },
-];
+
 export const HowItWorks = () => {
   const matches = useMediaQuery("(max-width:1024px)");
   const matches3 = useMediaQuery("(max-width:1280px)");

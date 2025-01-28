@@ -1,5 +1,4 @@
-import Image from "next/image";
-import searchIcon from "../../../../static/searchIcon.svg";
+
 export const SearchBox = (props: any) => {
   return (
     <div

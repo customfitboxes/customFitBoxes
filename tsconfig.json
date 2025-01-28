@@ -42,5 +42,5 @@
     }
   },
   "exclude": ["./out/**/*", "./node_modules/**/*", "**/*.test.ts"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "vite.config.js"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "vite.config.js", "src/pages/request-quote.jsx"]
 }
