@@ -36,16 +36,16 @@ export const SmallNav = (props: any) => {
           </li>
         ))}
       </ul>
-      <div className="flex items-center gap-x-2 sm:gap-x-8">
+      <div className="flex flex-col gap-3 items-center gap-x-2 sm:gap-x-8">
         <button
           onClick={() => router.push("/contact-us")}
-          className={`text-xs fw_600 bg-white primaryText greenBorder py-2 w-36 sm:w-40 buttonBorderRadius`}
+          className={`text-xs fw_600 bg-white primaryText greenBorder py-2 w-48 buttonBorderRadius`}
         >
           Request a Sample Pack
         </button>
         <button
           onClick={() => router.push("/request-quote")}
-          className="text-xs fw_600 bg-white primaryText greenBorder py-2 w-40 buttonBorderRadius"
+          className="text-xs fw_600 bg-white primaryText greenBorder py-2 w-48 buttonBorderRadius"
         >
           Request a quote
         </button>

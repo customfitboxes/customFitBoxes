@@ -95,13 +95,23 @@ export const GetQouteForm2 = (props: any) => {
             className="h-10 w-full border-b border-zinc-500 bg-transparent text-base outline-none"
           />
         </div>
-        <div className="col-span-12">
+        <div className="col-span-12 sm:col-span-6">
           <input
             type="tel"
             required
             value={finalData.phone}
             onChange={(e) => onchnage("phone", e.target.value)}
             placeholder="Phone number"
+            className="h-10 w-full border-b border-zinc-500 bg-transparent text-base outline-none"
+          />
+        </div>
+        <div className="col-span-12 sm:col-span-6">
+          <input
+            type="number"
+            required
+            value={finalData.quantity}
+            onChange={(e) => onchnage("quantity", e.target.value)}
+            placeholder="Quantity"
             className="h-10 w-full border-b border-zinc-500 bg-transparent text-base outline-none"
           />
         </div>
@@ -156,10 +166,10 @@ export const GetQouteForm2 = (props: any) => {
           />
         </div>
 
-        <div className="col-span-6 flex justify-end">
+        <div className="col-span-6 flex justify-center sm:justify-end">
           <button
             type="submit"
-            className="primaryBg fw_400 py-4 px-20 rounded-md text-sm lg:text-base text-white"
+            className="primaryBg fw_400 py-4 w-full rounded-md text-sm lg:text-base text-white"
           >
             Get a Quote
           </button>

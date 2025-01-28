@@ -45,6 +45,7 @@
     "react-dom": "^18.1.0",
     "react-floating-whatsapp": "^5.0.8",
     "react-multi-carousel": "^2.8.4",
+    "react-select": "^5.10.0",
     "react-toastify": "^10.0.4",
     "sharp": "^0.33.4",
     "vhtml": "^2.2.0"

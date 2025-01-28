@@ -34,7 +34,7 @@ export const BlogCard = (props: any) => {
         className="rounded-md cursor-pointer overflow-hidden w-full"
         style={{ background: "#F5F5F5" }}
       >
-        <div className="h-60 xl:h-80">
+        <div className="h-40 sm:h-60 xl:h-80">
           <img
             src={getImg(props.blog.imageWithAlt).url}
             alt={getImg(props.blog.imageWithAlt).alt}
@@ -42,17 +42,19 @@ export const BlogCard = (props: any) => {
             className="w-full h-full"
           />
         </div>
-        <div className="pt-3 pb-8 px-4">
-          <p className="primaryText fw_600 text-lg xl:text-xl mt-3">
+        <div className="pt-3 md:pb-8 px-2 sm:px-4">
+          <p className="primaryText fw_600 text-center md:text-left text-sm sm:text-lg xl:text-xl mt-3">
             {props.blog.name}
           </p>
-          <BlogAuthor props={props}/>
-          <p className="text-sm xl:text-base big_four_lines_elipsis">
-            <PortableText
-              value={props.blog.description}
-              components={{ block }}
-            />
-          </p>
+          <BlogAuthor props={props} />
+          <div className="hidden md:block">
+            <p className="text-sm xl:text-base big_four_lines_elipsis">
+              <PortableText
+                value={props.blog.description}
+                components={{ block }}
+              />
+            </p>
+          </div>
         </div>
       </div>
     )

@@ -77,7 +77,7 @@ export const Footer = () => {
                     sales@customfitboxes.com
                   </a>
                 </div>
-                <div className="flex items-center gap-x-4">
+                <div className="flex items-center gap-x-4  md:items-start justify-center sm:!justify-start w-full md:w-auto">
                   <a
                     href="https://www.linkedin.com/company/custom-fit-boxes/"
                     target="_blank"

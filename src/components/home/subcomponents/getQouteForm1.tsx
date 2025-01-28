@@ -199,7 +199,7 @@ export const GetQouteForm1 = (props: any) => {
             type="submit"
             className="primaryBg hover:scale-105 transition-all duration-200 fw_400 h-12 px-10 rounded-md text-base uppercase text-white"
           >
-            Get Inquiry
+            Submit
           </button>
         </div>
       </form>

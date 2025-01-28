@@ -35,7 +35,7 @@ export const PackagingStyle = (props: any) => {
   return (
     <Container maxWidth={"xl"}>
       <div className="py-10">
-        <div className="flex flex-wrap sm:flex-nowrap gap-y-5 items-start justify-between gap-x-10">
+        <div className="flex text-center md:text-left flex-wrap sm:flex-nowrap gap-y-5 md:items-start justify-center md:justify-between gap-x-10">
           <div>
             <h2 className="text-3xl sm:text-2xl -mt-2 md:text-4xl xl:text-5xl fw_600 leading-tight primaryText pt-0">
               Find Custom Boxes for Your Industry
@@ -48,6 +48,34 @@ export const PackagingStyle = (props: any) => {
               perfect
             </p>
           </div>
+          <section className="grid grid-cols-2 gap-3 sm:hidden">
+            {props.list.map((data: any, ind: any) => (
+              <div className="px-1 md:px-3" key={ind + 1}>
+                <div
+                  onClick={() =>
+                    router.push(`/category/${getSlug(data.slug)}`)
+                  }
+                  className={`cursor-pointer rounded-3xl overflow-hidden`}
+                  style={{ background: "#F5F5F5" }}
+                >
+                  <div
+                    className="p-3 h-36 rounded-md flex items-center justify-center"
+                    style={{ background: "#EFFCF9" }}
+                  >
+                    <img
+                      src={getImg(data.imageWithAlt).url}
+                      alt={getImg(data.imageWithAlt).alt}
+                    />
+                  </div>
+                  <div className="px-6 xl:px-10 py-8 flex flex-col gap-y-4">
+                    <p className="fw_600 min-h-[54px] text-lg md:text-base lg:text-lg text-center primaryText">
+                      {data.name}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </section>
           <button
             onClick={() => router.push("/industries")}
             className="text-white rounded-md px-10 whitespace-nowrap primaryBg h-14 text-base fw_400 flex items-center justify-center gap-x-5"
@@ -57,7 +85,7 @@ export const PackagingStyle = (props: any) => {
         </div>
 
         {props.list && props.list.length > 0 && (
-          <div className="mt-14">
+          <div className="mt-14 hidden sm:block">
             <Carousel
               responsive={responsive}
               arrows={true}

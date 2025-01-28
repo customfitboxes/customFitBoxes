@@ -21,7 +21,7 @@ export const TabsGroup = (props: any) => {
     props.setBlogsData(res);
   };
   return (
-    <div className="flex items-cewnter gap-x-3 gap-y-3 flex-wrap fw_400">
+    <div className="flex items-center justify-center md:justify-start gap-x-3 gap-y-3 flex-wrap fw_400">
       {blogCategories.map((category, ind: any) => (
         <button
           key={ind + 1}

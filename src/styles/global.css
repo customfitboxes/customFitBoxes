@@ -221,3 +221,9 @@ textarea:-ms-input-placeholder {
 .blog-single p{
   margin-bottom: 12px;
 }
+
+@media (max-width: 768px) {
+  .plistImage{
+    height: 100% !important;
+  }
+}

@@ -35,16 +35,14 @@ const DetailsHeader = (props: any) => {
         className={`flex flex-col-reverse lg:grid ${matches ? "grid-cols-11" : "grid-cols-12"
           } gap-y-5 pb-10 pt-6 sm:py-10 lg:gap-x-10`}
       >
-        <div className="col-span-6 flex md:flex-row flex-row gap-3">
-
-          <div className="w-1/5">
-
-            <div className="flex flex-col gap-x-2 lg:h-full ">
+        <div className="col-span-6 flex md:flex-row flex-col-reverse gap-3">
+          <div className="md:w-1/5">
+            <div className="flex md:flex-col gap-x-2 lg:h-full ">
               {images.map((img: any, index: any) => (
                 <div
                   key={index + 1}
-                  className={`${matches2 ? "h-20" : "h-full"
-                    } w-full  flex items-center justify-center cursor-pointer rounded-md overflow-hidden border-2 ${img === myImg
+                  className={`${matches2 ? "h-full" : "h-full"
+                    } w-full flex items-center justify-center cursor-pointer rounded-md overflow-hidden border-2 ${img === myImg
                       ? "border-blue-700"
                       : "border-zinc-200 border-opacity-0"
                     }`}
@@ -62,8 +60,7 @@ const DetailsHeader = (props: any) => {
               ))}
             </div>
           </div>
-          <div className="w-4/5">
-
+          <div className="md:w-4/5">
             {props.product &&
               props.product.images &&
               props.product.images.length > 0 && (

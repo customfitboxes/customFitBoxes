@@ -39,7 +39,7 @@ const Index = ({ data, blogs, boxProducts, shapeProducts }: any) => {
           <h2 className="fw_600 text-center text-3xl sm:text-2xl md:text-4xl xl:text-5xl primaryText leading-tight">
             Behind the Box
           </h2>
-          <p className="mt-5 xl:mt-3 text-base leading-5 opacity-70">
+          <p className="mt-5 xl:mt-3 text-center text-base leading-5 opacity-70">
             Unpack expert insights with a range of content from our packaging
             wizards, featuring in-depth guides, custom packaging tips and
             inspiring customer stories. Grow from beginner to pro with
@@ -54,6 +54,7 @@ const Index = ({ data, blogs, boxProducts, shapeProducts }: any) => {
               placeholder="Search by title..."
               onChange={(e: any) => handleSearch(e)}
               height="h-12"
+              blog
             />
           </div>
         </Container>

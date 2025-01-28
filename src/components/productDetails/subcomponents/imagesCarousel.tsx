@@ -40,7 +40,7 @@ export const ImagesCarousel = (props: any) => {
           props.imagesList.map((item: any, ind: any) => (
             <div
               key={ind + 1}
-              className="flex items-center justify-center w-full bg-zinc-100 rounded-md  "
+              className="flex plistImage items-center justify-center w-full bg-zinc-100 rounded-md  "
               style={{
                 height: matches ? (matches2 ? "400px" : "470px") : "100%",
               }}

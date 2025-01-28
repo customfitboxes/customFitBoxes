@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { getServerSideProps, resetForm } from "@/services/categoriesService";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
+import Select from 'react-select';
 
 const Index = ({ data, products, boxProducts, shapeProducts }: any) => {
   const [finalData, setFinalData] = useState<any>({ unit: "Inches" });
@@ -20,35 +21,9 @@ const Index = ({ data, products, boxProducts, shapeProducts }: any) => {
       setFinalData({ ...finalData, productName: products[0].name });
   }, [products]);
 
-  // const sendEmail = async (e: any) => {
-  //   e.preventDefault();
-  //   try {
-  //     const response = await fetch("https://formspree.io/f/mzbnokyz", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(finalData),
-  //     });
-
-  //     if (response.ok) {
-  //       setFinalData({
-  //         ...resetForm(finalData),
-  //         color: "1-Color",
-  //         productName: products[0].name,
-  //       });
-  //       router.push("/thank-you");
-  //     } else {
-  //       toast.error("Failed to send email");
-  //     }
-  //   } catch (error) {
-  //     toast.error("Failed to send email");
-  //   }
-  // };
-
   const sendEmail = async (e: any) => {
     e.preventDefault();
-    
+
     const formData = new FormData();
     formData.append("name", finalData.name);
     formData.append("email", finalData.email);
@@ -62,18 +37,18 @@ const Index = ({ data, products, boxProducts, shapeProducts }: any) => {
     formData.append("unit", finalData.unit);
     formData.append("deadline", finalData.deadline);
     formData.append("message", finalData.message);
-  
+
     // Check if there's an attachment and append it
     if (finalData.attachment) {
       formData.append("attachment", finalData.attachment);
     }
-  
+
     try {
       const response = await fetch("https://formspree.io/f/mzbnokyz", {
         method: "POST",
         body: formData,
       });
-  
+
       if (response.ok) {
         setFinalData({
           ...resetForm(finalData),
@@ -89,7 +64,7 @@ const Index = ({ data, products, boxProducts, shapeProducts }: any) => {
     }
   };
 
-  
+
   return (
     <div>
       <Navbar
@@ -149,17 +124,50 @@ const Index = ({ data, products, boxProducts, shapeProducts }: any) => {
             {products && products.length > 0 && (
               <div className="col-span-12 sm:col-span-6">
                 <label className="text-sm sm:text-base">Select Product*</label>
-                <select
+                <Select
                   required
-                  value={finalData.productName}
-                  onChange={(e) => onchnage("productName", e.target.value)}
-                  className="h-10 md:h-12 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
-                >
-                  {products.map((product: any, index: any) => (
-                    <option key={index + 1}>{product.name}</option>
-                  ))}
-                  <option>Other</option>
-                </select>
+                  value={finalData.productName ? { label: finalData.productName, value: finalData.productName } : null}
+                  onChange={(selectedOption) => onchnage("productName", selectedOption ? selectedOption.value : '')}
+                  options={products.map((product: any) => ({
+                    label: product.name,
+                    value: product.name,
+                  }))}
+                  className="mt-2"
+                  placeholder="Search and select a product"
+                  styles={{
+                    control: (base) => ({
+                      ...base,
+                      height: 48,  // Adjust the height of the input box
+                      minHeight: 44,
+                      borderColor: '#ccc', // Border color
+                      borderRadius: '8px',  // Rounded corners
+                      padding: '0 10px',  // Padding inside the control
+                      boxShadow: 'none',  // Remove the default shadow
+                    }),
+                    option: (base, state) => ({
+                      ...base,
+                      backgroundColor: state.isSelected ? '#1a4885' : state.isFocused ? '#f0f0f0' : null, // Change background color when focused or selected
+                      color: state.isSelected ? 'white' : '#333', // Text color change when selected
+                      padding: '10px',  // Option padding
+                    }),
+                    dropdownIndicator: (base) => ({
+                      ...base,
+                      color: '#333', // Arrow color
+                    }),
+                    clearIndicator: (base) => ({
+                      ...base,
+                      color: '#f00', // Clear indicator color (optional)
+                    }),
+                    singleValue: (base) => ({
+                      ...base,
+                      color: '#333', // Text color for selected value
+                    }),
+                    placeholder: (base) => ({
+                      ...base,
+                      color: '#aaa', // Placeholder text color
+                    }),
+                  }}
+                />
               </div>
             )}
             <div className="col-span-12 sm:col-span-6">
@@ -252,7 +260,7 @@ const Index = ({ data, products, boxProducts, shapeProducts }: any) => {
               <label className="text-sm sm:text-base">Attachment</label>
               <input
                 type="file"
-                onChange={(e:any) => onchnage("attachment", e.target.files[0])}
+                onChange={(e: any) => onchnage("attachment", e.target.files[0])}
                 className="h-10 md:h-12 pt-3 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
             </div>

@@ -11,7 +11,7 @@ const BlogAuthor = ({props, newLine}:any) => {
                     alt={getImg(props.blog.userImage).alt}
                     className="h-8 w-8 rounded-full object-cover"
                 />
-                <p className="text-xs">
+                <p className="text-[10px] sm:text-xs">
                     {props.blog.username}, {newLine && <br/>} Last Updated:{" "}
                     {moment(props.blog.date).format("MMM DD, YYYY")}
                 </p>

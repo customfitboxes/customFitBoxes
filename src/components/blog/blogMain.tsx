@@ -72,7 +72,7 @@ export const BlogMain = (props: any) => {
       </div>
 
       {/* Display the remaining blogs */}
-      <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-5 xl:gap-8">
+      <div className="mt-6 grid grid-cols-2 gap-3 sm:gap-5 xl:gap-8">
         {blogsToDisplay.map((blog: any, index: number) => (
           index !== 0 && (
             <BlogCard key={blog.slug} blog={blog} />
