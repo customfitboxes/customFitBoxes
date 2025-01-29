@@ -10,8 +10,8 @@ export const ContactDetails = () => {
       <Container maxWidth="xl">
         <div>
           <div>
-            <p className="fw_400 text-2xl sm:text-3xl">Our Contact Details</p>
-            <p className="primaryText2 text-3xl sm:text-4xl fw_600">
+            <p className="fw_400 text-2xl text-center md:text-left sm:text-3xl">Our Contact Details</p>
+            <p className="primaryText2 text-center md:text-left text-3xl sm:text-4xl fw_600">
               CONTACT US
             </p>
           </div>

@@ -17,7 +17,7 @@ export const TestimonialItem = (props: any) => {
         <p className="text-xs text-center four_lines_elipsis">{props.data.review}</p>
        </div>
        <div className="mt-4 h-10">
-       <p className="primaryText text-lg fw_600 text-center">{props.data.reviewerName}</p>
+       <span className="primaryText block text-lg fw_600 text-center">{props.data.reviewerName}</span>
         <p className="primaryText text-sm fw_400 text-center">{props.data.reviewerDesignation}</p>
        </div>
       </div>

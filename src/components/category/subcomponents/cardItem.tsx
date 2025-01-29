@@ -10,7 +10,7 @@ export const CardItem = (props: any) => {
       onClick={() => router.push("/" + getSlug(props.data.slug))}
     >
       <div
-        className="w-full h-72 lg:h-96 flex items-center justify-center overflow-hidden "
+        className="w-full h-92 lg:h-96 flex items-center justify-center overflow-hidden "
         style={{ background: "#eaf0f5" }}
       >
         {props.data.images &&

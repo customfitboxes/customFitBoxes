@@ -61,9 +61,9 @@ export const PackagingProcess = () => {
                     style={{ minHeight: "9rem" }}
                     className="mt-6 overflow-hidden xl:px-2"
                   >
-                    <h2 className="fw_600 text-xl h-10 flex items-center text-center justify-center">
+                    <span className="fw_600 text-xl h-10 flex items-center text-center justify-center">
                       {item.name}
-                    </h2>
+                    </span>
                     <p className="mt-4 text-base lg:text-sm xl:text-base leading-6">{item.description}</p>
                   </div>
                 </div>

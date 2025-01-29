@@ -75,9 +75,9 @@ export const Header = () => {
                 <div className="flex items-center gap-x-2">
                   <Image src={shippingIcon} alt={shippingIcon} width={30} />
                   <div className="whitespace-nowrap leading-4">
-                    <h2 className="fw_600 text-sm 2xl:text-base pb-0 mb-0">
+                    <span className="fw_600 text-sm 2xl:text-base pb-0 mb-0">
                       FREE SHIPPING & RETURN
-                    </h2>
+                    </span>
                     <p className="text-xs 2xl:text-sm p-0 m-0">
                       Free shipping on all orders over $99.
                     </p>
@@ -86,9 +86,9 @@ export const Header = () => {
                 <div className="flex items-center gap-x-2">
                   <Image src={brushIcon} alt={brushIcon} width={30} />
                   <div className="whitespace-nowrap leading-4">
-                    <h2 className="fw_600 text-sm 2xl:text-base pb-0 mb-0">
+                    <span className="fw_600 text-sm 2xl:text-base pb-0 mb-0">
                       FREE DESIGN SUPPORT
-                    </h2>
+                    </span>
                     <p className="text-xs 2xl:text-sm p-0 m-0">
                       Get advice from our expert designers.
                     </p>
@@ -97,9 +97,9 @@ export const Header = () => {
                 <div className="flex items-center gap-x-2">
                   <Image src={dollarIcon} alt={dollarIcon} width={30} />
                   <div className="whitespace-nowrap leading-4">
-                    <h2 className="fw_600 text-sm 2xl:text-base pb-0 mb-0">
+                    <span className="fw_600 text-sm 2xl:text-base pb-0 mb-0">
                       NO HIDDEN CHARGES
-                    </h2>
+                    </span>
                     <p className="text-xs 2xl:text-sm p-0 m-0">
                       100% secure payment & no extra penny.
                     </p>

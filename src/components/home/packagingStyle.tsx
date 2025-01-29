@@ -59,7 +59,7 @@ export const PackagingStyle = (props: any) => {
                   style={{ background: "#F5F5F5" }}
                 >
                   <div
-                    className="p-3 h-36 rounded-md flex items-center justify-center"
+                    className="p-3 h-[197px] rounded-md flex items-center justify-center"
                     style={{ background: "#EFFCF9" }}
                   >
                     <img
@@ -67,10 +67,10 @@ export const PackagingStyle = (props: any) => {
                       alt={getImg(data.imageWithAlt).alt}
                     />
                   </div>
-                  <div className="px-6 xl:px-10 py-8 flex flex-col gap-y-4">
-                    <p className="fw_600 min-h-[54px] text-lg md:text-base lg:text-lg text-center primaryText">
+                  <div className="px-6 xl:px-10 pt-6 py-8 flex flex-col md:gap-y-4">
+                    <span className="fw_600 text-lg md:text-base lg:text-lg text-center primaryText">
                       {data.name}
-                    </p>
+                    </span>
                   </div>
                 </div>
               </div>

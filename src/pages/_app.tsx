@@ -28,7 +28,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
       phoneNumber="+13322541272"
       accountName="Team"
       notification={false}
-      buttonClassName="left-3 -mb-5"
+      buttonClassName="left-3 -mb-3"
       chatboxClassName="left-20 "
       allowClickAway
     />

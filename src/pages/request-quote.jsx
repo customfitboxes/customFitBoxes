@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 import Select from 'react-select';
 
 const Index = ({ data, products, boxProducts, shapeProducts }) => {
-  const [finalData, setFinalData] = useState<any>({ unit: "Inches" });
+  const [finalData, setFinalData] = useState({ unit: "Inches" });
   const router = useRouter();
 
   const onchnage = (key, val) => {

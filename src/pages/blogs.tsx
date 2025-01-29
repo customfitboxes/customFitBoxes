@@ -49,7 +49,7 @@ const Index = ({ data, blogs, boxProducts, shapeProducts }: any) => {
             cardboard, shipping strategy, box templates, and more from a trusted
             packaging industry leader.
           </p>
-          <div className="absolute -mt-6 left-1/2 transform -translate-x-1/2 w-5/6 top-full">
+          <div className="absolute -mt-6 left-1/2 shadow-xl transform -translate-x-1/2 w-5/6 top-full">
             <SearchBox
               placeholder="Search by title..."
               onChange={(e: any) => handleSearch(e)}
