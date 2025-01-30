@@ -6,6 +6,7 @@ import { getServerSideProps, resetForm } from "@/services/categoriesService";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 import Select from 'react-select';
+import CustomSelect from "../components/ui/CustomSelect";
 
 const Index = ({ data, products, boxProducts, shapeProducts }) => {
   const [finalData, setFinalData] = useState({ unit: "Inches" });
@@ -87,7 +88,7 @@ const Index = ({ data, products, boxProducts, shapeProducts }) => {
         <Container maxWidth="lg" className="-mt-72">
           <form
             onSubmit={sendEmail}
-            className="bg-white rounded-lg p-6 sm:p-8 grid grid-cols-12 w-full md:w-5/6 lg:w-3/4 mx-auto shadow-xl gap-x-3 gap-y-5 sm:gap-5"
+            className="bg-white border border-[#1a4885] rounded-lg p-6 sm:p-8 grid grid-cols-12 w-full md:w-5/6 lg:w-3/4 mx-auto shadow-xl gap-x-3 gap-y-5 sm:gap-5"
           >
             <div className="col-span-12 sm:col-span-6">
               <label className="text-sm sm:text-base">Enter your Name*</label>
@@ -122,53 +123,13 @@ const Index = ({ data, products, boxProducts, shapeProducts }) => {
               />
             </div>
             {products && products.length > 0 && (
-              <div className="col-span-12 sm:col-span-6">
-                <label className="text-sm sm:text-base">Select Product*</label>
-                <Select
-                  required
-                  value={finalData.productName ? { label: finalData.productName, value: finalData.productName } : null}
-                  onChange={(selectedOption) => onchnage("productName", selectedOption ? selectedOption.value : '')}
-                  options={products.map((product) => ({
-                    label: product.name,
-                    value: product.name,
-                  }))}
-                  className="mt-2"
-                  placeholder="Search and select a product"
-                  styles={{
-                    control: (base) => ({
-                      ...base,
-                      height: 48,  // Adjust the height of the input box
-                      minHeight: 44,
-                      borderColor: '#ccc', // Border color
-                      borderRadius: '8px',  // Rounded corners
-                      padding: '0 10px',  // Padding inside the control
-                      boxShadow: 'none',  // Remove the default shadow
-                    }),
-                    option: (base, state) => ({
-                      ...base,
-                      backgroundColor: state.isSelected ? '#1a4885' : state.isFocused ? '#f0f0f0' : null, // Change background color when focused or selected
-                      color: state.isSelected ? 'white' : '#333', // Text color change when selected
-                      padding: '10px',  // Option padding
-                    }),
-                    dropdownIndicator: (base) => ({
-                      ...base,
-                      color: '#333', // Arrow color
-                    }),
-                    clearIndicator: (base) => ({
-                      ...base,
-                      color: '#f00', // Clear indicator color (optional)
-                    }),
-                    singleValue: (base) => ({
-                      ...base,
-                      color: '#333', // Text color for selected value
-                    }),
-                    placeholder: (base) => ({
-                      ...base,
-                      color: '#aaa', // Placeholder text color
-                    }),
-                  }}
-                />
-              </div>
+              <CustomSelect
+                value={finalData.productName}
+                onChange={(value) => onchnage("productName", value)}
+                options={products}
+                label="Select Product*"
+                placeholder="Search and select a product"
+              />
             )}
             <div className="col-span-12 sm:col-span-6">
               <label className="text-sm sm:text-base">Color</label>

@@ -23,7 +23,7 @@ export const CardListItem = (props: any) => {
           )}
       </div>
       <div className="pt-4 pb-6 px-4">
-        <h3 className="text-lg fw_600 mb-2 text-black">{props.data.name}</h3>
+        <p className="text-lg fw_600 mb-2 text-black">{props.data.name}</p>
         <p className="text-sm mb-0 big_three_lines_elipsis">
           {props.data.shortDescription}
         </p>

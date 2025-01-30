@@ -60,11 +60,11 @@ export const CategoryCards = (props: any) => {
             </button>
           </div>
         </div>
-        {tab === 0 && <CardsGrid cardsData={props.products} />}
+        {tab === 0 && <CardsGrid cardsData={props.products} type="category"/>}
         {tab === 1 && (
           <>
             {matches ? (
-              <CardsGrid cardsData={props.products} />
+              <CardsGrid type="category" cardsData={props.products} />
             ) : (
               <CardsList cardsData={props.products} />
             )}

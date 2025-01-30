@@ -8,9 +8,9 @@ export const DetailsContent = () => {
   return (
     <Container maxWidth="xl">
       <div className="pt-16 lg:pt-6 pb-10 lg:pb-16">
-        <h3 className="fw_600 text-center leading-tight text-3xl primaryText lg:text-4xl">
+        <h2 className="fw_600 text-center leading-tight text-3xl primaryText lg:text-4xl">
           Product features
-        </h3>
+        </h2>
         <p className="mt-4 lg:mt-2 text-center text-sm lg:text-base leading-5 opacity-70">
           Discover our range of fully customizable retail boxes tailored to your
           industry - available in an array of unique shapes, custom
