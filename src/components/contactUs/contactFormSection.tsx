@@ -6,10 +6,13 @@ import { resetForm } from "@/services/categoriesService";
 import { toast } from "react-toastify";
 import Image from "next/image";
 import longArrowIcon from "../../static/longArrowIcon.svg";
+import useRandomNumbers from "../../hooks/useRandomNumbers"
 
 export const ContactFormSection = () => {
   const [finalData, setFinalData] = useState<any>({});
   const router = useRouter();
+  const { num1, num2, sum }: any = useRandomNumbers();
+
 
   const onchnage = (key: any, val: any) => {
     const updatedData = { ...finalData, [key]: val };
@@ -18,23 +21,27 @@ export const ContactFormSection = () => {
 
   const sendEmail = async (e: any) => {
     e.preventDefault();
-    try {
-      const response = await fetch("https://formspree.io/f/mzbnokyz", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(finalData),
-      });
+    if (sum === +finalData.answer) {
+      try {
+        const response = await fetch("https://formspree.io/f/mzbnokyz", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(finalData),
+        });
 
-      if (response.ok) {
-        setFinalData({ ...resetForm(finalData), color: "1-Color" });
-        router.push("/thank-you");
-      } else {
+        if (response.ok) {
+          setFinalData({ ...resetForm(finalData), color: "1-Color" });
+          router.push("/thank-you");
+        } else {
+          toast.error("Failed to send email");
+        }
+      } catch (error) {
         toast.error("Failed to send email");
       }
-    } catch (error) {
-      toast.error("Failed to send email");
+    } else {
+      toast.error('Answer Not correct!')
     }
   };
   return (
@@ -105,13 +112,19 @@ export const ContactFormSection = () => {
                       placeholder="Write your message"
                     />
                   </div>
-                  <div className="col-span-12 sm:col-span-6">
+                  <div className="col-span-12 flex items-center gap-4 sm:col-span-6">
+                    <div className="flex items-center font-semibold gap-2">
+                      <span>{num1}</span>
+                      <span>+</span>
+                      <span>{num2}</span>
+                      <span>=</span>
+                    </div>
                     <input
                       type="text"
                       required
                       value={finalData.answer}
                       onChange={(e) => onchnage("answer", e.target.value)}
-                      className="w-full border-b border-zinc-400 bg-transparent py-2 text-base"
+                      className="w-full border-b px-2 outline-none border-zinc-400 bg-transparent py-2 text-base"
                       placeholder="Answer"
                     />
                   </div>
