@@ -8,8 +8,8 @@ function useRandomNumbers() {
 
   useEffect(() => {
     // Generate random numbers once when the component mounts
-    const randomNum1:any = Math.floor(Math.random() * 99) + 1; // Between 1 and 99
-    const randomNum2:any = Math.floor(Math.random() * 99) + 1; // Between 1 and 99
+    const randomNum1:any = Math.floor(Math.random() * 10) + 1; // Between 1 and 99
+    const randomNum2:any = Math.floor(Math.random() * 10) + 1; // Between 1 and 99
     setNum1(randomNum1);
     setNum2(randomNum2);
     

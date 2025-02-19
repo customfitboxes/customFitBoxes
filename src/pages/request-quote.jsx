@@ -11,6 +11,7 @@ import CustomSelect from "../components/ui/CustomSelect";
 const Index = ({ data, products, boxProducts, shapeProducts }) => {
   const [finalData, setFinalData] = useState({ unit: "Inches" });
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
 
   const onchnage = (key, val) => {
     const updatedData = { ...finalData, [key]: val };
@@ -22,48 +23,40 @@ const Index = ({ data, products, boxProducts, shapeProducts }) => {
       setFinalData({ ...finalData, productName: products[0].name });
   }, [products]);
 
-  const sendEmail = async (e) => {
-    e.preventDefault();
+  const onSubmit = async (e) => {
+    e.preventDefault(); // Prevent page refresh
 
-    const formData = new FormData();
-    formData.append("name", finalData.name);
-    formData.append("email", finalData.email);
-    formData.append("phone", finalData.phone);
-    formData.append("productName", finalData.productName);
-    formData.append("color", finalData.color);
-    formData.append("quantity", finalData.quantity);
-    formData.append("length", finalData.length);
-    formData.append("width", finalData.width);
-    formData.append("depth", finalData.depth);
-    formData.append("unit", finalData.unit);
-    formData.append("deadline", finalData.deadline);
-    formData.append("message", finalData.message);
-
-    // Check if there's an attachment and append it
-    if (finalData.attachment) {
-      formData.append("attachment", finalData.attachment);
+    // Validate the required fields
+    if (!finalData.name || !finalData.email || !finalData.productName || !finalData.quantity) {
+      toast.error("Please fill in all required fields!");
+      return;
     }
 
+    setLoading(true);
+    
     try {
-      const response = await fetch("https://formspree.io/f/mzbnokyz", {
+      const response = await fetch("/api/request-qoute", {
         method: "POST",
-        body: formData,
+        headers: {
+          Accept: "application/json, text/plain, */*",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(finalData),
       });
 
-      if (response.ok) {
-        setFinalData({
-          ...resetForm(finalData),
-          color: "1-Color",
-          productName: products[0].name,
-        });
-        router.push("/thank-you");
+      if (response.status === 200) {
+        toast.success("Quote request submitted successfully!");
+        setFinalData({ unit: "Inches" }); 
       } else {
-        toast.error("Failed to send email");
+        toast.error("Failed to submit the quote request. Please try again.");
       }
     } catch (error) {
-      toast.error("Failed to send email");
+      toast.error("An error occurred. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
+
 
 
   return (
@@ -87,7 +80,7 @@ const Index = ({ data, products, boxProducts, shapeProducts }) => {
         </div>
         <Container maxWidth="lg" className="-mt-72">
           <form
-            onSubmit={sendEmail}
+            onSubmit={onSubmit}
             className="bg-white border border-[#1a4885] rounded-lg p-6 sm:p-8 grid grid-cols-12 w-full md:w-5/6 lg:w-3/4 mx-auto shadow-xl gap-x-3 gap-y-5 sm:gap-5"
           >
             <div className="col-span-12 sm:col-span-6">
@@ -96,7 +89,7 @@ const Index = ({ data, products, boxProducts, shapeProducts }) => {
                 type="text"
                 placeholder="Full Name"
                 required
-                value={finalData.name}
+                value={finalData?.name}
                 onChange={(e) => onchnage("name", e.target.value)}
                 className="h-10 md:h-12 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
@@ -106,7 +99,7 @@ const Index = ({ data, products, boxProducts, shapeProducts }) => {
               <input
                 type="email"
                 required
-                value={finalData.email}
+                value={finalData?.email}
                 onChange={(e) => onchnage("email", e.target.value)}
                 placeholder="Email"
                 className="h-10 md:h-12 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
@@ -116,7 +109,7 @@ const Index = ({ data, products, boxProducts, shapeProducts }) => {
               <label className="text-sm sm:text-base">Phone Number</label>
               <input
                 type="tel"
-                value={finalData.phone}
+                value={finalData?.phone}
                 onChange={(e) => onchnage("phone", e.target.value)}
                 placeholder="Phone number"
                 className="h-10 md:h-12 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
@@ -124,7 +117,7 @@ const Index = ({ data, products, boxProducts, shapeProducts }) => {
             </div>
             {products && products.length > 0 && (
               <CustomSelect
-                value={finalData.productName}
+                value={finalData?.productName}
                 onChange={(value) => onchnage("productName", value)}
                 options={products}
                 label="Select Product*"
@@ -134,7 +127,7 @@ const Index = ({ data, products, boxProducts, shapeProducts }) => {
             <div className="col-span-12 sm:col-span-6">
               <label className="text-sm sm:text-base">Color</label>
               <select
-                value={finalData.color}
+                value={finalData?.color}
                 onChange={(e) => onchnage("color", e.target.value)}
                 className="h-10 md:h-12 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               >
@@ -154,7 +147,7 @@ const Index = ({ data, products, boxProducts, shapeProducts }) => {
               <input
                 type="number"
                 required
-                value={finalData.quantity}
+                value={finalData?.quantity}
                 onChange={(e) => onchnage("quantity", e.target.value)}
                 placeholder="Quantity"
                 className="h-10 md:h-12 mt-2 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
@@ -164,7 +157,7 @@ const Index = ({ data, products, boxProducts, shapeProducts }) => {
               <input
                 type="number"
                 required
-                value={finalData.length}
+                value={finalData?.length}
                 onChange={(e) => onchnage("length", e.target.value)}
                 placeholder="Length"
                 className="h-10 md:h-12 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
@@ -174,7 +167,7 @@ const Index = ({ data, products, boxProducts, shapeProducts }) => {
               <input
                 type="number"
                 required
-                value={finalData.width}
+                value={finalData?.width}
                 onChange={(e) => onchnage("width", e.target.value)}
                 placeholder="Width"
                 className="h-10 md:h-12 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
@@ -184,7 +177,7 @@ const Index = ({ data, products, boxProducts, shapeProducts }) => {
               <input
                 type="number"
                 required
-                value={finalData.depth}
+                value={finalData?.depth}
                 onChange={(e) => onchnage("depth", e.target.value)}
                 placeholder="Depth"
                 className="h-10 md:h-12 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
@@ -197,7 +190,7 @@ const Index = ({ data, products, boxProducts, shapeProducts }) => {
               </label>
               <select
                 required
-                value={finalData.unit}
+                value={finalData?.unit}
                 onChange={(e) => onchnage("unit", e.target.value)}
                 className="h-10 md:h-12 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               >
@@ -211,7 +204,7 @@ const Index = ({ data, products, boxProducts, shapeProducts }) => {
               <input
                 type="date"
                 min={new Date().toISOString().split("T")[0]}
-                value={finalData.deadline}
+                value={finalData?.deadline}
                 onChange={(e) => onchnage("deadline", e.target.value)}
                 placeholder="Depth"
                 className="h-10 md:h-12 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
@@ -221,7 +214,7 @@ const Index = ({ data, products, boxProducts, shapeProducts }) => {
               <label className="text-sm sm:text-base">Attachment</label>
               <input
                 type="file"
-                onChange={(e) => onchnage("attachment", e.target.files[0])}
+                // onChange={(e) => onchnage("attachment", e.target.files[0])}
                 className="h-10 md:h-12 pt-3 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"
               />
             </div>
@@ -229,7 +222,7 @@ const Index = ({ data, products, boxProducts, shapeProducts }) => {
             <div className="col-span-12">
               <textarea
                 rows={5}
-                value={finalData.message}
+                value={finalData?.message}
                 onChange={(e) => onchnage("message", e.target.value)}
                 className="w-full rounded-md border border-zinc-300 px-3 py-2 text-xs"
                 placeholder="Write your message"
@@ -237,9 +230,10 @@ const Index = ({ data, products, boxProducts, shapeProducts }) => {
             </div>
             <button
               type="submit"
+              disabled={loading ? true : false}
               className="primaryBg fw_400 h-12 col-span-12 rounded-md text-sm uppercase text-white"
             >
-              Submit
+              {loading ? "Sending..." : "Submit"}
             </button>
           </form>
         </Container>

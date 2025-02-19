@@ -1,8 +1,6 @@
 import { Container } from "@mui/material";
 import contactImg from "../../static/contactImg.png";
 import { useState } from "react";
-import { useRouter } from "next/router";
-import { resetForm } from "@/services/categoriesService";
 import { toast } from "react-toastify";
 import Image from "next/image";
 import longArrowIcon from "../../static/longArrowIcon.svg";
@@ -10,40 +8,47 @@ import useRandomNumbers from "../../hooks/useRandomNumbers"
 
 export const ContactFormSection = () => {
   const [finalData, setFinalData] = useState<any>({});
-  const router = useRouter();
   const { num1, num2, sum }: any = useRandomNumbers();
-
+  const [loading, setLoading] = useState(false);
 
   const onchnage = (key: any, val: any) => {
     const updatedData = { ...finalData, [key]: val };
     setFinalData(updatedData);
   };
 
-  const sendEmail = async (e: any) => {
-    e.preventDefault();
-    if (sum === +finalData.answer) {
-      try {
-        const response = await fetch("https://formspree.io/f/mzbnokyz", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(finalData),
-        });
+  const onSubmit = async (e:any) => {
+    e.preventDefault(); // Prevent page refresh
+    setLoading(true);
 
-        if (response.ok) {
-          setFinalData({ ...resetForm(finalData), color: "1-Color" });
-          router.push("/thank-you");
-        } else {
-          toast.error("Failed to send email");
-        }
-      } catch (error) {
-        toast.error("Failed to send email");
+    if(sum !== +finalData?.answer){
+      toast.error("Answer is not correct!");
+      setLoading(false);
+      return
+    }
+
+    try {
+      const response = await fetch("/api/contact-us-email", {
+        method: "POST",
+        headers: {
+          Accept: "application/json, text/plain, */*",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(finalData),
+      });
+
+      if (response.status === 200) {
+        toast.success("Quote request submitted successfully!");
+        setFinalData({ unit: "Inches" }); 
+      } else {
+        toast.error("Failed to submit the quote request. Please try again.");
       }
-    } else {
-      toast.error('Answer Not correct!')
+    } catch (error) {
+      toast.error("An error occurred. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
+
   return (
     <div className="py-14" style={{ background: "#EFFCF9" }}>
       <Container maxWidth="xl">
@@ -59,7 +64,7 @@ export const ContactFormSection = () => {
                 </p>
                 <p className="primaryText2 text-3xl sm:text-2xl md:text-4xl xl:text-5xl fw_600">GET IN TOUCH</p>
                 <form
-                  onSubmit={sendEmail}
+                  onSubmit={onSubmit}
                   className="mt-8 grid grid-cols-12 w-full mx-auto gap-x-3 gap-y-5 sm:gap-y-10 sm:gap-x-5"
                 >
                   <div className="col-span-12 sm:col-span-6">
@@ -120,7 +125,7 @@ export const ContactFormSection = () => {
                       <span>=</span>
                     </div>
                     <input
-                      type="text"
+                      type="number"
                       required
                       value={finalData.answer}
                       onChange={(e) => onchnage("answer", e.target.value)}
@@ -131,9 +136,10 @@ export const ContactFormSection = () => {
                   <div className="col-span-12 sm:col-span-6 flex items-center justify-center gap-x-8">
                     <button
                       type="submit"
+                      disabled= {loading ? true : false}
                       className="primaryBg fw_400 py-3 px-10 rounded-md text-base text-white whitespace-nowrap"
                     >
-                      Get Your Quote
+                      {loading ? "Sending..." : "Get Your Quote"}
                     </button>
                     <Image src={longArrowIcon} alt={longArrowIcon} width={30} />
                   </div>
