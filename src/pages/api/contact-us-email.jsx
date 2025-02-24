@@ -2,12 +2,14 @@ import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
 
-
      if (req.method !== "POST") {
           return res.status(405).json({ error: "Method Not Allowed" });
      }
-     
 
+     const hostmail = process.env.EMAIL
+     const password = process.env.EMAIL_PASSWORD
+     const host = process.env.EMAIL_HOST
+     
      const { 
           answer,
           email,
@@ -15,7 +17,7 @@ export default async function handler(req, res) {
           lastName,
           message,
           phone
-     } = req.body;
+     } = req.body
 
      if (!firstName || !email ) {
           return res.status(400).json({ error: "Required fields are missing." });
@@ -23,18 +25,18 @@ export default async function handler(req, res) {
 
      try {
           const transporter = nodemailer.createTransport({
-               host: process.env.EMAIL_HOST, // Set this in `.env.local`
+               host: host, // Set this in `.env.local`
                port: 465,
                secure: true,
                auth: {
-                    user: process.env.EMAIL,
-                    pass: process.env.EMAIL_PASSWORD,
+                    user: hostmail,
+                    pass: password,
                },
           });
 
           const mailData = {
-               from: process.env.EMAIL,
-               to: `mailto:mufaqar@gmail.com, ${email}`,
+               from: hostmail,
+               to: `sales@customfitboxes.com`,
                subject: `Message From ${firstName}`,
                text: `Sent from: ${email}`,
                html: `
@@ -52,6 +54,6 @@ export default async function handler(req, res) {
 
      } catch (error) {
           console.error("Email sending failed:", error);
-          return res.status(500).json({ error: "Failed to send email" });
+          return res.status(500).json({ error: "Failed to send email",error });
      }
 }

@@ -40,7 +40,7 @@ export default async function handler(req, res) {
 
           const mailData = {
                from: process.env.EMAIL,
-               to: `mailto:mufaqar@gmail.com, ${email}`,
+               to: `sales@customfitboxes.com`,
                subject: `Message From ${name}`,
                text: `Sent from: ${email}`,
                html: `
