@@ -33,9 +33,9 @@ export const RelatedProducts = (props: any) => {
     props.product.relatedProducts.length > 0 && (
       <Container maxWidth="xl">
         <div className="pb-16 pt-10 lg:pt-0">
-          <h1 className="fw_600 text-2xl text-center leading-tight md:text-3xl lg:text-4xl primaryText">
+          <p className="fw_600 text-2xl text-center leading-tight md:text-3xl lg:text-4xl primaryText">
             Related Products
-          </h1>
+          </p>
           <div className="mt-5">
             <Carousel responsive={responsive}>
               {props.product.relatedProducts.map((data: any, index: any) => (
