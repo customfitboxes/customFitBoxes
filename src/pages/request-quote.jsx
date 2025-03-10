@@ -47,6 +47,7 @@ const Index = ({ data, products, boxProducts, shapeProducts }) => {
       if (response.status === 200) {
         toast.success("Quote request submitted successfully!");
         setFinalData({ unit: "Inches" }); 
+        router.push('/thank-you')
       } else {
         toast.error("Failed to submit the quote request. Please try again.");
       }

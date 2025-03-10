@@ -56,6 +56,7 @@ export const GetQouteForm2 = (props: any) => {
 
       if (response.status === 200) {
         toast.success("Quote request submitted successfully!");
+        router.push('/thank-you')
         setFinalData({ unit: "Inches" }); 
       } else {
         toast.error("Failed to submit the quote request. Please try again.");
