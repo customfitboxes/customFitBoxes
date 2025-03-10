@@ -7,21 +7,17 @@ export default async function handler(req, res) {
      }
 
      const { 
-          unit,
-          productName,
           name,
           email,
           phone,
-          color,
           quantity,
           length,
           width,
           depth,
-          deadline,
           message
      } = req.body;
 
-     if (!unit || !productName || !name || !quantity || !email ) {
+     if ( !name || !quantity || !email ) {
           return res.status(400).json({ error: "Required fields are missing." });
      }
 
@@ -45,14 +41,10 @@ export default async function handler(req, res) {
             <p><strong>Name: </strong> ${name}</p>
             <p><strong>Email: </strong> ${email}</p>
             <p><strong>Phone: </strong> ${phone}</p>
-            <p><strong>Product: </strong> ${productName}</p>
             <p><strong>Length: </strong> ${length}</p>
             <p><strong>Width: </strong> ${width}</p>
             <p><strong>Depth: </strong> ${depth}</p>
-            <p><strong>Colors: </strong> ${color}</p>
-            <p><strong>Unit: </strong> ${unit}</p>
             <p><strong>Quantity: </strong> ${quantity}</p>
-            <p><strong>Deadline: </strong> ${deadline}</p>
             <p><strong>Message: </strong> ${message}</p>
             `,
           };

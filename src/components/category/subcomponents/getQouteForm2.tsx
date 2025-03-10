@@ -9,6 +9,8 @@ import { toast } from "react-toastify";
 export const GetQouteForm2 = (props: any) => {
   const matches2 = useMediaQuery("(max-width:850px)");
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
+
   const [finalData, setFinalData] = useState<any>({
     color: "1-Color",
     productName: props.productName,
@@ -33,36 +35,38 @@ export const GetQouteForm2 = (props: any) => {
     }
   };
 
-  const sendEmail = async (e: any) => {
-    e.preventDefault();
-    const formData = new FormData();
 
-    // Append form fields to FormData
-    Object.keys(finalData).forEach((key) => {
-      if (finalData[key] !== null) {
-        formData.append(key, finalData[key]);
-      }
-    });
-
+  const sendEmail = async (e:any) => {
+    e.preventDefault(); // Prevent page refresh
+    // Validate the required fields
+    if (!finalData.name || !finalData.email || !finalData.quantity) {
+      toast.error("Please fill in all required fields!");
+      return;
+    }
+    setLoading(true);
     try {
-      const response = await fetch("https://formspree.io/f/mzbnokyz", {
+      const response = await fetch("/api/request-qoute-2", {
         method: "POST",
         headers: {
-          "Accept": "application/json",
+          Accept: "application/json, text/plain, */*",
+          "Content-Type": "application/json",
         },
-        body: formData,
+        body: JSON.stringify(finalData),
       });
 
-      if (response.ok) {
-        setFinalData({ ...resetForm(finalData), color: "1-Color" });
-        router.push("/thank-you");
+      if (response.status === 200) {
+        toast.success("Quote request submitted successfully!");
+        setFinalData({ unit: "Inches" }); 
       } else {
-        toast.error("Failed to send email");
+        toast.error("Failed to submit the quote request. Please try again.");
       }
     } catch (error) {
-      toast.error("Failed to send email");
+      toast.error("An error occurred. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
+
 
   return (
     <div className="overflow-hidden rounded-xl drop-shadow-xl w-full">
@@ -171,7 +175,10 @@ export const GetQouteForm2 = (props: any) => {
             type="submit"
             className="primaryBg fw_400 py-4 w-full rounded-md text-sm lg:text-base text-white"
           >
-            Get a Quote
+            {
+              loading ? "Sending..." : "Get a Quote"
+            }
+            
           </button>
         </div>
       </form>
