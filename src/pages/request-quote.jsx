@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { getServerSideProps, resetForm } from "@/services/categoriesService";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
-import Select from 'react-select';
+// import Select from 'react-select';
 import CustomSelect from "../components/ui/CustomSelect";
 
 const Index = ({ data, products, boxProducts, shapeProducts }) => {
