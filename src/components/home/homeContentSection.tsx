@@ -11,10 +11,7 @@ export const HomeContentSection = () => {
   return (
     <Container maxWidth={"xl"}>
       <div className="pt-14">
-        <div>
-          <h2 className="text-3xl sm:text-2xl md:text-4xl xl:text-5xl fw_600 leading-tight primaryText mt-0 pt-0">
-          </h2>
-        </div>
+        
         <div className="flex flex-col-reverse gap-y-6 gap-x-0 rounded-lg py-5 sm:py-10 md:flex-row md:gap-y-0 md:gap-x-10 md:py-14">
           <div
             className="scrollDiv overflow-y-auto pl-3 md:pl-5"
