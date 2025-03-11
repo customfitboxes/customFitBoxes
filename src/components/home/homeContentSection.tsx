@@ -19,24 +19,18 @@ export const HomeContentSection = () => {
           >
             <div className="scrollItem">
               <h2 className="text-xl primaryText fw_600 mb-3">
-                How Can Packaging Contribute To Brand Identity And Customer
-                Experience?
+                Create Custom Boxes That Elevate Your Brand
               </h2>
               <p className="text-sm">
-                Once upon a time, a small business owner named Lily lived in a
-                land not so far away. Lily had a dream, a dream to make her
-                brand sparkle in the eyes of her customers. She knew that her
-                products were amazing, but she also knew they needed something
-                extra to stand out in the crowded market.
+                Looking for the perfect packaging to showcase your brand? At Custom Fit Boxes, we provide tailor-made packaging solutions designed to meet your unique product needs. We offer the ideal packaging solutions regardless of whether you need minimalistic or premium designs.
               </p>
-              <h3 className="text-lg fw_600 mt-3">
-                One day, Lily had a brilliant idea: packaging!
-              </h3>
+              <h2 className="text-lg fw_600 mt-3">
+                Why Are Custom Boxes Essential for Product Marketing?
+              </h2>
               <p className="text-sm mt-3">
-                So, Lily set out on her packaging adventure. She chose colors
-                that mirrored her brand's personality, a logo that was easy to
-                understand, and designs that whispered tales of her products.
-                And she was finally done!
+                Using custom packaging designs helps your business stand out and gives your products a unique edge in the market. Custom-printed boxes attract shoppers because they look appealing, making people more likely to buy your products. When customers like what they see, they share their positive experiences with others, helping spread the word about your brand. This natural promotion can boost your brand's reputation and value in the market. There is a wide range of custom printing services to make your packaging look great. Advanced printing machines are used to turn your ideas into reality and ensure your orders are delivered quickly. With high-quality machines, your custom boxes will look exactly how you envision them.
+By buying custom boxes wholesale, you can save money and invest in other parts of your business. Attractive packaging catches customers' attention in stores, leading to more loyal customers and higher sales.
+
               </p>
               <p className="text-sm mt-3">
                 Her customers couldn't help but fall in love with the delightful
