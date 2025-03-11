@@ -1,11 +1,11 @@
-import { resetForm } from "@/services/categoriesService";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 export const GetQouteForm1 = (props: any) => {
   const [finalData, setFinalData] = useState<any>({});
-  const [file, setFile] = useState<any>(null);
+  const [, setFile] = useState<any>(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (props.products && props.products.length > 0)
@@ -19,40 +19,46 @@ export const GetQouteForm1 = (props: any) => {
 
   const router = useRouter();
 
-  const sendEmail = async (e: any) => {
-    e.preventDefault();
-    const formData = new FormData();
-    // Append form data
-    for (let key in finalData) {
-      formData.append(key, finalData[key]);
-    }
-    // Append file if exists
-    if (file) {
-      formData.append("file", file);
+  const onSubmit = async (e:any) => {
+    e.preventDefault(); // Prevent page refresh
+
+    // Validate the required fields
+    if (!finalData.name || !finalData.email || !finalData.productName || !finalData.quantity) {
+      toast.error("Please fill in all required fields!");
+      return;
     }
 
+    setLoading(true);
+    
     try {
-      const response = await fetch("https://formspree.io/f/mzbnokyz", {
+      const response = await fetch("/api/request-qoute", {
         method: "POST",
-        body: formData,
+        headers: {
+          Accept: "application/json, text/plain, */*",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(finalData),
       });
 
-      if (response.ok) {
-        setFinalData({ ...resetForm(finalData), color: "" });
-        setFile(null); // Reset file after submission
-        router.push("/thank-you");
+      if (response.status === 200) {
+        toast.success("Quote request submitted successfully!");
+        setFinalData({ unit: "Inches" }); 
+        router.push('/thank-you')
       } else {
-        toast.error("Failed to send email");
+        toast.error("Failed to submit the quote request. Please try again.");
       }
     } catch (error) {
-      toast.error("Failed to send email");
+      toast.error("An error occurred. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
+
 
   return (
     <div className="border border-black rounded-xl px-4 sm:px-8 lg:px-10 pt-6 sm:pt-8 pb-16 relative w-full lg:w-11/12 mx-auto">
       <form
-        onSubmit={sendEmail}
+        onSubmit={onSubmit}
         className="grid grid-cols-12 gap-x-6 sm:gap-x-6 gap-y-6 md:gap-y-4 sm:p-3"
       >
         <div className="col-span-6 sm:col-span-3 md:col-span-4">
@@ -199,7 +205,7 @@ export const GetQouteForm1 = (props: any) => {
             type="submit"
             className="primaryBg hover:scale-105 transition-all duration-200 fw_400 h-12 px-10 rounded-md text-base uppercase text-white"
           >
-            Submit
+            {loading ? "Sending..." : "Submit"}
           </button>
         </div>
       </form>

@@ -4,7 +4,6 @@ import callBackBanner from "../../static/callBackBanner.svg";
 import { useState } from "react";
 import whiteChev from "../../static/whiteChev.svg";
 import { useRouter } from "next/router";
-import { resetForm } from "@/services/categoriesService";
 import { toast } from "react-toastify";
 
 export const CallBackComp = () => {
@@ -15,28 +14,43 @@ export const CallBackComp = () => {
   };
 
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
 
-  const sendEmail = async (e: any) => {
-    e.preventDefault();
+  const onSubmit = async (e:any) => {
+    e.preventDefault(); // Prevent page refresh
+
+    // Validate the required fields
+    if (!finalData.name || !finalData.email || !finalData.phone) {
+      toast.error("Please fill in all required fields!");
+      return;
+    }
+
+    setLoading(true);
+    
     try {
-      const response = await fetch("https://formspree.io/f/mzbnokyz", {
+      const response = await fetch("/api/call-you-back", {
         method: "POST",
         headers: {
+          Accept: "application/json, text/plain, */*",
           "Content-Type": "application/json",
         },
         body: JSON.stringify(finalData),
       });
 
-      if (response.ok) {
-        setFinalData({ ...resetForm(finalData), color: "" });
-        router.push("/thank-you");
+      if (response.status === 200) {
+        toast.success("Quote request submitted successfully!");
+        setFinalData({ unit: "Inches" }); 
+        router.push('/thank-you')
       } else {
-        toast.error("Failed to send email");
+        toast.error("Failed to submit the quote request. Please try again.");
       }
     } catch (error) {
-      toast.error("Failed to send email");
+      toast.error("An error occurred. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
+
 
   return (
     <div className="pb-0 md:pb-14">
@@ -47,7 +61,7 @@ export const CallBackComp = () => {
               <Image src={callBackBanner} alt="callBackBanner" />
             </div>
             <div className="col-span-6 flex items-center">
-              <form onSubmit={sendEmail} className="w-full">
+              <form onSubmit={onSubmit} className="w-full">
                 <p className="text-center text-base sm:text-lg fw_600">
                   Just drop your contact number
                 </p>
@@ -90,7 +104,7 @@ export const CallBackComp = () => {
                   type="submit"
                   className="text-white rounded-md mx-auto whitespace-nowrap primaryBg h-12 px-5 text-base fw_400 mt-10 lg:mt-20 flex items-center justify-between gap-x-8"
                 >
-                  Send Now
+                  { loading ? "Sending..." : "Send Now"}
                   <Image
                     src={whiteChev}
                     alt={"whiteChev"}
