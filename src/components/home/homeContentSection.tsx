@@ -55,6 +55,106 @@ export const HomeContentSection = () => {
                   <span className="fw_600">Delivery:</span> Fast and secure shipping, ensuring your packaging arrives on time.
                 </li>
               </ul>
+              <h2 className="text-xl primaryText fw_600 mb-3">
+  Industry-Specific Custom Packaging Solutions
+</h2>
+<p className="text-sm">
+  Custom boxes are created for a wide range of industries. Customized packaging solutions to meet the specific needs of each sector are offered. This flexibility extends across industries, enabling businesses to choose from various packaging types:
+</p>
+<ul className="list-disc mt-10 pl-6 flex flex-col gap-y-5 text-sm">
+  <li>Custom CBD Packaging</li>
+  <li>Cosmetic Packaging Boxes</li>
+  <li>Mailer Boxes</li>
+  <li>Food and Beverage Packaging</li>
+  <li>Soap Boxes</li>
+  <li>Bakery Boxes</li>
+  <li>Apparel Boxes</li>
+  <li>Gift Boxes</li>
+  <li>Rigid Boxes</li>
+  <li>Candle Boxes</li>
+</ul>
+
+<h2 className="text-lg fw_600 mt-3">
+  Advanced Printing Methods for High-Impact Packaging
+</h2>
+<ul className="list-disc mt-10 pl-6 flex flex-col gap-y-5 text-sm">
+  <li><span className="fw_600">Digital Printing:</span> Delivers impressive quality output for minor—to medium-scale manufacturing demands.</li>
+  <li><span className="fw_600">Flexographic Printing:</span> Economical printing approach for large quantities of custom boxes.</li>
+  <li><span className="fw_600">Offset Printing:</span> Ensures accurate color output and crisp line quality for large print runs.</li>
+  <li><span className="fw_600">Screen Printing:</span> Ideal for dynamic colors in custom boxes with logos.</li>
+</ul>
+
+<h2 className="text-xl primaryText fw_600 mt-4">
+  Printing Color Models for Custom Boxes
+</h2>
+<ul className="list-disc mt-10 pl-6 flex flex-col gap-y-5 text-sm">
+  <li><span className="fw_600">CMYK Printing:</span> Generates various colors by combining cyan, magenta, yellow, and black inks.</li>
+  <li><span className="fw_600">PMS (Pantone Matching System):</span> Standardized system ensuring consistent reproduction across media.</li>
+</ul>
+
+<h2 className="text-lg fw_600 mt-3">
+  Premium Finishing Techniques for Custom Boxes
+</h2>
+<p className="text-sm mt-3">
+  Premium finishes serve aesthetic and protective purposes, enhancing branding and functionality.
+</p>
+<ul className="list-disc mt-10 pl-6 flex flex-col gap-y-5 text-sm">
+  <li><span className="fw_600">UV Printing:</span> High-quality, durable finishes like gloss or matte.</li>
+  <li><span className="fw_600">Embossing & Debossing:</span> Adds depth and luxury to packaging.</li>
+  <li><span className="fw_600">Foil Stamping:</span> Metallic reflective finishes for enhanced appeal.</li>
+  <li><span className="fw_600">Litho Lamination:</span> Premium quality printing for luxury packaging.</li>
+</ul>
+
+<h2 className="text-xl primaryText fw_600 mt-4">
+  Popular Custom Packaging Styles
+</h2>
+<ul className="list-disc mt-10 pl-6 flex flex-col gap-y-5 text-sm">
+  <li>Gable Boxes</li>
+  <li>Window Die-Cut Boxes</li>
+  <li>Sleeve Boxes</li>
+  <li>Seal End Auto Bottom</li>
+  <li>Double Wall Tuck Top</li>
+  <li>Roll End Tuck Top</li>
+</ul>
+
+<h2 className="text-lg fw_600 mt-3">
+  Luxury Add-Ons to Elevate Your Packaging
+</h2>
+<ul className="list-disc mt-10 pl-6 flex flex-col gap-y-5 text-sm">
+  <li>Silver Foiling</li>
+  <li>Gold Foiling</li>
+  <li>Embossing</li>
+  <li>Die-cut Windows</li>
+  <li>Ribbons Pasting</li>
+</ul>
+
+<h2 className="text-xl primaryText fw_600 mt-4">
+  About Custom Fit Boxes – Your Trusted Packaging Partner
+</h2>
+<p className="text-sm mt-3">
+  Custom Fit Boxes designs distinctive packaging that showcases products and brand values. We provide complete customization tools and advanced printing methods to help your products dominate competitive markets.
+</p>
+
+<h2 className="text-lg fw_600 mt-3">
+  Why Choose Custom Fit Boxes?
+</h2>
+<ul className="list-disc mt-10 pl-6 flex flex-col gap-y-5 text-sm">
+  <li>Tailored Packaging Solutions</li>
+  <li>Eco-Friendly and Sustainable Packaging</li>
+  <li>High-Quality Logo Printing</li>
+  <li>Endless Customization</li>
+  <li>Wholesale Pricing</li>
+  <li>Free Design Support</li>
+  <li>Fast & Free Delivery</li>
+  <li>24/7 Customer Support</li>
+</ul>
+
+<h2 className="text-xl primaryText fw_600 mt-4">
+  Request a Quote Today!
+</h2>
+<p className="text-sm mt-3">
+  Check out our wide range of products and request a quote tailored to your needs. Our experts will help you create the perfect custom boxes for your brand.
+</p>
             </div>
           </div>
           <div
