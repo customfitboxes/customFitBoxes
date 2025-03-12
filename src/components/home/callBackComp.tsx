@@ -65,9 +65,9 @@ export const CallBackComp = () => {
                 <p className="text-center text-base sm:text-lg fw_600">
                   Just drop your contact number
                 </p>
-                <h2 className="text-center primaryText fw_600 text-4xl sm:text-5xl 2xl:text-6xl mt-2">
+                <p className="text-center primaryText fw_600 text-4xl sm:text-5xl 2xl:text-6xl mt-2">
                   We’ll Call You Back
-                </h2>
+                </p>
                 <div className="grid grid-cols-12 gap-y-3 sm:gap-y-0 gap-x-4 mt-10">
                   <div className="col-span-6 sm:col-span-4">
                     <input
