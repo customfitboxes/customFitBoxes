@@ -107,12 +107,6 @@ const DetailsHeader = (props: any) => {
           </div>
         </div>
       </div>
-      <div className="block lg:hidden">
-        <h2 className="text-xl fw_600 mt-0 text-center lg:text-left">
-          Get Custom Quote
-        </h2>
-        <QouteForm3 productName={props.product.name} />
-      </div>
     </Container>
   );
 };
