@@ -37,10 +37,8 @@ export const Faq = (props: any) => {
           Frequently Asked Question
         </h2>
         <p className="mt-2 text-center text-base leading-5 opacity-70">
-          Have questions about our packaging solutions? Find answers to the most common queries about our custom boxes, materials, printing options, and more. If you don’t see what you're looking for, our team is always here to help!
-          <br className="hidden xl:block" />
-          sizes and colors. Our packaging specialists can help you find the
-          perfect
+          Have questions about our packaging solutions? Find answers to the most common queries about our custom boxes, materials, printing options, and more.<br className="hidden xl:block" /> If you don’t see what you're looking for, our team is always here to help!
+          
         </p>
         <div className="mt-14 flex flex-col sm:flex-row gap-y-10 sm:gap-y-0 sm:gap-x-10 lg:gap-x-20 h-full">
           <div className="w-full sm:w-11/12 md:w-5/6 lg:w-2/3 xl:w-1/2 flex flex-col gap-y-4">
