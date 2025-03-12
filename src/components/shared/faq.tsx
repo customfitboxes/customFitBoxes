@@ -37,8 +37,7 @@ export const Faq = (props: any) => {
           Frequently Asked Question
         </h2>
         <p className="mt-2 text-center text-base leading-5 opacity-70">
-          Discover our range of fully customizable retail boxes tailored to your
-          industry - available in an array of unique shapes, custom
+          Have questions about our packaging solutions? Find answers to the most common queries about our custom boxes, materials, printing options, and more. If you don’t see what you're looking for, our team is always here to help!
           <br className="hidden xl:block" />
           sizes and colors. Our packaging specialists can help you find the
           perfect
