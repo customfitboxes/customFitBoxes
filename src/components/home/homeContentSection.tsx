@@ -110,7 +110,7 @@ export const HomeContentSection = () => {
   <li><span className="fw_600">PMS (Pantone Matching System):</span> Standardized system ensuring consistent reproduction across media.</li>
 </ul>
 
-<h2 className="text-xl fw_600 mt-3">
+<h2 className="text-xl primaryText fw_600 mt-4">
   Premium Finishing Techniques for Custom Boxes
 </h2>
 <p className="text-sm mt-3">
@@ -153,7 +153,7 @@ export const HomeContentSection = () => {
   Custom Fit Boxes designs distinctive packaging that showcases products and brand values. We provide complete customization tools and advanced printing methods to help your products dominate competitive markets.
 </p>
 
-<h2 className="text-xl primaryText fw_600 mt-4">>
+<h2 className="text-xl primaryText fw_600 mt-4">
   Why Choose Custom Fit Boxes?
 </h2>
 <ul className="list-disc mt-10 pl-6 flex flex-col gap-y-5 text-sm">
