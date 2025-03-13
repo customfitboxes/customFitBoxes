@@ -24,7 +24,7 @@ export const HomeContentSection = () => {
               <p className="text-sm">
                 Looking for the perfect packaging to showcase your brand? At Custom Fit Boxes, we provide tailor-made packaging solutions designed to meet your unique product needs. We offer the ideal packaging solutions regardless of whether you need minimalistic or premium designs.
               </p>
-              <h2 className="text-lg fw_600 mt-3">
+              <h2 className="text-xl primaryText fw_600 mb-3">
                 Why Are Custom Boxes Essential for Product Marketing?
               </h2>
               <p className="text-sm mt-3">
