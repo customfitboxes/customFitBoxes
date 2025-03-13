@@ -77,12 +77,30 @@ export const HomeContentSection = () => {
 <h2 className="text-lg fw_600 mt-3">
   Advanced Printing Methods for High-Impact Packaging
 </h2>
-<ul className="list-disc mt-10 pl-6 flex flex-col gap-y-5 text-sm">
-  <li><span className="fw_600">Digital Printing:</span> Delivers impressive quality output for minor—to medium-scale manufacturing demands.</li>
-  <li><span className="fw_600">Flexographic Printing:</span> Economical printing approach for large quantities of custom boxes.</li>
-  <li><span className="fw_600">Offset Printing:</span> Ensures accurate color output and crisp line quality for large print runs.</li>
-  <li><span className="fw_600">Screen Printing:</span> Ideal for dynamic colors in custom boxes with logos.</li>
-</ul>
+<h3 className="text-lg fw_600 mt-3">
+  Digital Printing
+</h3>
+  <p className="text-sm mt-3">
+  Digital printing delivers impressive quality output for products with minor—to medium-scale manufacturing demands, resulting in detailed and intensely colored finished prints.
+</p>
+  <h3 className="text-lg fw_600 mt-3">
+  Flexographic Printing
+</h3>
+  <p className="text-sm mt-3">
+  Customers who need large quantities of custom boxes should choose this economical printing approach. Businesses seeking mass production of custom packaging boxes featuring solid colors and simple designs should use this method.
+</p>
+  <h3 className="text-lg fw_600 mt-3">
+  Offset Printing
+</h3>
+  <p className="text-sm mt-3">
+  Large printing sets can rely on offset printing to produce precise and uniform results throughout their total quantity. This printing method ensures accurate color output and crisp line quality, which is essential for maintaining high design standards for custom-printed boxes.
+</p>
+<h3 className="text-lg fw_600 mt-3">
+  Screen Printing
+</h3>
+  <p className="text-sm mt-3">
+  The process's main application is showing off dynamic colors in custom boxes with logos while offering top visibility on both cardboard structures and solid boxes.
+</p>
 
 <h2 className="text-xl primaryText fw_600 mt-4">
   Printing Color Models for Custom Boxes
