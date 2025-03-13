@@ -1,31 +1,31 @@
 export const faqsData = [
   {
-    question: "Why should I care about eco-friendly packaging?",
+    question: "What variety of custom boxes are offered by your company?",
     answer:
-      "Eco-friendly packaging helps save the planet! It reduces waste and pollution, which everyone loves.",
+      "We supply extensive selections of custom packaging products, including custom boxes, custom product boxes, custom boxes with logos, and custom printed boxes.",
   },
   {
     question:
-      "What's so great about using corrugated card stock for packaging?",
+      "Do I have the ability to design my custom boxes for any shape and dimensions?",
     answer:
-      "It protects your products during shipping and can be recycled afterward, so it's good for the environment too.",
+      "Absolutely! Custom Fit Boxes provides customized packing solutions where clients obtain unlimited control over design features and dimensions.",
   },
   {
     question:
-      "How does the design of my packaging affect what people think of my brand?",
+      "Which printing procedures form the basis of your operations?",
     answer:
-      "It tells people what you're all about! A cool design shows you care about quality and style.",
+      "Our advanced printing services include digital, flexographic, offset, screen, and UV printing, which deliver premium quality to each custom print box we produce. Our company provides clients with custom features, including embossing and debossing alongside foil stamping.",
   },
   {
-    question: "Why should I choose rigid boxes for my fancy products?",
+    question: "Does Custom Fit Boxes provide sustainable packaging solutions to customers?",
     answer:
-      "Rigid boxes are like the red carpet for your products! They make them look super luxurious and valuable, which makes customers feel special.",
+      "Yes! Sustainability lies at the forefront of our company vision, so we provide eco-friendly custom boxes for our customers.",
   },
   {
     question:
-      "Can Packaging Height make custom packaging for any type of business?",
+      "What are the required conditions for the smallest order quantity?",
     answer:
-      "Absolutely! Whether you sell makeup, gadgets, or even pet toys, we've got you covered with packaging that's as unique as your business.",
+      "Our company provides solutions for small custom logo batch orders and wholesale bulk custom box orders regardless of size.",
   },
   {
     question: "What cool printing options do you offer for custom packaging?",
@@ -38,38 +38,8 @@ export const faqsData = [
       "Easy-peasy! Just hop onto our website and fill out a quick form with all your details. Our super-friendly team will whip up a personalized quote in no time!",
   },
   {
-    question: "Can you help with designing my custom packaging?",
+    question: "Is Free support to design your solutions available to customers?",
     answer:
-      "Absolutely! Our design wizards are here to sprinkle some magic on your packaging if you need it.",
-  },
-  {
-    question: "Do you offer packaging solutions for small businesses?",
-    answer:
-      "You betcha! Whether you're a one-person show or a growing startup, we've got flexible solutions tailored just for you.",
-  },
-  {
-    question: "Can I check out samples before making a decision?",
-    answer:
-      "Of course! We want you to love your packaging as much as we do. Just say the word, and we'll send over some samples.",
-  },
-  {
-    question: "Why should I bother with custom packaging for my brand?",
-    answer:
-      "Custom packaging boosts your brand's visibility, makes your products look amazing, and gives your customers a jaw-dropping unboxing experience they won't forget!",
-  },
-  {
-    question: "Can you handle rush orders or tight deadlines?",
-    answer:
-      "For those urgent requests, we offer priority turnaround options to ensure your orders are delivered on time, every time.",
-  },
-  {
-    question:
-      "What kinds of industries does Packaging Height specialize in serving?",
-    answer:
-      "We cater to a diverse range of industries, including cosmetics, food and beverage, electronics, retail, and more.",
-  },
-  {
-    question: "How do I contact Packaging Height if I have more questions?",
-    answer: "You can shoot us an email or give us a ring. ",
+      "Yes! Our design team supports customers at no cost and assists them in developing their creative concepts.",
   },
 ];
