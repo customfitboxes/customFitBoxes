@@ -62,16 +62,16 @@ export const HomeContentSection = () => {
   Custom boxes are created for a wide range of industries. Customized packaging solutions to meet the specific needs of each sector are offered. This flexibility extends across industries, enabling businesses to choose from various packaging types:
 </p>
 <ul className="list-disc mt-10 pl-6 flex flex-col gap-y-5 text-sm">
-  <li>Custom CBD Packaging</li>
-  <li>Cosmetic Packaging Boxes</li>
-  <li>Mailer Boxes</li>
-  <li>Food and Beverage Packaging</li>
-  <li>Soap Boxes</li>
-  <li>Bakery Boxes</li>
-  <li>Apparel Boxes</li>
-  <li>Gift Boxes</li>
-  <li>Rigid Boxes</li>
-  <li>Candle Boxes</li>
+  <li><a href="https://customfitboxes.com/category/cbd-boxes" className="text-blue-600 hover:underline">Custom CBD Packaging</a></li>
+  <li><a href="https://customfitboxes.com/category/cosmetics-boxes" className="text-blue-600 hover:underline">Cosmetic Packaging Boxes</a></li>
+  <li><a href="https://customfitboxes.com/category/mailer-boxes" className="text-blue-600 hover:underline">Mailer Boxes</a></li>
+  <li><a href="https://customfitboxes.com/category/food-boxes" className="text-blue-600 hover:underline">Food Boxes</a></li>
+  <li><a href="https://customfitboxes.com/category/soap-boxes" className="text-blue-600 hover:underline">Soap Boxes</a></li>
+  <li><a href="https://customfitboxes.com/category/bakery-boxes" className="text-blue-600 hover:underline">Bakery Boxes</a></li>
+  <li><a href="https://customfitboxes.com/category/apparel-boxes" className="text-blue-600 hover:underline">Apparel Boxes</a></li>
+  <li><a href="https://customfitboxes.com/category/gift-boxes" className="text-blue-600 hover:underline">Gift Boxes</a></li>
+  <li><a href="https://customfitboxes.com/category/rigid-boxes" className="text-blue-600 hover:underline">Rigid Boxes</a></li>
+  <li><a href="https://customfitboxes.com/category/candle-boxes" className="text-blue-600 hover:underline">Candle Boxes</a></li>
 </ul>
 
 <h2 className="text-lg fw_600 mt-3">
