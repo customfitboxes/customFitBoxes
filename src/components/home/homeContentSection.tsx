@@ -74,7 +74,7 @@ export const HomeContentSection = () => {
   <li><a href="https://customfitboxes.com/category/candle-boxes" className="text-blue-600 hover:underline">Candle Boxes</a></li>
 </ul>
 
-<h2 className="text-lg fw_600 mt-3">
+<h2 className="text-xl primaryText fw_600 mt-4">
   Advanced Printing Methods for High-Impact Packaging
 </h2>
 <h3 className="text-lg fw_600 mt-3">
