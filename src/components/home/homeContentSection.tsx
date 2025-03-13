@@ -105,24 +105,85 @@ export const HomeContentSection = () => {
 <h2 className="text-xl primaryText fw_600 mt-4">
   Printing Color Models for Custom Boxes
 </h2>
-<ul className="list-disc mt-10 pl-6 flex flex-col gap-y-5 text-sm">
-  <li><span className="fw_600">CMYK Printing:</span> Generates various colors by combining cyan, magenta, yellow, and black inks.</li>
-  <li><span className="fw_600">PMS (Pantone Matching System):</span> Standardized system ensuring consistent reproduction across media.</li>
-</ul>
+<h3 className="text-lg fw_600 mt-3">
+  CMYK Printing
+</h3>
+  <p className="text-sm mt-3">
+  The CMYK printing model generates various colors by combining four printing inks: cyan, Magenta, Yellow, and Black. The technique is extensively utilized for complete color output and achieves color mixing through subtraction.
+</p>
+<h3 className="text-lg fw_600 mt-3">
+  PMS (Pantone Matching System)
+</h3>
+  <p className="text-sm mt-3">
+  PMS is a standardized color-matching system that distributes unique codes to particular colors to achieve consistent reproduction between different media. Its primary application is branding, where it helps businesses maintain color consistency across multiple platforms.
+</p>
 
-<h2 className="text-xl primaryText fw_600 mt-4">
+<h2 className="text-xl fw_600 mt-3">
   Premium Finishing Techniques for Custom Boxes
 </h2>
 <p className="text-sm mt-3">
-  Premium finishes serve aesthetic and protective purposes, enhancing branding and functionality.
+  Standout packaging plays an essential role for clients. The company maintains manufacturing and design capabilities, consistently creating innovative custom packages that build strong brand identities. Sustainability is achieved by implementing environmentally friendly materials and eco-friendly production methods while maintaining excellent performance. Premium finishes serve aesthetic and protective purposes, combining art with functionality so that each box performs efficiently based on form and function.
 </p>
-<ul className="list-disc mt-10 pl-6 flex flex-col gap-y-5 text-sm">
-  <li><span className="fw_600">UV Printing:</span> High-quality, durable finishes like gloss or matte.</li>
-  <li><span className="fw_600">Embossing & Debossing:</span> Adds depth and luxury to packaging.</li>
-  <li><span className="fw_600">Foil Stamping:</span> Metallic reflective finishes for enhanced appeal.</li>
-  <li><span className="fw_600">Litho Lamination:</span> Premium quality printing for luxury packaging.</li>
-</ul>
-
+<h3 className="text-lg fw_600 mt-3">
+  UV Printing
+</h3>
+  <p className="text-sm mt-3">
+  This method suits the production of logo-bearing custom boxes and custom print boxes when high-quality, durable finishes like gloss or matte surfaces are desired.
+</p>
+<h3 className="text-lg fw_600 mt-3">
+  Embossing & Debossing
+</h3>
+  <p className="text-sm mt-3">
+  Embossing and debossing techniques acquire a luxurious appearance by adding raised or recessed designs. The texture adds depth, making your branding approachable through touch and more visually appealing.
+</p>
+<h3 className="text-lg fw_600 mt-3">
+  Foil Stamping
+</h3>
+  <p className="text-sm mt-3">
+  Custom boxes acquire an elegant and sophisticated appearance when you incorporate foil stamping as an enhancement. The foil stamping process creates metallic reflective finishes, making custom boxes, logos, and accents more noticeable.
+</p>
+<h3 className="text-lg fw_600 mt-3">
+  Litho Lamination
+</h3>
+  <p className="text-sm mt-3">
+  Premium quality printing through lamination offers luxury packaging, which helps preserve vibrant print designs, especially when you want to package high-end products.
+</p>
+<h3 className="text-lg fw_600 mt-3">
+  Varnishing
+</h3>
+  <p className="text-sm mt-3">
+  Varnishing applied to custom boxes improves both appearance and operational capabilities. This finishing process also creates glossy, matte, or satin finishes by applying protective coatings to printed surfaces.
+    </p>
+  <h3 className="text-lg fw_600 mt-3">
+  Glossy Lamination
+</h3>
+  <p className="text-sm mt-3">
+  Gloss is the best choice if you want to see a shiny, reflective finish that enhances colors and details.
+</p>
+  <h3 className="text-lg fw_600 mt-3">
+  Soft-touch Lamination
+</h3>
+  <p className="text-sm mt-3">
+  Soft touch lamination offers a velvety, tactile feel while maintaining a matte look.
+</p>
+<h3 className="text-lg fw_600 mt-3">
+  Spot UV Finish
+</h3>
+  <p className="text-sm mt-3">
+  A glossy coating is applied to specific areas for contrast and emphasis.
+</p>
+<h3 className="text-lg fw_600 mt-3">
+  AQ Coating
+</h3>
+  <p className="text-sm mt-3">
+  An aqueous coating for a smooth, satin-like finish that is eco-friendly.
+</p>
+<h3 className="text-lg fw_600 mt-3">
+  Matte Lamination
+</h3>
+  <p className="text-sm mt-3">
+  Provides a smooth, non-reflective finish with a soft touch.
+</p>
 <h2 className="text-xl primaryText fw_600 mt-4">
   Popular Custom Packaging Styles
 </h2>
