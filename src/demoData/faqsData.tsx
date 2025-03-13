@@ -42,4 +42,14 @@ export const faqsData = [
     answer:
       "Yes! Our design team supports customers at no cost and assists them in developing their creative concepts.",
   },
+  {
+    question: "What is the turnaround time for custom printed packaging boxes?",
+    answer:
+      "Production and delivery time depend on your design and order quantity, but typically it takes 7-12 days.",
+  },
+  {
+    question: "Do you offer discounts on bulk orders?",
+    answer:
+      "Yes, we provide special discounts and customized pricing for bulk orders.",
+  },
 ];
