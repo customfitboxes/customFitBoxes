@@ -18,13 +18,13 @@ export const HomeContentSection = () => {
             style={{ height: "30rem" }}
           >
             <div className="scrollItem">
-              <h2 className="text-xl primaryText fw_600 mb-3">
+              <h2 className="text-xl primaryText fw_600 mb-4">
                 Create Custom Boxes That Elevate Your Brand
               </h2>
               <p className="text-sm">
                 Looking for the perfect packaging to showcase your brand? At Custom Fit Boxes, we provide tailor-made packaging solutions designed to meet your unique product needs. We offer the ideal packaging solutions regardless of whether you need minimalistic or premium designs.
               </p>
-              <h2 className="text-xl primaryText fw_600 mb-3">
+              <h2 className="text-xl primaryText fw_600 mb-4">
                 Why Are Custom Boxes Essential for Product Marketing?
               </h2>
               <p className="text-sm mt-3">
@@ -135,7 +135,7 @@ export const HomeContentSection = () => {
   <li>Roll End Tuck Top</li>
 </ul>
 
-<h2 className="text-lg fw_600 mt-3">
+<h2 className="text-lg fw_600 mt-4">
   Luxury Add-Ons to Elevate Your Packaging
 </h2>
 <ul className="list-disc mt-10 pl-6 flex flex-col gap-y-5 text-sm">
@@ -153,7 +153,7 @@ export const HomeContentSection = () => {
   Custom Fit Boxes designs distinctive packaging that showcases products and brand values. We provide complete customization tools and advanced printing methods to help your products dominate competitive markets.
 </p>
 
-<h2 className="text-lg fw_600 mt-3">
+<h2 className="text-lg fw_600 mt-4">
   Why Choose Custom Fit Boxes?
 </h2>
 <ul className="list-disc mt-10 pl-6 flex flex-col gap-y-5 text-sm">
