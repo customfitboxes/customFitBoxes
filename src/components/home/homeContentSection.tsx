@@ -118,7 +118,7 @@ export const HomeContentSection = () => {
   PMS is a standardized color-matching system that distributes unique codes to particular colors to achieve consistent reproduction between different media. Its primary application is branding, where it helps businesses maintain color consistency across multiple platforms.
 </p>
 
-<h2 className="text-xl fw_600 mt-3">
+<h2 className="text-xl fw_600 mt-">
   Premium Finishing Techniques for Custom Boxes
 </h2>
 <p className="text-sm mt-3">
@@ -319,9 +319,9 @@ Our company completely covers the shipping expenses. We deliver custom boxes and
 <p className="text-sm mt-3">
 Our team provides round-the-clock customer support to help customers with their custom box requirements and other packaging solution queries. Custom-fit boxes create an ideal custom package of custom packaging boxes that will fulfill all your business requirements and exceed your expectations.
 </p>
-<h3 className="text-lg fw_600 mt-3">
+<h2 className="text-xl fw_600 mt-4">
   Request a Quote Today!
-</h3>
+</h2>
 <p className="text-sm mt-3">
 Check out our wide range of products and services and request a quote for what meets your requirements. Our experts will help you create the perfect custom boxes for your brand.
 </p>
