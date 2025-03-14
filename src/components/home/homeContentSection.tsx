@@ -227,41 +227,105 @@ export const HomeContentSection = () => {
 <h2 className="text-xl primaryText fw_600 mt-4">
   Luxury Add-Ons to Elevate Your Packaging
 </h2>
+ <p className="text-sm mt-3">
+   Finishing coats improve the appearance and longevity of custom packaging boxes, creating a sense of luxury.
+</p>
 <ul className="list-disc mt-10 pl-6 flex flex-col gap-y-5 text-sm">
-  <li>Silver Foiling</li>
-  <li>Gold Foiling</li>
-  <li>Embossing</li>
-  <li>Die-cut Windows</li>
-  <li>Ribbons Pasting</li>
-</ul>
+                <li>
+                  <span className="fw_600">Silver Foiling:</span>{" "}
+                  Adds metallic silver accents for a refined, high-end look.
+                </li>
+                <li>
+                  <span className="fw_600">Gold Foiling:</span> Provides a luxurious, shiny gold finish for elegant packaging.
+                </li>
+                <li>
+                  <span className="fw_600">Metallic Foiling:</span> Adds a reflective, metallic finish in various colors for a premium feel.
+                </li>
+                <li>
+                  <span className="fw_600">Ribbons Pasting:</span> Adds decorative ribbons for an upscale presentation.
+                </li>
+                <li>
+                  <span className="fw_600">Other Artistic Works:</span> Includes custom artwork, patterns, and designs to personalize packaging further.
+                </li>
+              </ul>
 
 <h2 className="text-xl primaryText fw_600 mt-4">
   About Custom Fit Boxes – Your Trusted Packaging Partner
 </h2>
 <p className="text-sm mt-3">
-  Custom Fit Boxes designs distinctive packaging that showcases products and brand values. We provide complete customization tools and advanced printing methods to help your products dominate competitive markets.
+  Custom Fit Boxes designs distinctive packaging that initially showcases your items while reflecting your brand values to create lasting customer impressions. The company is a leading packaging solutions provider, aiming to turn brand visions into designs. We combine design innovation with modern technology to construct memorable custom packaging solutions.
+</p>
+<p className="text-sm mt-3">
+Our company provides complete customization tools and advanced printing methods, including offset, ital, and rotogravure techniques, to help your products dominate competitive markets today.
+</p>
+<p className="text-sm mt-3">
+  We take pride in our sustainable packaging solutions, which provide high-quality resilience and environmentally friendly packaging. Our team's bespoke packaging delivers brand representation through expert detail work and superior manufacturing methods.
+</p>
+<p className="text-sm mt-3">
+  Our organization focuses on customers to provide the exact packaging solutions required for your business. Our company's sustainable practices, innovative solutions, and exceptional customer service help you successfully highlight your product in the market.
 </p>
 
 <h2 className="text-xl primaryText fw_600 mt-4">
   Why Choose Custom Fit Boxes?
 </h2>
-<ul className="list-disc mt-10 pl-6 flex flex-col gap-y-5 text-sm">
-  <li>Tailored Packaging Solutions</li>
-  <li>Eco-Friendly and Sustainable Packaging</li>
-  <li>High-Quality Logo Printing</li>
-  <li>Endless Customization</li>
-  <li>Wholesale Pricing</li>
-  <li>Free Design Support</li>
-  <li>Fast & Free Delivery</li>
-  <li>24/7 Customer Support</li>
-</ul>
-
-<h2 className="text-xl primaryText fw_600 mt-4">
-  Request a Quote Today!
-</h2>
 <p className="text-sm mt-3">
-  Check out our wide range of products and request a quote tailored to your needs. Our experts will help you create the perfect custom boxes for your brand.
+ We help you attract your target audience and achieve your business goals through our custom packaging. 
 </p>
+<h3 className="text-lg fw_600 mt-3">
+  Tailored Packaging Solutions
+</h3>
+<p className="text-sm mt-3">
+  Our business provides a comprehensive selection of boxes we create according to your requirements. We offer all types of custom boxes, including product-specific versions, printed options, and personalized packaging solutions with branding features. Custom packaging can also lead to customer retention and increased sales. Custom boxes provide a vital long-term business investment that drives companies' success and growth.
+</p>
+<h3 className="text-lg fw_600 mt-3">
+Eco-Friendly and Sustainable Packaging
+</h3>
+<p className="text-sm mt-3">
+  Using Eco-friendly packaging materials in custom product boxes allows your brand to give out a meaningful message and create a difference. Green packaging from our services safeguards merchandise as it supports environmental preservation.
+</p>
+<h3 className="text-lg fw_600 mt-3">
+  High-Quality Logo Printing
+</h3>
+<p className="text-sm mt-3">
+  Customize your boxes by choosing our logo print option and get your company's logo printed on your custom-made boxes. We use the latest printing techniques to emboss your company logo on your custom boxes, which helps with brand recognition.
+</p>
+<h3 className="text-lg fw_600 mt-3">
+  Endless Customization
+</h3>
+<p className="text-sm mt-3">
+Our company's wholesale custom box offerings include unlimited customization possibilities. Your product success depends directly on the custom boxes you utilize as marketing instruments. Our wholesale custom boxes establish instant visual appeal, which drives product purchases through personalized finishing choices and well-designed features. Add distinctive finishing touches together with unique features to develop wholesale logo boxes that can make your brand more recognizable.
+</p>
+<h3 className="text-lg fw_600 mt-3">
+  Wholesale Pricing
+</h3>
+<p className="text-sm mt-3">
+Our business provides affordable custom boxes with excellent quality standards. We offer custom boxes at wholesale rates to deliver packaging solutions that satisfy every client's needs.
+</p>
+<h3 className="text-lg fw_600 mt-3">
+  Free Design Support
+</h3>
+<p className="text-sm mt-3">
+Our company stands ready to produce custom-printed boxes that precisely fit your product. You can utilize our free design support to convert your plans into beautiful market-ready designs.
+</p>
+<h3 className="text-lg fw_600 mt-3">
+  Fast & Free Delivery
+</h3>
+<p className="text-sm mt-3">
+Our company completely covers the shipping expenses. We deliver custom boxes and custom packaging boxes without any charges and expedite their delivery so you receive your products on schedule.
+</p>
+<h3 className="text-lg fw_600 mt-3">
+  24/7 Customer Support
+</h3>
+<p className="text-sm mt-3">
+Our team provides round-the-clock customer support to help customers with their custom box requirements and other packaging solution queries. Custom-fit boxes create an ideal custom package of custom packaging boxes that will fulfill all your business requirements and exceed your expectations.
+</p>
+<h3 className="text-lg fw_600 mt-3">
+  Request a Quote Today!
+</h3>
+<p className="text-sm mt-3">
+Check out our wide range of products and services and request a quote for what meets your requirements. Our experts will help you create the perfect custom boxes for your brand.
+</p>
+
             </div>
           </div>
           <div
