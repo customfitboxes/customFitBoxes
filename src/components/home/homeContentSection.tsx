@@ -187,14 +187,42 @@ export const HomeContentSection = () => {
 <h2 className="text-xl primaryText fw_600 mt-4">
   Popular Custom Packaging Styles
 </h2>
+  <p className="text-sm mt-3">
+  Custom packaging boxes allow businesses to select from various possible dimensions and designs for product packaging into aesthetic representations that match their brand identity.
+</p>
 <ul className="list-disc mt-10 pl-6 flex flex-col gap-y-5 text-sm">
-  <li>Gable Boxes</li>
-  <li>Window Die-Cut Boxes</li>
-  <li>Sleeve Boxes</li>
-  <li>Seal End Auto Bottom</li>
-  <li>Double Wall Tuck Top</li>
-  <li>Roll End Tuck Top</li>
-</ul>
+                <li>
+                  <span className="fw_600">Gable Boxes:</span>{" "}
+                  Easy-to-carry boxes with a handle, ideal for gift packaging or food products.
+                </li>
+                <li>
+                  <span className="fw_600">Window Die-Cut Boxes:</span> Feature a transparent window to showcase the product inside.
+                </li>
+                <li>
+                  <span className="fw_600">Sleeve Boxes:</span> A box with a sliding sleeve offering a premium unboxing experience.
+                </li>
+                <li>
+                  <span className="fw_600">Seal End Auto Bottom:</span> Automatically secured at the base, providing easy assembly.
+                </li>
+                <li>
+                  <span className="fw_600">Entire Flap Auto Bottom:</span> Similar to the Seal End Auto Bottom, with added stability.
+                </li>
+                <li>
+                  <span className="fw_600">Auto Bottom with Display Lid:</span> Features a secure bottom with an easy-to-open lid for display.
+                </li>
+                <li>
+                  <span className="fw_600">Double Wall Tuck Top:</span> Provides extra protection and a secure tuck flap closure.
+                </li>
+                <li>
+                  <span className="fw_600">Roll End Tuck Top:</span> Features a tuck top and roll end for secure, compact packaging.
+                </li>
+                <li>
+                  <span className="fw_600">Tuck End Auto Bottom:</span> Combines a tuck end and auto bottom for secure closure and quick assembly.
+                </li>
+                <li>
+                  <span className="fw_600">Straight Tuck Boxes:</span> Simple design with straight tuck flaps for easy closure and packaging.
+                </li>
+              </ul>
 
 <h2 className="text-xl primaryText fw_600 mt-4">
   Luxury Add-Ons to Elevate Your Packaging
