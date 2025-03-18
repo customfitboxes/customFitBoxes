@@ -14,12 +14,7 @@ const Index = ({ data, boxProducts, shapeProducts }: any) => {
       <div className="py-10  px-3" style={{ background: "#EFFCF9" }}>
         <div>
           <h1 className="text-4xl fw_600 text-center">About Us</h1>
-          <p className="mt-4 text-center fw_400">
-            Choose a packaging style for your custom boxes, start designing with
-            us, and get your
-            <br className="hidden md:block" /> boxes with the most advanced
-            printing techniques.
-          </p>
+        
         </div>
       </div>
       <Container maxWidth={"xl"}>
@@ -68,12 +63,12 @@ const Index = ({ data, boxProducts, shapeProducts }: any) => {
             Let’s Create Something Amazing Together!
           </h2>
           <p className="mt-3 p-0 text-black">
-            Partner with Custom Fit Boxes for packaging that speaks volumes about your brand. Whether you need a unique design, sustainable solutions, or cost-effective options, we’ve got you covered.
+            Partner with Custom Fit Boxes for packaging that speaks volumes about your brand. Whether you need a unique design, sustainable solutions, or cost-effective options, we’ve got you covered.</p>
 
-📞 Get in Touch Today!Contact us to discuss your packaging needs, request a quote, or explore our custom design options. Our team is here to assist you in every step of your packaging journey!
+ <p className="mt-3 p-0 text-black">📞 Get in Touch Today!Contact us to discuss your packaging needs, request a quote, or explore our custom design options. Our team is here to assist you in every step of your packaging journey!</p>
 
-At Custom Fit Boxes, we believe that the right packaging can make all the difference. Let us help you make that difference!
-        </p>
+ <p className="mt-3 p-0 text-black">At Custom Fit Boxes, we believe that the right packaging can make all the difference. Let us help you make that difference!</p>
+        
         </div>
       </Container>
       <Footer />
