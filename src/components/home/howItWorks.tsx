@@ -32,10 +32,10 @@ export const HowItWorks = () => {
           <div className="col-span-12 md:col-span-6">
             <div className="text-lg text-gray-700">
               <p className="mt-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus laboriosam architecto, excepturi minus iure iste ipsum pariatur vel rerum voluptatem molestias officiis aspernatur veritatis nam aperiam nihil sequi, obcaecati necessitatibus doloremque id. Quisquam a, consequuntur cupiditate necessitatibus fuga expedita recusandae!
+                Custom Fit Boxes is a USA-based company dedicated to providing high-quality custom packaging solutions to businesses across the USA and worldwide. We specialize in crafting unique, durable, and visually appealing packaging that enhances your brand’s identity. Our expertise spans across various industries, ensuring that each packaging solution meets the highest standards of quality and design.
               </p>
-              <p className="mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, accusantium quidem sapiente neque maiores libero temporibus sed amet numquam nesciunt itaque, ratione, a adipisci exercitationem nemo sunt eum cupiditate repudiandae? Delectus iure tempora iusto ullam recusandae error cum alias hic, deserunt voluptates porro quasi non doloribus dolor id perspiciatis minima voluptatum cumque incidunt dignissimos voluptas vitae provident! Voluptatum, voluptates. Suscipit.</p>
-              <p className="mt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit libero dolorum ipsa alias ipsum hic minima perspiciatis fugit quod maiores! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, nobis.</p>
+              <p className="mt-3">We offer a wide range of custom packaging options, including retail boxes, mailer boxes, food packaging, luxury rigid boxes, and more. Our solutions are tailored to fit your specific needs, with premium printing, eco-friendly materials, and endless customization possibilities. Whether you're looking for eye-catching designs or sustainable packaging, we have the perfect fit for you.</p>
+              <p className="mt-3">At Custom Fit Boxes, customer satisfaction is our top priority. We combine creativity, precision, and innovation to help businesses create a strong market presence. With our cost-effective and high-end packaging solutions, we ensure that your brand stands out and leaves a lasting impression.</p>
             </div>
             <div className="flex justify-center sm:justify-start">
               <button
