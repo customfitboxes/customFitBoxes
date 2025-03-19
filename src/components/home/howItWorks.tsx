@@ -22,8 +22,7 @@ export const HowItWorks = () => {
         <p className="mt-2 text-center text-base leading-5 opacity-70">
           At Custom Fit Boxes, we specialize in crafting innovative, high-quality custom packaging solutions that enhance brand identity. Our focus on sustainability, precision, and creativity ensures your packaging leaves a lasting impact in the competitive market.
           <br className="hidden xl:block" />
-          sizes and colors. Our packaging specialists can help you find the
-          perfect
+    
         </p>
         <div
           className={`flex flex-col-reverse gap-y-16 md:gap-y-0 md:grid grid-cols-12 mt-14 sm:mt-20 md:gap-x-8`}
