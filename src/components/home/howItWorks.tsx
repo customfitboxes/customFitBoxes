@@ -17,11 +17,10 @@ export const HowItWorks = () => {
     <Container maxWidth={"xl"}>
       <div className="pb-14 pt-5">
         <h2 className="fw_600 text-center text-3xl sm:text-2xl md:text-4xl xl:text-5xl primaryText leading-tight">
-          How it works
+          Who We Are
         </h2>
         <p className="mt-2 text-center text-base leading-5 opacity-70">
-          Discover our range of fully customizable retail boxes tailored to your
-          industry - available in an array of unique shapes, custom
+          At Custom Fit Boxes, we specialize in crafting innovative, high-quality custom packaging solutions that enhance brand identity. Our focus on sustainability, precision, and creativity ensures your packaging leaves a lasting impact in the competitive market.
           <br className="hidden xl:block" />
           sizes and colors. Our packaging specialists can help you find the
           perfect
