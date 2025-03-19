@@ -41,11 +41,7 @@ export const PackagingProcess = () => {
             Our Packaging Process
           </h2>
           <p className="text-center mt-2 leading-5 opacity-70 text-base">
-            Discover our range of fully customizable retail boxes tailored to
-            your industry - available in an array of unique shapes, custom
-            <br className="hidden xl:block" />
-            sizes and colors. Our packaging specialists can help you find the
-            perfect
+            We follow a streamlined process to ensure you get the perfect custom packaging for your products. From selecting the right box style to finalizing artwork and shipping, we make the journey simple and hassle-free.
           </p>
           <div className="mt-14 rounded-md">
             <div className="mt-10 grid grid-cols-12 gap-3">
