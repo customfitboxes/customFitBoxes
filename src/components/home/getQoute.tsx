@@ -9,7 +9,7 @@ export const GetQoute = (props: any) => {
           Request a Quote
         </p>
         <p className="mt-2 text-center text-base leading-5 opacity-70">
-          Get a custom packaging quote tailored to your needs. Share your specifications, and our experts will provide a fast, competitive estimate. Let’s create something amazing!
+          Get a custom packaging quote tailored to your needs. Share your specifications, and our experts will provide <br className="hidden xl:block" />a fast, competitive estimate. Let’s create something amazing!
         </p>
         <div className="mt-12">
           <GetQouteForm1 products={props.products} />
