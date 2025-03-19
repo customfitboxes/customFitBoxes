@@ -10,25 +10,25 @@ export const tabsData = [
     img: p1,
     name: "Choose Box Style",
     description:
-      "Chat live with our packaging experts now for a free consultation. and instant price quote. Chat live with our packaging experts now for a free consultation and instant price quote.",
+      "Select from a variety of custom box styles that suit your brand and product requirements. Whether you need retail boxes, mailers, or luxury rigid boxes, we’ve got the perfect fit for you.",
   },
   {
     img: p2,
     name: "Get Quote",
     description:
-      "Chat live with our packaging experts now for a free consultation and instant price quote. Chat live with our packaging experts now for a free consultation and instant price quote.",
+      "Receive a competitive quote instantly! Share your packaging specifications, and our team will provide you with the best pricing based on your needs and order volume.",
   },
   {
     img: p3,
     name: "Finilize Art Work",
     description:
-      "Chat live with our packaging experts now for a free consultation and instant price quote. Chat live with our packaging experts now for a free consultation and instant price quote.",
+      "Work with our expert designers to refine your packaging artwork. We ensure high-quality printing and premium finishing options to make your packaging stand out.",
   },
   {
     img: p4,
     name: "Ready for Shipment",
     description:
-      "Chat live with our packaging experts now for a free consultation and instant price quote. Chat live with our packaging experts now for a free consultation and instant price quote.",
+      "Once your design is approved, we move to production with precision and efficiency. Your custom packaging is then carefully packed and shipped to your doorstep, ready for use.",
   },
 ];
 
