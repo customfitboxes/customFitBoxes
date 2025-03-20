@@ -24,17 +24,9 @@ const Index = ({ data, boxProducts, shapeProducts }: any) => {
       </div>
       <Container maxWidth={"lg"}>
         <div className="py-10">
-          <p className="mt-4 p-0 text-black">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.
-          </p>
-          <h1 className="mt-4 font-bold text-black text-xl">
+          <h2 className="mt-4 font-bold text-black text-xl">
             What Is a Terms of Service Agreement?
-          </h1>
+          </h2>
           <p className="mt-3 p-0 text-black">
             A terms of service sets all user rules, restrictions, and prohibited
             behaviors, and outlines your company’s liability limitations,
