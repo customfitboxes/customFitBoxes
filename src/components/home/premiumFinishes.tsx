@@ -35,7 +35,7 @@ export const PremiumFinishes = () => {
         <h2 className="text-3xl sm:text-2xl md:text-4xl xl:text-5xl primaryText text-center fw_600 leading-tight">
           Luxury Finishing Options
         </h2>
-        <p className="text-center mt-2 leading-5 opacity-70 text-sm">
+        <p className="text-center mt-2 leading-5 opacity-70 text-base">
           Elevate your packaging with stunning premium finishes that enhance appeal and sophistication. From gold and silver foils to holographic effects,
 {" "}
       
