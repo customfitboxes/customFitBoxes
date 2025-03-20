@@ -26,6 +26,7 @@ const Index = ({ data, boxProducts, shapeProducts }: any) => {
           </h2>
           <p className="mt-3 p-0 text-black">
             We may collect the following types of information:
+            </p>
             <ul className="list-disc mt-8 pl-6 flex flex-col gap-y-3">
             <li>Contact Details: Name, email address, shipping address, and phone number.
 </li>
@@ -38,7 +39,7 @@ const Index = ({ data, boxProducts, shapeProducts }: any) => {
             <li>User Preferences: Purchase history, communication preferences, and feedback.
 </li>
           </ul>
-          </p>
+          
           
           <h2 className="mt-8 font-bold text-black text-xl">
             How We Use Your Information
@@ -71,6 +72,8 @@ const Index = ({ data, boxProducts, shapeProducts }: any) => {
 </li>
             <li>Legal Requirements: When required by law to comply with legal processes or protect our rights, property, or safety.
 </li>
+              </ul>
+          
              <h2 className="mt-8 font-bold text-black text-xl">
            Data Security
           </h2>
@@ -90,6 +93,7 @@ const Index = ({ data, boxProducts, shapeProducts }: any) => {
 </li>
               <li>Delete: Request deletion of your personal data, subject to legal obligations.
 </li>
+              </ul>
               <h2 className="mt-8 font-bold text-black text-xl">
            Children's Privacy
           </h2>
@@ -116,12 +120,13 @@ const Index = ({ data, boxProducts, shapeProducts }: any) => {
              <p className="mt-4 p-0 text-black">
            Custom Fit Boxes
             </p>
+            <ul className="list-disc mt-8 pl-6 flex flex-col gap-y-3">
              <li>+1(332) 252 9988
 </li>
             <li>info@customfitboxes.com
 </li>
-              
-          </p>
+        </ul>       
+         
         </div>
       </Container>
       <Footer />
