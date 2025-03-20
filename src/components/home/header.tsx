@@ -53,11 +53,11 @@ export const Header = () => {
                 Customer Packaging Boxes
               </button>
               <h1 className="fw_600 text-3xl sm:text-2xl leading-tight md:text-4xl xl:text-5xl mt-8">
-                Elevate Your Brand With{" "}
+                Eco-Friendly, Premium,{" "}
                 <br className={matches ? "hidden" : "block"} />
-                Tailor Made Packaging{" "}
+                and Customizable{" "}
                 <br className={matches ? "hidden" : "block"} />
-                Solutions
+                Packaging Solutions
               </h1>
               <button
                 onClick={() => router.push("/request-quote")}
