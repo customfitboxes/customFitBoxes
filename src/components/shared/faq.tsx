@@ -36,7 +36,7 @@ export const Faq = (props: any) => {
         <h2 className="text-3xl sm:text-2xl md:text-4xl xl:text-5xl fw_600 text-center leading-tight primaryText">
           Frequently Asked Question
         </h2>
-        <p className="mt-2 text-center text-base leading-5 opacity-70">
+        <p className="text-center mt-1 leading-5 text-base">
           Have questions about our packaging solutions? Find answers to the most common queries about our custom boxes, materials, printing options, and more.<br className="hidden xl:block" /> Still If you have any questions, let us know!
           
         </p>
