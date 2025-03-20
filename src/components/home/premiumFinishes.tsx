@@ -33,19 +33,14 @@ export const PremiumFinishes = () => {
     <Container maxWidth={"xl"}>
       <div className="pb-10 pt-14">
         <h2 className="text-3xl sm:text-2xl md:text-4xl xl:text-5xl primaryText text-center fw_600 leading-tight">
-          Premium Finishes
+          Luxury Finishing Options
         </h2>
         <p className="text-center mt-2 leading-5 opacity-70 text-sm">
-          We know how crucial it is for your packaging to shine bright like a
-          diamond! Our premium finishes guarantee that your packaging looks
-          amazing and feels super fancy in your customers hands. Because when
-          it comes to packaging, it's all about making a statement, and we're
-          here to help you do it with style{" "}
-          <span className="lowercase">
-            of finishing options to ensure SPECTACULAR LOOKS AND PREMIUM
-          </span>
+          Elevate your packaging with stunning premium finishes that enhance appeal and sophistication. From gold and silver foils to holographic effects,
+{" "}
+      
           <br className="hidden sm:block" />
-          <span className="lowercase"> FEEL OF CUSTOM BOXES</span>
+          <span className="lowercase"> our high-quality finishing options ensure a luxurious, eye-catching presentation that leaves a lasting impression.</span>
         </p>
         <div className="w-full mt-10 relative z-10">
           <Carousel responsive={responsive}>
