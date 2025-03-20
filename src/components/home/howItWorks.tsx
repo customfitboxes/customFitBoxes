@@ -19,8 +19,12 @@ export const HowItWorks = () => {
         <h2 className="fw_600 text-center text-3xl sm:text-2xl md:text-4xl xl:text-5xl primaryText leading-tight">
           Who We Are
         </h2>
-        <p className="mt-2 text-center text-base leading-5 opacity-70">
-          At Custom Fit Boxes, we specialize in crafting innovative, high-quality custom packaging solutions that enhance brand identity. Our focus on sustainability, precision, and creativity ensures your packaging leaves a lasting impact in the competitive market.
+       <p className="text-center mt-2 leading-5 opacity-70 text-sm">
+          At Custom Fit Boxes, we specialize in crafting innovative, high-quality packaging solutions that enhance brand identity.
+{" "}
+      
+          <br className="hidden sm:block" />
+          <span className="lowercase"> Our focus on sustainability, precision, and creativity ensures your packaging leaves a lasting impact in the competitive market.</span>
         </p>
         <div
           className={`flex flex-col-reverse gap-y-16 md:gap-y-0 md:grid grid-cols-12 mt-14 sm:mt-20 md:gap-x-8`}
