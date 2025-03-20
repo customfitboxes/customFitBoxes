@@ -40,7 +40,7 @@ export const PackagingProcess = () => {
           <h2 className="text-3xl sm:text-2xl md:text-4xl xl:text-5xl primaryText text-center fw_600 leading-tight">
             Our Packaging Process
           </h2>
-          <p className="text-center mt-2 leading-5 opacity-70 text-base">
+          <p className="mt-1 leading-5 text-base">
             We follow a streamlined process to ensure you get the perfect custom packaging for your products. From selecting the right box style to finalizing artwork 
             <br className="hidden sm:block" />
             and shipping, we make the journey simple and hassle-free.
