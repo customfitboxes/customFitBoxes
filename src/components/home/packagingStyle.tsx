@@ -38,14 +38,12 @@ export const PackagingStyle = (props: any) => {
         <div className="flex text-center md:text-left flex-wrap sm:flex-nowrap gap-y-5 md:items-start justify-center md:justify-between gap-x-10">
           <div>
             <h2 className="text-3xl sm:text-2xl -mt-2 md:text-4xl xl:text-5xl fw_600 leading-tight primaryText pt-0">
-              Find Custom Boxes for Your Industry
+              Custom Boxes for Every Industry
             </h2>
             <p className="mt-1 leading-5 text-base">
-              Discover our range of fully customizable retail boxes tailored to
-              your industry - available in an array of unique shapes, custom
+              Explore our diverse range of customizable packaging solutions designed to suit any business. With endless shape, size,
               <br className="hidden xl:block" />
-              sizes and colors. Our packaging specialists can help you find the
-              perfect
+              and color options, create packaging that enhances your brand identity, improves product presentation, and delivers a lasting impression.
             </p>
           </div>
           <section className="grid grid-cols-2 gap-3 sm:hidden">
