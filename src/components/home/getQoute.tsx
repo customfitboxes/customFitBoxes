@@ -8,7 +8,7 @@ export const GetQoute = (props: any) => {
         <p className="fw_600 text-center leading-tight text-3xl sm:text-2xl md:text-4xl xl:text-5xl primaryText">
           Request a Quote
         </p>
-        <p className="mt-2 text-center text-base leading-5 opacity-70">
+        <p className="text-center mt-1 leading-5 text-base">
           Get a custom packaging quote tailored to your needs. Share your specifications, and our experts will provide <br className="hidden xl:block" />a fast, competitive estimate. Let’s create something amazing!
         </p>
         <div className="mt-12">
