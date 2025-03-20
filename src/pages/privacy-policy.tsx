@@ -14,97 +14,113 @@ const Index = ({ data, boxProducts, shapeProducts }: any) => {
       <div className="py-10  px-3" style={{ background: "#EFFCF9" }}>
         <div>
           <h1 className="text-4xl fw_600 text-center">Privacy Policy</h1>
-          <p className="mt-4 text-center fw_400">
-            Choose a packaging style for your custom boxes, start designing with
-            us, and get your
-            <br className="hidden md:block" /> boxes with the most advanced
-            printing techniques.
-          </p>
         </div>
       </div>
       <Container maxWidth={"xl"}>
         <div className="py-10">
           <p className="mt-4 p-0 text-black">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.
+            At Custom Fit Boxes, we are committed to safeguarding your privacy. This Privacy Policy outlines how we collect, use, disclose, and protect your personal information when you interact with our website and services.
           </p>
-          <h1 className="mt-4 font-bold text-black text-xl">
-            What Is a Terms of Service Agreement?
-          </h1>
+          <h2 className="mt-4 font-bold text-black text-xl">
+           Information We Collect
+          </h2>
           <p className="mt-3 p-0 text-black">
-            A terms of service sets all user rules, restrictions, and prohibited
-            behaviors, and outlines your company’s liability limitations,
-            property rights, and dispute resolutions.
-          </p>
-          <p className="mt-3 p-0 text-black">
-            You’ve probably seen some alternative titles for a terms of service
-            agreement, like:
-          </p>
-          <ul className="list-disc mt-8 pl-6 flex flex-col gap-y-3">
-            <li>Terms of Use</li>
-            <li>Terms and Conditions</li>
-            <li>ToS Agreement</li>
-            <li>General Terms</li>
-            <li>Terms</li>
+            We may collect the following types of information:
+            <ul className="list-disc mt-8 pl-6 flex flex-col gap-y-3">
+            <li>Contact Details: Name, email address, shipping address, and phone number.
+</li>
+            <li>Financial Information: Payment details such as bank or credit account information.
+</li>
+            <li>Account Information: Username, password, and other credentials.
+</li>
+            <li>Usage Data: IP address, browser type, device identification, and browsing behavior.
+</li>
+            <li>User Preferences: Purchase history, communication preferences, and feedback.
+</li>
           </ul>
-
-          <p className="mt-8 p-0 text-black">
-            Despite the different names, these agreements are all the same.
           </p>
+          
+          <h2 className="mt-8 font-bold text-black text-xl">
+            How We Use Your Information
+          </h2>
           <p className="mt-4 p-0 text-black">
-            No matter what you choose to call it, a generic terms of service
-            policy can help protect your business from users who might break the
-            law or cause harm to your website, app, or other users.
-          </p>
-
-          <p className="mt-4 p-0 text-black">
-            You can customize our free terms of service template below,
-            including the title, so it works for you no matter if your own a:
+            The information collected is used for:
           </p>
 
           <ul className="list-disc mt-8 pl-6 flex flex-col gap-y-3">
-            <li>Dropshipping businesses</li>
-            <li>Marketplace shop</li>
-            <li>Retail store</li>
-            <li>Ecommerce website or app</li>
-            <li>Blog</li>
-            <li>Forum</li>
-            <li>Subscription-based platform</li>
+            <li>Order Processing: To fulfill and ship your orders accurately.
+</li>
+            <li>Account Management: To manage your user account and provide customer support.
+</li>
+            <li>Payment Processing: To verify and process payments securely.
+</li>
+            <li>Communication: To inform you about order status, new products, services, or promotions.
+</li>
+            <li>Website Improvement: To analyze usage and enhance website functionality.
+</li>
           </ul>
 
-          <h1 className="mt-8 font-bold text-black text-xl">
-            Why You Need a Terms of Service for Your Website or App
-          </h1>
+          <h2 className="mt-8 font-bold text-black text-xl">
+           Information Sharing and Disclosure
+          </h2>
           <p className="mt-4 p-0 text-black">
-            While a ToS agreement is not required by law, you need to post one
-            on your website or app to help:
+            We do not sell or rent your personal information to third parties. However, we may share your information with:
+          </p>
+           <ul className="list-disc mt-8 pl-6 flex flex-col gap-y-3">
+            <li>Service Providers: Trusted third parties who assist in operating our website, conducting our business, or servicing you, so long as those parties agree to keep this information confidential.
+</li>
+            <li>Legal Requirements: When required by law to comply with legal processes or protect our rights, property, or safety.
+</li>
+             <h2 className="mt-8 font-bold text-black text-xl">
+           Data Security
+          </h2>
+          <p className="mt-4 p-0 text-black">
+            We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. Despite our efforts, no method of transmission over the internet or electronic storage is 100% secure.
+          </p>
+           <h2 className="mt-8 font-bold text-black text-xl">
+           Your Choices
+          </h2>
+          <p className="mt-4 p-0 text-black">
+           You have the right to:
+          </p>
+           <ul className="list-disc mt-8 pl-6 flex flex-col gap-y-3">
+            <li>Access and Update: Review and update your personal information.
+</li>
+            <li>Opt-Out: Unsubscribe from marketing communications.
+</li>
+              <li>Delete: Request deletion of your personal data, subject to legal obligations.
+</li>
+              <h2 className="mt-8 font-bold text-black text-xl">
+           Children's Privacy
+          </h2>
+            
+          <p className="mt-4 p-0 text-black">
+            Our services are not directed to individuals under 16. We do not knowingly collect personal information from children under 16. If we become aware that a child under 16 has provided us with personal information, we will take steps to delete such information.
           </p>
 
-          <ul className="list-disc mt-8 pl-6 flex flex-col gap-y-3">
-            <li>Set your users’ expectations</li>
-            <li>Protect your business from legal liabilities</li>
-            <li>Maintain rights over your intellectual property</li>
-            <li>Minimizes Disputes</li>
-            <li>Establish trust and transparency with your users</li>
-          </ul>
-
-          <h1 className="mt-8 font-bold text-black text-xl">
-            Terms of Service Set Your Users’ Expectations
-          </h1>
+               <h2 className="mt-8 font-bold text-black text-xl">
+           Changes to This Privacy Policy
+          </h2>
+            
           <p className="mt-4 p-0 text-black">
-            One of the purposes of a terms of service policy is to explain the
-            rules and guidelines your users must follow while accessing your
-            services, which helps set their expectations.
+            We may update this Privacy Policy periodically. Any changes will be posted on this page with an updated revision date. We encourage you to review this policy regularly to stay informed about how we are protecting your information.
           </p>
+
+             <h2 className="mt-8 font-bold text-black text-xl">
+           Contact Us
+          </h2>
+            
           <p className="mt-4 p-0 text-black">
-            By clearly communicating what’s allowed and prohibited on your
-            website or app and explaining to your users the consequences of
-            breaking those rules, you make it easier for your business to
-            prevent users from abusing your services or causing harm to others.
+            If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at:
+            </p>
+             <p className="mt-4 p-0 text-black">
+           Custom Fit Boxes
+            </p>
+             <li>+1(332) 252 9988
+</li>
+            <li>info@customfitboxes.com
+</li>
+              
           </p>
         </div>
       </Container>
