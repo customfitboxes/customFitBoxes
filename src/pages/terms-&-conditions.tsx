@@ -14,97 +14,102 @@ const Index = ({ data, boxProducts, shapeProducts }: any) => {
       <div className="py-10  px-3" style={{ background: "#EFFCF9" }}>
         <div>
           <h1 className="text-4xl fw_600 text-center">Terms & Conditions</h1>
-          <p className="mt-4 text-center fw_400">
-            Choose a packaging style for your custom boxes, start designing with
-            us, and get your
-            <br className="hidden md:block" /> boxes with the most advanced
-            printing techniques.
-          </p>
         </div>
       </div>
       <Container maxWidth={"xl"}>
         <div className="py-10">
-          <p className="mt-4 p-0 text-black">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.
-          </p>
-          <h1 className="mt-4 font-bold text-black text-xl">
-            What Is a Terms of Service Agreement?
-          </h1>
+          <h2 className="mt-4 font-bold text-black text-xl">
+            Introduction
+          </h2>
           <p className="mt-3 p-0 text-black">
-            A terms of service sets all user rules, restrictions, and prohibited
-            behaviors, and outlines your company’s liability limitations,
-            property rights, and dispute resolutions.
+            Welcome to Custom Fit Boxes. By accessing or using our website, you agree to comply with and be bound by the following terms and conditions. Please read them carefully before using our services. If you do not agree with any part of these terms, you should not use our website.
           </p>
-          <p className="mt-3 p-0 text-black">
-            You’ve probably seen some alternative titles for a terms of service
-            agreement, like:
-          </p>
+           <h2 className="mt-4 font-bold text-black text-xl">
+            Definitions
+          </h2>
+          
           <ul className="list-disc mt-8 pl-6 flex flex-col gap-y-3">
-            <li>Terms of Use</li>
-            <li>Terms and Conditions</li>
-            <li>ToS Agreement</li>
-            <li>General Terms</li>
-            <li>Terms</li>
+            <li>Company refers to Custom Fit Boxes.</li>
+            <li>User/You refers to any person accessing or using our website.s</li>
+            <li>Services refer to the products and solutions offered by Custom Fit Boxes.</li>
+          </ul>
+ <h2 className="mt-4 font-bold text-black text-xl">
+            Use of Website
+          </h2>
+          
+          <ul className="list-disc mt-8 pl-6 flex flex-col gap-y-3">
+            <li>You must be at least 18 years old to use our website.</li>
+            <li>You agree not to use the website for any unlawful purposes or in a way that may harm Custom Fit Boxes or other users.</li>
+            <li>We reserve the right to terminate access to our website at any time without prior notice if we find any misuse or violation of our terms.</li>
+            
           </ul>
 
-          <p className="mt-8 p-0 text-black">
-            Despite the different names, these agreements are all the same.
-          </p>
-          <p className="mt-4 p-0 text-black">
-            No matter what you choose to call it, a generic terms of service
-            policy can help protect your business from users who might break the
-            law or cause harm to your website, app, or other users.
-          </p>
-
-          <p className="mt-4 p-0 text-black">
-            You can customize our free terms of service template below,
-            including the title, so it works for you no matter if your own a:
-          </p>
+          <h2 className="mt-8 font-bold text-black text-xl">
+            Orders and Payments
+          </h2>
 
           <ul className="list-disc mt-8 pl-6 flex flex-col gap-y-3">
-            <li>Dropshipping businesses</li>
-            <li>Marketplace shop</li>
-            <li>Retail store</li>
-            <li>Ecommerce website or app</li>
-            <li>Blog</li>
-            <li>Forum</li>
-            <li>Subscription-based platform</li>
+            <li>All orders placed through our website are subject to acceptance and availability.</li>
+            <li>Prices are listed in USD and may be subject to change without notice.</li>
+            <li>Payments must be made in full at the time of order placement through our accepted payment methods.</li>
+            
           </ul>
 
-          <h1 className="mt-8 font-bold text-black text-xl">
-            Why You Need a Terms of Service for Your Website or App
-          </h1>
-          <p className="mt-4 p-0 text-black">
-            While a ToS agreement is not required by law, you need to post one
-            on your website or app to help:
-          </p>
-
-          <ul className="list-disc mt-8 pl-6 flex flex-col gap-y-3">
-            <li>Set your users’ expectations</li>
-            <li>Protect your business from legal liabilities</li>
-            <li>Maintain rights over your intellectual property</li>
-            <li>Minimizes Disputes</li>
-            <li>Establish trust and transparency with your users</li>
+          <h2 className="mt-8 font-bold text-black text-xl">
+            Shipping and Delivery
+          </h2>
+            <ul className="list-disc mt-8 pl-6 flex flex-col gap-y-3">
+            <li>Delivery times are estimates and not guaranteed.</li>
+            <li>Custom Fit Boxes is not responsible for delays caused by third-party shipping carriers.</li>
+            <li>Customers are responsible for providing accurate shipping details. Any errors may result in additional charges.</li>
+            
           </ul>
-
-          <h1 className="mt-8 font-bold text-black text-xl">
-            Terms of Service Set Your Users’ Expectations
-          </h1>
-          <p className="mt-4 p-0 text-black">
-            One of the purposes of a terms of service policy is to explain the
-            rules and guidelines your users must follow while accessing your
-            services, which helps set their expectations.
+           <h2 className="mt-8 font-bold text-black text-xl">
+            Returns and Refunds
+          </h2>
+            <ul className="list-disc mt-8 pl-6 flex flex-col gap-y-3">
+            <li>Due to the custom nature of our products, all sales are final.</li>
+            <li>Refunds or replacements will only be issued in cases of defects or errors caused by Custom Fit Boxes.</li>
+            <li>Claims for defective or incorrect products must be reported within 7 days of delivery.</li>
+            
+          </ul>
+           <h2 className="mt-8 font-bold text-black text-xl">
+            Intellectual Property
+          </h2>
+            <ul className="list-disc mt-8 pl-6 flex flex-col gap-y-3">
+            <li>All content on this website, including images, designs, logos, and text, is the property of Custom Fit Boxes and may not be used without permission.</li>
+            <li>Unauthorized use of our intellectual property may result in legal action.</li>
+            
+          </ul>
+          <h2 className="mt-8 font-bold text-black text-xl">
+            Privacy Policy
+          </h2>
+            <ul className="list-disc mt-8 pl-6 flex flex-col gap-y-3">
+            <li>Your use of this website is also governed by our Privacy Policy, which outlines how we collect, use, and protect your personal information.</li>
+            
+          </ul>
+          <h2 className="mt-8 font-bold text-black text-xl">
+            Limitation of Liability
+          </h2>
+            <ul className="list-disc mt-8 pl-6 flex flex-col gap-y-3">
+            <li>Custom Fit Boxes is not liable for any indirect, incidental, or consequential damages arising from the use of our website or services.</li>
+            <li>We do not guarantee that our website will always be error-free or uninterrupted.</li>
+          </ul>
+          <h2 className="mt-8 font-bold text-black text-xl">
+            Changes to Terms
+          </h2>
+            <ul className="list-disc mt-8 pl-6 flex flex-col gap-y-3">
+            <li>Custom Fit Boxes reserves the right to update these terms at any time without prior notice.</li>
+            <li>It is your responsibility to review these terms periodically.</li>
+          </ul>
+          <h2 className="mt-8 font-bold text-black text-xl">
+            Contact Information
+          </h2>
+           <p className="mt-3 p-0 text-black">
+            If you have any questions or concerns about these terms, please email us at info@customfitboxes.com, +1(332) 252 9988.
           </p>
-          <p className="mt-4 p-0 text-black">
-            By clearly communicating what’s allowed and prohibited on your
-            website or app and explaining to your users the consequences of
-            breaking those rules, you make it easier for your business to
-            prevent users from abusing your services or causing harm to others.
+           <p className="mt-3 p-0 text-black">
+            By using our website, you acknowledge that you have read, understood, and agreed to these Terms and Conditions.
           </p>
         </div>
       </Container>
