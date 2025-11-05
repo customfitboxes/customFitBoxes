@@ -27,13 +27,13 @@ const Index = ({ data, products, boxProducts, shapeProducts }) => {
     e.preventDefault(); // Prevent page refresh
 
     // Validate the required fields
-    if (!finalData.name || !finalData.email || !finalData.productName || !finalData.quantity) {
+    if (!finalData.name || !finalData.email || !finalData.phone) {
       toast.error("Please fill in all required fields!");
       return;
     }
 
     setLoading(true);
-    
+
     try {
       const response = await fetch("/api/request-qoute", {
         method: "POST",
@@ -46,8 +46,8 @@ const Index = ({ data, products, boxProducts, shapeProducts }) => {
 
       if (response.status === 200) {
         toast.success("Quote request submitted successfully!");
-        setFinalData({ unit: "Inches" }); 
-        router.push('/thank-you')
+        setFinalData({ unit: "Inches" });
+        router.push("/thank-you");
       } else {
         toast.error("Failed to submit the quote request. Please try again.");
       }
@@ -57,8 +57,6 @@ const Index = ({ data, products, boxProducts, shapeProducts }) => {
       setLoading(false);
     }
   };
-
-
 
   return (
     <div>
@@ -107,9 +105,10 @@ const Index = ({ data, products, boxProducts, shapeProducts }) => {
               />
             </div>
             <div className="col-span-12 sm:col-span-6">
-              <label className="text-sm sm:text-base">Phone Number</label>
+              <label className="text-sm sm:text-base">Phone Number *</label>
               <input
                 type="tel"
+                required
                 value={finalData?.phone}
                 onChange={(e) => onchnage("phone", e.target.value)}
                 placeholder="Phone number"
@@ -121,7 +120,7 @@ const Index = ({ data, products, boxProducts, shapeProducts }) => {
                 value={finalData?.productName}
                 onChange={(value) => onchnage("productName", value)}
                 options={products}
-                label="Select Product*"
+                label="Select Product"
                 placeholder="Search and select a product"
               />
             )}
@@ -144,10 +143,9 @@ const Index = ({ data, products, boxProducts, shapeProducts }) => {
               </select>
             </div>
             <div className="col-span-12 sm:col-span-6">
-              <label className="text-sm sm:text-base">Quantity*</label>
+              <label className="text-sm sm:text-base">Quantity</label>
               <input
                 type="number"
-                required
                 value={finalData?.quantity}
                 onChange={(e) => onchnage("quantity", e.target.value)}
                 placeholder="Quantity"
@@ -157,7 +155,6 @@ const Index = ({ data, products, boxProducts, shapeProducts }) => {
             <div className="col-span-6 sm:col-span-4">
               <input
                 type="number"
-                required
                 value={finalData?.length}
                 onChange={(e) => onchnage("length", e.target.value)}
                 placeholder="Length"
@@ -167,7 +164,6 @@ const Index = ({ data, products, boxProducts, shapeProducts }) => {
             <div className="col-span-6 sm:col-span-4">
               <input
                 type="number"
-                required
                 value={finalData?.width}
                 onChange={(e) => onchnage("width", e.target.value)}
                 placeholder="Width"
@@ -177,7 +173,6 @@ const Index = ({ data, products, boxProducts, shapeProducts }) => {
             <div className="col-span-6 sm:col-span-4">
               <input
                 type="number"
-                required
                 value={finalData?.depth}
                 onChange={(e) => onchnage("depth", e.target.value)}
                 placeholder="Depth"
@@ -187,10 +182,9 @@ const Index = ({ data, products, boxProducts, shapeProducts }) => {
 
             <div className="col-span-12 sm:col-span-4">
               <label className="hidden sm:block text-sm sm:text-base">
-                Select Unit*
+                Select Unit
               </label>
               <select
-                required
                 value={finalData?.unit}
                 onChange={(e) => onchnage("unit", e.target.value)}
                 className="h-10 md:h-12 w-full rounded-md border border-zinc-300 px-2 text-xs outline-none"

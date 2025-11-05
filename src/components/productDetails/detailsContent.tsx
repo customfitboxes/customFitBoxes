@@ -4,19 +4,16 @@ import msgIcon from "../../static/msgIcon.svg";
 import touchIcon from "../../static/touchIcon.svg";
 import lifeCycle from "../../static/lifeCycle.svg";
 
-export const DetailsContent = () => {
+export const DetailsContent = (props: any) => {
+  console.log("DetailsContent props:", props);
   return (
     <Container maxWidth="xl">
       <div className="pt-16 lg:pt-6 pb-10 lg:pb-16">
         <h2 className="fw_600 text-center leading-tight text-3xl primaryText lg:text-4xl">
-          Product Features
+         {props.product?.productFeatureHeading || "Product Features"}
         </h2>
         <p className="mt-4 lg:mt-2 text-center text-sm lg:text-base leading-5 opacity-70">
-          Discover our range of fully customizable retail boxes tailored to your
-          industry - available in an array of unique shapes, custom
-          <br className="hidden lg:block" />
-          sizes and colors. Our packaging specialists can help you find the
-          perfect
+            {props.product?.productFeatureDetails }
         </p>
 
         <div className="grid grid-cols-12 lg:gap-x-3 xl:gap-x-16 mt-6 lg:mt-14">

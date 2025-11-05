@@ -85,7 +85,7 @@ const Index = ({ data, product, faqs, boxProducts, shapeProducts }: any) => {
             shapeProducts={shapeProducts}
           />
           <DetailsHeader product={product} />
-          <DetailsContent />
+          <DetailsContent product={product} />
           <ContentSection contentData={product.content} />
           {faqs && faqs.length > 0 && <Faq faqs={faqs} />}
           <RelatedProducts product={product} />
