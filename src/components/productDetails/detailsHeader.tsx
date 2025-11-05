@@ -100,7 +100,7 @@ const DetailsHeader = (props: any) => {
               </div>
             </div>
 
-            <div className="hidden lg:block">
+            <div className="">
               <QouteForm3 productName={props.product.name} />
             </div>
 
