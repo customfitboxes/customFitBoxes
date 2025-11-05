@@ -42,7 +42,9 @@ a:hover {
   src: local("PoppinsExtraBold800"),
     url(../PoppinsExtraBold800.ttf) format("truetype");
 }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: "PoppinsLight300";
   color: #131313;
@@ -204,27 +206,26 @@ textarea:-ms-input-placeholder {
   background-color: #1a4885;
   color: white;
 }
-.num_input[type=number] {
-  -moz-appearance:textfield !important; /* Firefox */
+.num_input[type="number"] {
+  -moz-appearance: textfield !important; /* Firefox */
 
-/* Your Tailwind CSS classes here */
+  /* Your Tailwind CSS classes here */
 }
 
 .num_input::-webkit-outer-spin-button,
 .num_input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
-    -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
 .blog-single ul li,
-.blog-single p{
+.blog-single p {
   margin-bottom: 12px;
 }
 
 @media (max-width: 768px) {
-  .plistImage{
+  .plistImage {
     height: 100% !important;
   }
 }
-

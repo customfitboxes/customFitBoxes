@@ -47,7 +47,7 @@ const Index = ({
         />
         <CategoryHeader category={category} />
         <CategoryDetails category={category} products={products} />
-        <CategoryCards products={products} />
+        <CategoryCards products={products} proInfo={category} />
         <ContentSection contentData={category.content} />
         <Faq faqs={faqs} />
         <div className="border-t border-zinc-300">
