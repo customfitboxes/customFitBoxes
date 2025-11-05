@@ -229,3 +229,5 @@ textarea:-ms-input-placeholder {
     height: 100% !important;
   }
 }
+
+.contentSection ul  { list-style: disc; list-style-position: inside;}

@@ -43,7 +43,7 @@ export const ContentSection = (props: any) => {
 
   return (
     <Container maxWidth={"xl"}>
-      <div className="">
+      <div className="contentSection">
         {/* <div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl fw_600 leading-tight primaryText2 mt-0 pt-0">
             Content Section 01
